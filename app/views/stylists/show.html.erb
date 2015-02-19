@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @stylist.style %>
+</p>
+
+<p>
+  <strong>Education:</strong>
+  <%= @stylist.education %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @stylist.experience %>
+</p>
+
+<p>
+  <strong>Clients:</strong>
+  <%= @stylist.clients %>
+</p>
+
+<p>
+  <strong>Equipment:</strong>
+  <%= @stylist.equipment %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @stylist.rate %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @stylist.user %>
+</p>
+
+<%= link_to 'Edit', edit_stylist_path(@stylist) %> |
+<%= link_to 'Back', stylists_path %>

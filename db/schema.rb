@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219224648) do
+ActiveRecord::Schema.define(version: 20150219224908) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "company"
@@ -21,6 +21,32 @@ ActiveRecord::Schema.define(version: 20150219224648) do
   end
 
   add_index "clients", ["user_id"], name: "index_clients_on_user_id"
+
+  create_table "females", force: :cascade do |t|
+    t.string   "height"
+    t.string   "weight"
+    t.string   "age"
+    t.string   "hair_c"
+    t.string   "hair_l"
+    t.string   "eyes"
+    t.string   "bust"
+    t.string   "waist"
+    t.string   "hips"
+    t.string   "dress"
+    t.string   "shoes"
+    t.string   "skin"
+    t.string   "tattoo"
+    t.string   "pierce"
+    t.string   "scar"
+    t.string   "nudity"
+    t.string   "experience"
+    t.integer  "rate"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "females", ["user_id"], name: "index_females_on_user_id"
 
   create_table "males", force: :cascade do |t|
     t.string   "height"

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :stylists
+
+  resources :muas
+
+  resources :hairs
+
+  resources :photos
+
   resources :females
 
   resources :males

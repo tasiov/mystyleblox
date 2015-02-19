@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @hair.style %>
+</p>
+
+<p>
+  <strong>Education:</strong>
+  <%= @hair.education %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @hair.experience %>
+</p>
+
+<p>
+  <strong>Clients:</strong>
+  <%= @hair.clients %>
+</p>
+
+<p>
+  <strong>Equipment:</strong>
+  <%= @hair.equipment %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @hair.rate %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @hair.user %>
+</p>
+
+<%= link_to 'Edit', edit_hair_path(@hair) %> |
+<%= link_to 'Back', hairs_path %>
