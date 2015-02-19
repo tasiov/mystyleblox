@@ -1,0 +1,1 @@
+json.extract! @male, :id, :height, :weight, :age, :hair_c, :hair_l, :eyes, :suit, :chest, :pant, :shoes, :skin, :tattoo, :pierce, :scar, :nudity, :experience, :rate, :user_id, :created_at, :updated_at
