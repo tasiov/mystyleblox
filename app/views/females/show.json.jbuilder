@@ -1,0 +1,1 @@
+json.extract! @female, :id, :height, :weight, :age, :hair_c, :hair_l, :eyes, :bust, :waist, :hips, :dress, :shoes, :skin, :tattoo, :pierce, :scar, :nudity, :experience, :rate, :user_id, :created_at, :updated_at

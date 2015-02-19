@@ -1,0 +1,93 @@
+<%= form_for(@female) do |f| %>
+  <% if @female.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@female.errors.count, "error") %> prohibited this female from being saved:</h2>
+
+      <ul>
+      <% @female.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.text_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :hair_c %><br>
+    <%= f.text_field :hair_c %>
+  </div>
+  <div class="field">
+    <%= f.label :hair_l %><br>
+    <%= f.text_field :hair_l %>
+  </div>
+  <div class="field">
+    <%= f.label :eyes %><br>
+    <%= f.text_field :eyes %>
+  </div>
+  <div class="field">
+    <%= f.label :bust %><br>
+    <%= f.text_field :bust %>
+  </div>
+  <div class="field">
+    <%= f.label :waist %><br>
+    <%= f.text_field :waist %>
+  </div>
+  <div class="field">
+    <%= f.label :hips %><br>
+    <%= f.text_field :hips %>
+  </div>
+  <div class="field">
+    <%= f.label :dress %><br>
+    <%= f.text_field :dress %>
+  </div>
+  <div class="field">
+    <%= f.label :shoes %><br>
+    <%= f.text_field :shoes %>
+  </div>
+  <div class="field">
+    <%= f.label :skin %><br>
+    <%= f.text_field :skin %>
+  </div>
+  <div class="field">
+    <%= f.label :tattoo %><br>
+    <%= f.text_field :tattoo %>
+  </div>
+  <div class="field">
+    <%= f.label :pierce %><br>
+    <%= f.text_field :pierce %>
+  </div>
+  <div class="field">
+    <%= f.label :scar %><br>
+    <%= f.text_field :scar %>
+  </div>
+  <div class="field">
+    <%= f.label :nudity %><br>
+    <%= f.text_field :nudity %>
+  </div>
+  <div class="field">
+    <%= f.label :experience %><br>
+    <%= f.text_field :experience %>
+  </div>
+  <div class="field">
+    <%= f.label :rate %><br>
+    <%= f.number_field :rate %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :females
+
   resources :males
 
   resources :clients
