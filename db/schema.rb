@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219224908) do
+ActiveRecord::Schema.define(version: 20150219225244) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "company"
@@ -48,6 +48,20 @@ ActiveRecord::Schema.define(version: 20150219224908) do
 
   add_index "females", ["user_id"], name: "index_females_on_user_id"
 
+  create_table "hairs", force: :cascade do |t|
+    t.string   "style"
+    t.string   "education"
+    t.string   "experience"
+    t.string   "clients"
+    t.string   "equipment"
+    t.integer  "rate"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "hairs", ["user_id"], name: "index_hairs_on_user_id"
+
   create_table "males", force: :cascade do |t|
     t.string   "height"
     t.string   "weight"
@@ -72,6 +86,48 @@ ActiveRecord::Schema.define(version: 20150219224908) do
   end
 
   add_index "males", ["user_id"], name: "index_males_on_user_id"
+
+  create_table "muas", force: :cascade do |t|
+    t.string   "style"
+    t.string   "education"
+    t.string   "experience"
+    t.string   "clients"
+    t.string   "equipment"
+    t.integer  "rate"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "muas", ["user_id"], name: "index_muas_on_user_id"
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "style"
+    t.string   "education"
+    t.string   "experience"
+    t.string   "clients"
+    t.string   "equipment"
+    t.integer  "rate"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id"
+
+  create_table "stylists", force: :cascade do |t|
+    t.string   "style"
+    t.string   "education"
+    t.string   "experience"
+    t.string   "clients"
+    t.string   "equipment"
+    t.integer  "rate"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "stylists", ["user_id"], name: "index_stylists_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
