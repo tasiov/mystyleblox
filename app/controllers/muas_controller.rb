@@ -1,4 +1,4 @@
-class MuAsController < ApplicationController
+class MuasController < ApplicationController
   before_action :set_mua, only: [:show, :edit, :update, :destroy]
 
   # GET /muas
