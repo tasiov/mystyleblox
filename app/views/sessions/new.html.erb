@@ -3,6 +3,7 @@
 
 <%= form_for(:session, url: login_path) do |f| %>
 
+<p><%= flash[:error] %></p>
 <%= f.label :email %>
 <%= f.email_field :email %>
 
