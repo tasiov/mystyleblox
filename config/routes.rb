@@ -23,7 +23,16 @@ Rails.application.routes.draw do
 
   resources :clients
 
-  resources :users
+  resources :users do
+    resources :stylists
+    resources :muas
+    resources :hairs
+    resources :photos
+    resources :females
+    resources :males
+    resources :clients
+  end
+
 
   get "static_pages/all_talent_forms_page"
 
