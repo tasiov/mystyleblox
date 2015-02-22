@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
 	has_one :photo
 	has_one :mua
 	has_one :stylist
+
+	has_secure_password
 end

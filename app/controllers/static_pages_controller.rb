@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
   end
   # This allows us to render the different forms on one page
   # We are creating a new instance of these object
-  def test
+  def all_talent_forms_page
   	@male = Male.new
   	@female = Female.new
   	@photo = Photo.new
