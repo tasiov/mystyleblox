@@ -1,6 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Name:</strong>
+  <%= @male.user.name %>
+</p>
+
+<p>
+  <strong>Memberid:</strong>
+  <%= @male.user.memberId %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @male.user.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @male.user.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @male.user.zip %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @male.user.description %>
+</p>
+
+<p>
   <strong>Height:</strong>
   <%= @male.height %>
 </p>
@@ -85,10 +115,6 @@
   <%= @male.rate %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @male.user %>
-</p>
 
 <%= link_to 'Edit', edit_male_path(@male) %> |
 <%= link_to 'Back', males_path %>

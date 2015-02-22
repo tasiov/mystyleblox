@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   root 'static_pages#index'
 
   get 'signup' => 'users#new'
@@ -21,9 +23,24 @@ Rails.application.routes.draw do
 
   resources :clients
 
-  resources :users
+  resources :users do
+    resources :stylists
+    resources :muas
+    resources :hairs
+    resources :photos
+    resources :females
+    resources :males
+    resources :clients
+  end
+
 
   get "static_pages/all_talent_forms_page"
+
+  get 'login' => 'sessions#new'
+
+  post 'login' => 'sessions#create'
+
+  delete 'logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
