@@ -1,6 +1,6 @@
 class FemalesController < ApplicationController
   before_action :set_female, only: [:show, :edit, :update, :destroy]
-
+  before_action :user_only, only: :edit
   # GET /females
   # GET /females.json
   def index
@@ -19,6 +19,11 @@ class FemalesController < ApplicationController
 
   # GET /females/1/edit
   def edit
+    if current_user.female
+      @female = current_user.female
+    else
+      redirect_to '/'
+    end
   end
 
   # POST /females
@@ -54,12 +59,17 @@ class FemalesController < ApplicationController
   # DELETE /females/1
   # DELETE /females/1.json
   def destroy
-    @female.destroy
-    respond_to do |format|
-      format.html { redirect_to females_url, notice: 'Female was successfully destroyed.' }
-      format.json { head :no_content }
+    if @female == current_user.female
+      @female.destroy
+      respond_to do |format|
+        format.html { redirect_to females_url, notice: 'Female was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to '/'
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

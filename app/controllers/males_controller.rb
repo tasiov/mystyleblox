@@ -1,5 +1,6 @@
 class MalesController < ApplicationController
   before_action :set_male, only: [:show, :edit, :update, :destroy]
+  before_action :user_only, only: :edit 
 
   # GET /males
   # GET /males.json
@@ -19,6 +20,11 @@ class MalesController < ApplicationController
 
   # GET /males/1/edit
   def edit
+    if current_user.male 
+      @male = current_user.male 
+    else
+      redirect_to '/'
+    end
   end
 
   # POST /males
@@ -54,10 +60,14 @@ class MalesController < ApplicationController
   # DELETE /males/1
   # DELETE /males/1.json
   def destroy
-    @male.destroy
-    respond_to do |format|
-      format.html { redirect_to males_url, notice: 'Male was successfully destroyed.' }
-      format.json { head :no_content }
+    if @male == current_user.male 
+      @male.destroy
+      respond_to do |format|
+        format.html { redirect_to males_url, notice: 'Male was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to '/'
     end
   end
 

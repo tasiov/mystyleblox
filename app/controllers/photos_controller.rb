@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
-
+  before_action :user_only, only: :edit
   # GET /photos
   # GET /photos.json
   def index
@@ -19,6 +19,11 @@ class PhotosController < ApplicationController
 
   # GET /photos/1/edit
   def edit
+    if current_user.photo 
+      @photo = current_user.photo
+    else
+      redirect_to '/'
+    end
   end
 
   # POST /photos
@@ -54,10 +59,14 @@ class PhotosController < ApplicationController
   # DELETE /photos/1
   # DELETE /photos/1.json
   def destroy
-    @photo.destroy
-    respond_to do |format|
-      format.html { redirect_to photos_url, notice: 'Photo was successfully destroyed.' }
-      format.json { head :no_content }
+    if @photo == current_user.photo 
+      @photo.destroy
+      respond_to do |format|
+        format.html { redirect_to photos_url, notice: 'Photo was successfully destroyed.' }
+        format.json { head :no_content }
+     end
+      else
+        redirect_to '/'
     end
   end
 

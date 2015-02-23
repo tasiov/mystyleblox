@@ -1,5 +1,6 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: [:show, :edit, :update, :destroy]
+  before_action :user_only, only: :edit
 
   # GET /clients
   # GET /clients.json
@@ -18,7 +19,12 @@ class ClientsController < ApplicationController
   end
 
   # GET /clients/1/edit
-  def edit
+  def edit # This is what allows only the current user to edit their profile.
+    if current_user.client 
+      @client = current_user.client 
+    else
+      redirect_to '/'
+    end
   end
 
   # POST /clients
@@ -54,10 +60,14 @@ class ClientsController < ApplicationController
   # DELETE /clients/1
   # DELETE /clients/1.json
   def destroy
-    @client.destroy
-    respond_to do |format|
-      format.html { redirect_to clients_url, notice: 'Client was successfully destroyed.' }
-      format.json { head :no_content }
+    if @client == current_user.client
+      @client.destroy
+      respond_to do |format|
+        format.html { redirect_to clients_url, notice: 'Client was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+      else
+        redirect_to '/'
     end
   end
 

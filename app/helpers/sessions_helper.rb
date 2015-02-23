@@ -12,4 +12,9 @@ module SessionsHelper
 		session.delete(:user_id)
 		@current_user = nil
 	end
+	def user_only
+		unless logged_in?
+			redirect_to '/'
+		end
+	end
 end

@@ -1,5 +1,6 @@
 class HairsController < ApplicationController
   before_action :set_hair, only: [:show, :edit, :update, :destroy]
+  before_action :user_only, only: :edit 
 
   # GET /hairs
   # GET /hairs.json
@@ -19,6 +20,11 @@ class HairsController < ApplicationController
 
   # GET /hairs/1/edit
   def edit
+    if current_user.hair 
+      @hair = current_user.hair 
+    else
+      redirect_to '/'
+    end
   end
 
   # POST /hairs
@@ -54,10 +60,15 @@ class HairsController < ApplicationController
   # DELETE /hairs/1
   # DELETE /hairs/1.json
   def destroy
-    @hair.destroy
-    respond_to do |format|
-      format.html { redirect_to hairs_url, notice: 'Hair was successfully destroyed.' }
-      format.json { head :no_content }
+    raise
+    if @hair == current_user.hair
+      @hair.destroy
+      respond_to do |format|
+        format.html { redirect_to hairs_url, notice: 'Hair was successfully destroyed.' }
+        format.json { head :no_content }
+    end
+    else 
+      redirect_to '/'
     end
   end
 

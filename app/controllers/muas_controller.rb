@@ -1,5 +1,6 @@
 class MuasController < ApplicationController
   before_action :set_mua, only: [:show, :edit, :update, :destroy]
+  before_action :user_only, only: :edit
 
   # GET /muas
   # GET /muas.json
@@ -19,6 +20,11 @@ class MuasController < ApplicationController
 
   # GET /muas/1/edit
   def edit
+    if current_user.mua 
+      @mua = current_user.mua 
+    else
+      redirect_to '/'
+    end
   end
 
   # POST /muas
@@ -54,10 +60,14 @@ class MuasController < ApplicationController
   # DELETE /muas/1
   # DELETE /muas/1.json
   def destroy
-    @mua.destroy
-    respond_to do |format|
-      format.html { redirect_to muas_url, notice: 'Mua was successfully destroyed.' }
-      format.json { head :no_content }
+    if @mua == current_user.mua 
+      @mua.destroy
+      respond_to do |format|
+        format.html { redirect_to muas_url, notice: 'Mua was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else 
+      redirect_to '/'
     end
   end
 
