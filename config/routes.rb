@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :images
+
   get 'sessions/new'
 
   root 'static_pages#index'

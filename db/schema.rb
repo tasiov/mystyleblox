@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222135948) do
+ActiveRecord::Schema.define(version: 20150224031507) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "company"
@@ -61,6 +61,18 @@ ActiveRecord::Schema.define(version: 20150222135948) do
   end
 
   add_index "hairs", ["user_id"], name: "index_hairs_on_user_id"
+
+  create_table "images", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "media_file_name"
+    t.string   "media_content_type"
+    t.integer  "media_file_size"
+    t.datetime "media_updated_at"
+  end
+
+  add_index "images", ["user_id"], name: "index_images_on_user_id"
 
   create_table "males", force: :cascade do |t|
     t.string   "height"
@@ -138,9 +150,13 @@ ActiveRecord::Schema.define(version: 20150222135948) do
     t.string   "state"
     t.string   "zip"
     t.text     "description"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "password_digest"
+    t.string   "media_file_name"
+    t.string   "media_content_type"
+    t.integer  "media_file_size"
+    t.datetime "media_updated_at"
   end
 
 end

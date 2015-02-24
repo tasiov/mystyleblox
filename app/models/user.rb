@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 	validates :email, uniqueness: {case_sensitive: false}
 	validates :email, format: {with: /\A[^@]+@[^@]+\z/, :message => "must be a valid email address."}
 
+	has_attached_file :image, styles: { large: "600x600>", medium: "300x300", thumb: "150x150#"}
+	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+	
 	has_one :client
 	has_one :male
 	has_one :female
@@ -16,4 +19,7 @@ class User < ActiveRecord::Base
 	has_one :stylist
 
 	has_secure_password
-end
+
+	has_many :images
+
+	end
