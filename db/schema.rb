@@ -11,13 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225151004) do
+ActiveRecord::Schema.define(version: 20150225171730) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "company"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "clients", ["user_id"], name: "index_clients_on_user_id"
@@ -42,8 +46,12 @@ ActiveRecord::Schema.define(version: 20150225151004) do
     t.string   "experience"
     t.integer  "rate"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "females", ["user_id"], name: "index_females_on_user_id"
@@ -56,8 +64,12 @@ ActiveRecord::Schema.define(version: 20150225151004) do
     t.string   "equipment"
     t.integer  "rate"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "hairs", ["user_id"], name: "index_hairs_on_user_id"
@@ -93,8 +105,12 @@ ActiveRecord::Schema.define(version: 20150225151004) do
     t.string   "experience"
     t.integer  "rate"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "males", ["user_id"], name: "index_males_on_user_id"
@@ -107,8 +123,12 @@ ActiveRecord::Schema.define(version: 20150225151004) do
     t.string   "equipment"
     t.integer  "rate"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "muas", ["user_id"], name: "index_muas_on_user_id"
@@ -121,8 +141,12 @@ ActiveRecord::Schema.define(version: 20150225151004) do
     t.string   "equipment"
     t.integer  "rate"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "photos", ["user_id"], name: "index_photos_on_user_id"
@@ -135,8 +159,12 @@ ActiveRecord::Schema.define(version: 20150225151004) do
     t.string   "equipment"
     t.integer  "rate"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "stylists", ["user_id"], name: "index_stylists_on_user_id"
