@@ -93,6 +93,6 @@ class FemalesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def female_params
-      params.require(:female).permit(:height, :weight, :age, :hair_c, :hair_l, :eyes, :bust, :waist, :hips, :dress, :shoes, :skin, :tattoo, :pierce, :scar, :nudity, :experience, :rate, :user_id, :image)
+      params.require(:female).permit(:height, :weight, :age, :hair_c, :hair_l, :eyes, :bust, :waist, :hips, :dress, :shoes, :skin, :tattoo, :pierce, :scar, :nudity, :experience, :rate, :user_id, :image, :media)
     end
 end

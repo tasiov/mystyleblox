@@ -2,62 +2,7 @@
 
 <h1>Listing Males</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Height</th>
-      <th>Weight</th>
-      <th>Age</th>
-      <th>Hair c</th>
-      <th>Hair l</th>
-      <th>Eyes</th>
-      <th>Suit</th>
-      <th>Chest</th>
-      <th>Pant</th>
-      <th>Shoes</th>
-      <th>Skin</th>
-      <th>Tattoo</th>
-      <th>Pierce</th>
-      <th>Scar</th>
-      <th>Nudity</th>
-      <th>Experience</th>
-      <th>Rate</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @males.each do |male| %>
-      <tr>
-        <td><%= male.height %></td>
-        <td><%= male.weight %></td>
-        <td><%= male.age %></td>
-        <td><%= male.hair_c %></td>
-        <td><%= male.hair_l %></td>
-        <td><%= male.eyes %></td>
-        <td><%= male.suit %></td>
-        <td><%= male.chest %></td>
-        <td><%= male.pant %></td>
-        <td><%= male.shoes %></td>
-        <td><%= male.skin %></td>
-        <td><%= male.tattoo %></td>
-        <td><%= male.pierce %></td>
-        <td><%= male.scar %></td>
-        <td><%= male.nudity %></td>
-        <td><%= male.experience %></td>
-        <td><%= male.rate %></td>
-        <td><%= male.user%></td>
-        
-
-        <td><%= link_to 'Show', male %></td>
-        <td><%= link_to 'Edit', edit_male_path(male) %></td>
-        <td><%= link_to 'Destroy', male, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<%= render 'males' %>
 <br>
 
 <%= link_to 'New Male', new_male_path %>

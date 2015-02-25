@@ -43,6 +43,7 @@ class StylistsController < ApplicationController
         params[:images].each { |image|
           @stylist.user.medias.create(image: image)
         }
+      end
 
 
         format.html { redirect_to @stylist, notice: 'Stylist was successfully created.' }
@@ -76,7 +77,7 @@ class StylistsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to stylists_url, notice: 'Stylist was successfully destroyed.' }
         format.json { head :no_content }
-    end
+      end
     else 
       redirect_to '/'
     end
@@ -90,6 +91,6 @@ class StylistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stylist_params
-      params.require(:stylist).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id, :image)
+      params.require(:stylist).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id, :image, :media)
     end
 end

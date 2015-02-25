@@ -90,6 +90,6 @@ class MuasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mua_params
-      params.require(:mua).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id, :image)
+      params.require(:mua).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id, :image, :media)
     end
 end

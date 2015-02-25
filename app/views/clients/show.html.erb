@@ -1,45 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @client.user.name %>
-</p>
-
-<p>
-  <strong>Memberid:</strong>
-  <%= @client.user.memberId %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @client.user.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @client.user.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @client.user.zip %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @client.user.description %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @client.company %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @client.user %>
-</p>
-
+<%= render 'profileClient' %>
 <p>
   <%= @client.user.images.each do |image| %><br>
     <%= image_tag image.media.url(:medium)%><br>

@@ -34,6 +34,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+
         log_in @user
         format.html { redirect_to "/static_pages/all_talent_forms_page", notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
@@ -80,6 +81,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :phone, :memberId, :city, :state, :zip, :description, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :phone, :memberId, :city, :state, :zip, :description, :password, :password_confirmation, :image)
     end
 end

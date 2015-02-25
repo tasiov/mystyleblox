@@ -1,0 +1,31 @@
+<table>
+  <thead>
+    <tr>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Age</th>
+      <th>Hair c</th>
+      <th>Hair l</th>
+      <th>Eyes</th>
+      <th>Suit</th>
+      <th>Chest</th>
+      <th>Pant</th>
+      <th>Shoes</th>
+      <th>Skin</th>
+      <th>Tattoo</th>
+      <th>Pierce</th>
+      <th>Scar</th>
+      <th>Nudity</th>
+      <th>Experience</th>
+      <th>Rate</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+   <tbody>
+    <% @males.each do |male| %>
+      <tr><%= render 'stats', male:male %></tr>    
+    <% end %>
+  </tbody>
+</table>

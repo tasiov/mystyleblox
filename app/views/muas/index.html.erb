@@ -2,37 +2,7 @@
 
 <h1>Listing Muas</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Style</th>
-      <th>Education</th>
-      <th>Experience</th>
-      <th>Clients</th>
-      <th>Equipment</th>
-      <th>Rate</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @muas.each do |mua| %>
-      <tr>
-        <td><%= mua.style %></td>
-        <td><%= mua.education %></td>
-        <td><%= mua.experience %></td>
-        <td><%= mua.clients %></td>
-        <td><%= mua.equipment %></td>
-        <td><%= mua.rate %></td>
-        <td><%= mua.user %></td>
-        <td><%= link_to 'Show', mua %></td>
-        <td><%= link_to 'Edit', edit_mua_path(mua) %></td>
-        <td><%= link_to 'Destroy', mua, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'muas' %>
 
 <br>
 

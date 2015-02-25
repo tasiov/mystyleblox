@@ -1,71 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @mua.user.name %>
-</p>
 
-<p>
-  <strong>Memberid:</strong>
-  <%= @mua.user.memberId %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @mua.user.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @mua.user.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @mua.user.zip %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @mua.user.description %>
-</p>
-
-
-<p>
-  <strong>Style:</strong>
-  <%= @mua.style %>
-</p>
-
-<p>
-  <strong>Education:</strong>
-  <%= @mua.education %>
-</p>
-
-<p>
-  <strong>Experience:</strong>
-  <%= @mua.experience %>
-</p>
-
-<p>
-  <strong>Clients:</strong>
-  <%= @mua.clients %>
-</p>
-
-<p>
-  <strong>Equipment:</strong>
-  <%= @mua.equipment %>
-</p>
-
-<p>
-  <strong>Rate:</strong>
-  <%= @mua.rate %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @mua.user %>
-</p>
-
+<%= render 'profileMua' %>
 <p>
   <%= @mua.user.images.each do |image| %><br>
     <%= image_tag image.media.url(:medium)%><br>

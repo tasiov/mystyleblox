@@ -1,129 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @female.user.name %>
-</p>
-
-<p>
-  <strong>Memberid:</strong>
-  <%= @female.user.memberId %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @female.user.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @female.user.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @female.user.zip %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @female.user.description %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @female.height %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @female.weight %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @female.age %>
-</p>
-
-<p>
-  <strong>Hair c:</strong>
-  <%= @female.hair_c %>
-</p>
-
-<p>
-  <strong>Hair l:</strong>
-  <%= @female.hair_l %>
-</p>
-
-<p>
-  <strong>Eyes:</strong>
-  <%= @female.eyes %>
-</p>
-
-<p>
-  <strong>Bust:</strong>
-  <%= @female.bust %>
-</p>
-
-<p>
-  <strong>Waist:</strong>
-  <%= @female.waist %>
-</p>
-
-<p>
-  <strong>Hips:</strong>
-  <%= @female.hips %>
-</p>
-
-<p>
-  <strong>Dress:</strong>
-  <%= @female.dress %>
-</p>
-
-<p>
-  <strong>Shoes:</strong>
-  <%= @female.shoes %>
-</p>
-
-<p>
-  <strong>Skin:</strong>
-  <%= @female.skin %>
-</p>
-
-<p>
-  <strong>Tattoo:</strong>
-  <%= @female.tattoo %>
-</p>
-
-<p>
-  <strong>Pierce:</strong>
-  <%= @female.pierce %>
-</p>
-
-<p>
-  <strong>Scar:</strong>
-  <%= @female.scar %>
-</p>
-
-<p>
-  <strong>Nudity:</strong>
-  <%= @female.nudity %>
-</p>
-
-<p>
-  <strong>Experience:</strong>
-  <%= @female.experience %>
-</p>
-
-<p>
-  <strong>Rate:</strong>
-  <%= @female.rate %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @female.user %>
-</p>
+<%= render 'profileShow' %>
 
 <p>
   <%= @female.user.images.each do |image| %><br>
@@ -131,6 +8,7 @@
     <%= button_to "Delete", :action => @destroy%>
   <% end %>
 </p>
+
 <%= render 'images/form' %>
 
 <%= link_to 'Edit', edit_female_path(@female) %> |

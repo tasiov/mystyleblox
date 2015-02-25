@@ -1,0 +1,10 @@
+<td><%= stylist.style %></td>
+<td><%= stylist.education %></td>
+<td><%= stylist.experience %></td>
+<td><%= stylist.clients %></td>
+<td><%= stylist.equipment %></td>
+<td><%= stylist.rate %></td>
+<td><%= stylist.user.name %></td>
+<td><%= link_to 'Show', stylist %></td>
+<td><%= link_to 'Edit', edit_stylist_path(stylist) %></td>
+<td><%= link_to 'Destroy', stylist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
