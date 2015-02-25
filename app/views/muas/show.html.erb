@@ -3,7 +3,7 @@
 
 <%= render 'profileMua' %>
 <p>
-  <%= @mua.user.images.each do |image| %><br>
+  <% @mua.user.images.each do |image| %><br>
     <%= image_tag image.media.url(:medium)%><br>
     <%= button_to "Delete", :action => @destroy%>
   <% end %>
