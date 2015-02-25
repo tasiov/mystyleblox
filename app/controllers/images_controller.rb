@@ -31,7 +31,7 @@ class ImagesController < ApplicationController
   # POST /images
   # POST /images.json
   def create
-    if @image == current_user.image
+    # if current_user.image
         @image = Image.new(image_params)
 
         respond_to do |format|
@@ -43,9 +43,9 @@ class ImagesController < ApplicationController
             format.json { render json: @image.errors, status: :unprocessable_entity }
           end
         end
-    else
-      redirect_to '/'
-    end
+    # else
+    #   redirect_to '/'
+    # end
   end
 
   # PATCH/PUT /images/1
@@ -65,15 +65,15 @@ class ImagesController < ApplicationController
   # DELETE /images/1
   # DELETE /images/1.json
   def destroy
-    if @image == curent_user.image 
+    # if @image == curent_user.image 
       @image.destroy
       respond_to do |format|
         format.html { redirect_to images_url, notice: 'Image was successfully destroyed.' }
         format.json { head :no_content }
       end
-    else
-      redirect_to '/'
-    end
+    # else
+    #   redirect_to '/'
+    # end
   end
 
   private

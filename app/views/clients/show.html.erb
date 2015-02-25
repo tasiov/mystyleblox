@@ -2,7 +2,7 @@
 
 <%= render 'profileClient' %>
 <p>
-  <%= @client.user.images.each do |image| %><br>
+  <% @client.user.images.each do |image| %><br>
     <%= image_tag image.media.url(:medium)%><br>
     <%= button_to "Delete", :action => @destroy%>
   <% end %>
