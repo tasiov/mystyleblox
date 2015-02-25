@@ -47,7 +47,7 @@ class FemalesController < ApplicationController
 
 
 
-        format.html { redirect_to @female, notice: 'Female was successfully created.' }
+        format.html { redirect_to :back, notice: 'Female was successfully created.' }
         format.json { render :show, status: :created, location: @female }
       else
         format.html { render :new }
@@ -61,7 +61,7 @@ class FemalesController < ApplicationController
   def update
     respond_to do |format|
       if @female.update(female_params)
-        format.html { redirect_to @female, notice: 'Female was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Female was successfully updated.' }
         format.json { render :show, status: :ok, location: @female }
       else
         format.html { render :edit }
