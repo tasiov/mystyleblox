@@ -11,6 +11,9 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.json
   def show
+    @client = Client.find(params[:id])
+    @image = Image.new
+    @user = User.new
   end
 
   # GET /clients/new
@@ -34,6 +37,16 @@ class ClientsController < ApplicationController
 
     respond_to do |format|
       if @client.save
+
+
+        if params[:images]
+        #===== The magic is here ;)
+        params[:images].each { |image|
+          @client.user.medias.create(image: image)
+        }
+      end
+
+
         format.html { redirect_to @client, notice: 'Client was successfully created.' }
         format.json { render :show, status: :created, location: @client }
       else
@@ -79,6 +92,6 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:company, :user_id)
+      params.require(:client).permit(:company, :user_id, :image)
     end
 end

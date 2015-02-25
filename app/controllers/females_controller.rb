@@ -10,6 +10,9 @@ class FemalesController < ApplicationController
   # GET /females/1
   # GET /females/1.json
   def show
+    @female = Female.find(params[:id])
+    @image = Image.new
+    @user = User.new
   end
 
   # GET /females/new
@@ -33,6 +36,17 @@ class FemalesController < ApplicationController
 
     respond_to do |format|
       if @female.save
+
+
+        if params[:images]
+        #===== The magic is here ;)
+        params[:images].each { |image|
+          @female.user.medias.create(image: image)
+        }
+      end
+
+
+
         format.html { redirect_to @female, notice: 'Female was successfully created.' }
         format.json { render :show, status: :created, location: @female }
       else
@@ -79,6 +93,6 @@ class FemalesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def female_params
-      params.require(:female).permit(:height, :weight, :age, :hair_c, :hair_l, :eyes, :bust, :waist, :hips, :dress, :shoes, :skin, :tattoo, :pierce, :scar, :nudity, :experience, :rate, :user_id)
+      params.require(:female).permit(:height, :weight, :age, :hair_c, :hair_l, :eyes, :bust, :waist, :hips, :dress, :shoes, :skin, :tattoo, :pierce, :scar, :nudity, :experience, :rate, :user_id, :image)
     end
 end

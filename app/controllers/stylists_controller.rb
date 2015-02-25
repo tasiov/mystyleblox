@@ -11,6 +11,9 @@ class StylistsController < ApplicationController
   # GET /stylists/1
   # GET /stylists/1.json
   def show
+    @stylist = Stylist.find(params[:id])
+    @image = Image.new
+    @user = User.new
   end
 
   # GET /stylists/new
@@ -34,6 +37,14 @@ class StylistsController < ApplicationController
 
     respond_to do |format|
       if @stylist.save
+
+        if params[:images]
+        #===== The magic is here ;)
+        params[:images].each { |image|
+          @stylist.user.medias.create(image: image)
+        }
+
+
         format.html { redirect_to @stylist, notice: 'Stylist was successfully created.' }
         format.json { render :show, status: :created, location: @stylist }
       else
@@ -79,6 +90,6 @@ class StylistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stylist_params
-      params.require(:stylist).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id)
+      params.require(:stylist).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id, :image)
     end
 end

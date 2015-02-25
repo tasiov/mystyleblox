@@ -1,5 +1,6 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
+  before_action :user_only, only: [:edit, :create, :destroy]
 
   # GET /images
   # GET /images.json
@@ -20,21 +21,30 @@ class ImagesController < ApplicationController
 
   # GET /images/1/edit
   def edit
+    if current_user.image 
+      @image = current_user.image
+    else
+      redirect_to '/'
+    end
   end
 
   # POST /images
   # POST /images.json
   def create
-    @image = Image.new(image_params)
+    if @image == current_user.image
+        @image = Image.new(image_params)
 
-    respond_to do |format|
-      if @image.save
-        format.html { redirect_to :back, notice: 'Image was successfully created.' }
-        format.json { render :show, status: :created, location: @image }
-      else
-        format.html { render :new }
-        format.json { render json: @image.errors, status: :unprocessable_entity }
-      end
+        respond_to do |format|
+          if @image.save
+            format.html { redirect_to :back, notice: 'Image was successfully created.' }
+            format.json { render :show, status: :created, location: @image }
+          else
+            format.html { render :new }
+            format.json { render json: @image.errors, status: :unprocessable_entity }
+          end
+        end
+    else
+      redirect_to '/'
     end
   end
 
@@ -55,10 +65,14 @@ class ImagesController < ApplicationController
   # DELETE /images/1
   # DELETE /images/1.json
   def destroy
-    @image.destroy
-    respond_to do |format|
-      format.html { redirect_to images_url, notice: 'Image was successfully destroyed.' }
-      format.json { head :no_content }
+    if @image == curent_user.image 
+      @image.destroy
+      respond_to do |format|
+        format.html { redirect_to images_url, notice: 'Image was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to '/'
     end
   end
 
