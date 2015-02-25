@@ -66,5 +66,13 @@
   <%= @mua.user %>
 </p>
 
+<p>
+  <%= @mua.user.images.each do |image| %><br>
+    <%= image_tag image.media.url(:medium)%><br>
+    <%= button_to "Delete", :action => @destroy%>
+  <% end %>
+</p>
+<%= render 'images/form' %>
+
 <%= link_to 'Edit', edit_mua_path(@mua) %> |
 <%= link_to 'Back', muas_path %>

@@ -40,5 +40,13 @@
   <%= @client.user %>
 </p>
 
+<p>
+  <%= @client.user.images.each do |image| %><br>
+    <%= image_tag image.media.url(:medium)%><br>
+    <%= button_to "Delete", :action => @destroy%>
+  <% end %>
+</p>
+<%= render 'images/form' %>
+
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>
