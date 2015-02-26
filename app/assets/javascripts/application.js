@@ -30,11 +30,12 @@ $(document).ready(function() {
   eventColor: '#ff4351',
       dayClick: function(date) {
         $(this).css('background-color', '#ff4351');
-        var unAvaliable = date.toString()
+        var userID = $("#calendar").attr("user-id");
+		var unAvaliable = date.toString()
         $.post("/unavailables", {
         unavailable: {
         date: unAvaliable,
-        user: 
+        user: userID,
         }
         })
     }
