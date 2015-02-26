@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @unavailable.user %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @unavailable.date %>
+</p>
+
+<%= link_to 'Edit', edit_unavailable_path(@unavailable) %> |
+<%= link_to 'Back', unavailables_path %>

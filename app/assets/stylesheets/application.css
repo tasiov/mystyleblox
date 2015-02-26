@@ -12,4 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require fullcalendar
  */
+
+.fc-day-grid-event {
+	height: 150px;
+}

@@ -13,6 +13,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @image = Image.new
     @user = User.new
+    @unavailable = Unavailable.new
   end
 
   # GET /photos/new

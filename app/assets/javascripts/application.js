@@ -14,3 +14,29 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require moment
+//= require fullcalendar 
+
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+  height: 550,
+  eventLimit: true,
+  allDayDefault: true,
+  allDaySlot: true,
+  eventSources:[
+  {url:'/unavailables.json',
+  cellColor: '#ff4351',
+  }],
+  eventColor: '#ff4351',
+      dayClick: function(date) {
+        $(this).css('background-color', '#ff4351');
+        var unAvaliable = date.toString()
+        $.post("/unavailables", {
+        unavailable: {
+        date: unAvaliable,
+        user: 
+        }
+        })
+    }
+    })
+});
