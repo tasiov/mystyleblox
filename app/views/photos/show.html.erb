@@ -77,7 +77,7 @@
 
 <br>
 
-<div id='calendar'></div>
+<div id='calendar' data-uid="<%= @photo.user.id %>"></div>
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>

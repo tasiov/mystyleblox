@@ -16,29 +16,32 @@
 //= require_tree .
 //= require moment
 //= require fullcalendar 
-
-$(document).ready(function() {
-    $('#calendar').fullCalendar({
-  height: 550,
-  eventLimit: true,
-  allDayDefault: true,
-  allDaySlot: true,
-  eventSources:[
-  {url:'/unavailables.json',
-  cellColor: '#ff4351',
-  }],
-  eventColor: '#ff4351',
-      dayClick: function(date) {
-        $(this).css('background-color', '#ff4351');
-        var userInput = $('#calendar').attr('user-id');
-    	var unAvaliable = date.toString()
-    // alert("User ID: " + userID);
-        $.post("/unavailables", {
+fullCal = function(){
+	var uid = $('#calendar').attr('data-uid');
+	$('#calendar').fullCalendar({
+	  height: 550,
+	  eventLimit: true,
+	  allDayDefault: true,
+	  allDaySlot: true,
+	  eventSources:[
+	  {url:'/unavailables/'+ uid +'.json',
+	  cellColor: '#ff4351',
+	  }],
+	  eventColor: '#ff4351',
+		dayClick: function(date) {
+	        $(this).css('background-color', '#ff4351');
+	        var userInput = $('#user-now').attr('user-id');
+	    	var unAvaliable = date.toString()
+	    // alert("User ID: " + userID);
+	        $.post("/unavailables", {
 	        unavailable: {
 	        date: unAvaliable,
 	        user_id: userInput,
 	        }
-        })
-      }
-   })
-});
+	        })
+		}
+	   });
+}
+
+$(document).ready(fullCal);
+$(document).on('page:load', fullCal);

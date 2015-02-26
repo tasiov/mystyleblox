@@ -1,6 +1,6 @@
 class UnavailablesController < ApplicationController
-  before_action :set_unavailable, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_unavailable, only: [:edit, :update, :destroy]
+  before_action :user_only, only: [:edit, :create, :destroy]
   # GET /unavailables
   # GET /unavailables.json
   def index
@@ -10,6 +10,7 @@ class UnavailablesController < ApplicationController
   # GET /unavailables/1
   # GET /unavailables/1.json
   def show
+    @unavailables = User.find(params[:id]).unavailables
   end
 
   # GET /unavailables/new
