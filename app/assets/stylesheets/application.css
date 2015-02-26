@@ -18,3 +18,9 @@
 .fc-day-grid-event {
 	height: 150px;
 }
+
+#calendar {
+
+	height:600px;
+	width: 600px;
+}

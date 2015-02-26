@@ -31,14 +31,14 @@ $(document).ready(function() {
       dayClick: function(date) {
         $(this).css('background-color', '#ff4351');
         var userInput = $('#calendar').attr('user-id');
-		var unAvaliable = date.toString()
-		// alert("User ID: " + userID);
+    	var unAvaliable = date.toString()
+    // alert("User ID: " + userID);
         $.post("/unavailables", {
-        unavailable: {
-        date: unAvaliable,
-        user_id: userInput,
-        }
+	        unavailable: {
+	        date: unAvaliable,
+	        user_id: userInput,
+	        }
         })
-    }
-    })
+      }
+   })
 });
