@@ -18,7 +18,7 @@
 	<% else  %>
 	<h1>You are NOT logged in</h1>
 	<% end %>
-	<div id="calendar" user-id="mario">
+	<div id="calendar" user-id="<%= current_user.id %>">
 	</div>
 <%= yield %>
 
