@@ -4,7 +4,7 @@
 
 <p>
   <% @female.user.images.each do |image| %><br>
-    <%= image_tag image.media.url(:medium)%><br>
+    <%= image_tag image.url(:medium)%><br>
     <%= button_to "Delete", :action => @destroy%>
   <% end %>
 </p>
