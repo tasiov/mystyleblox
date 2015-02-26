@@ -38,6 +38,13 @@ $(document).ready(function() {
 	        date: unAvaliable,
 	        user_id: userInput,
 	        }
+		var unAvaliable = date.toString()
+		// alert("User ID: " + userID);
+        $.post("/unavailables", {
+        unavailable: {
+        date: unAvaliable,
+        user_id: userInput,
+        }
         })
 
       }
