@@ -24,6 +24,7 @@ class UnavailablesController < ApplicationController
   # POST /unavailables
   # POST /unavailables.json
   def create
+
     @unavailable = Unavailable.new(unavailable_params)
 
     respond_to do |format|

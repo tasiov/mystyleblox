@@ -15,11 +15,10 @@
 	<% if logged_in? %>
 	<h1>Hello, <%= current_user.name%></h1>
 		<%= link_to "Log out", logout_path, method: "delete"  %>
+		<div id="calendar" user-id="<%= current_user.id %>"></div>
 	<% else  %>
 	<h1>You are NOT logged in</h1>
 	<% end %>
-	<div id="calendar" user-id="<%= current_user.id %>">
-	</div>
 <%= yield %>
 
 </body>
