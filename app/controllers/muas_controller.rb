@@ -12,7 +12,6 @@ class MuasController < ApplicationController
   # GET /muas/1.json
   def show
     @mua = Mua.find(params[:id])
-    @image = Image.new
     @user = User.new
   end
 
@@ -37,13 +36,6 @@ class MuasController < ApplicationController
 
     respond_to do |format|
       if @mua.save
-
-        if params[:images]
-        #===== The magic is here ;)
-        params[:images].each { |image|
-          @mua.user.medias.create(image: image)
-        }
-      end
 
         format.html { redirect_to @mua, notice: 'Mua was successfully created.' }
         format.json { render :show, status: :created, location: @mua }
@@ -90,6 +82,6 @@ class MuasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mua_params
-      params.require(:mua).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id, :image, :media)
+      params.require(:mua).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id)
     end
 end

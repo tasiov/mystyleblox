@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :unavailables
 
-  resources :images
-
   get 'sessions/new'
 
   root 'static_pages#index'

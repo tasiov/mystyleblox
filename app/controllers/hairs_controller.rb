@@ -12,7 +12,6 @@ class HairsController < ApplicationController
   # GET /hairs/1.json
   def show
     @hair = Hair.find(params[:id])
-    @image = Image.new
     @user = User.new
   end
 
@@ -38,12 +37,6 @@ class HairsController < ApplicationController
     respond_to do |format|
       if @hair.save
 
-        if params[:images]
-        #===== The magic is here ;)
-        params[:images].each { |image|
-          @hair.user.medias.create(image: image)
-        }
-      end
 
         format.html { redirect_to @hair, notice: 'Hair was successfully created.' }
         format.json { render :show, status: :created, location: @hair }
@@ -91,6 +84,6 @@ class HairsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hair_params
-      params.require(:hair).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id, :image, :media)
+      params.require(:hair).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id)
     end
 end

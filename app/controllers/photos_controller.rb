@@ -11,7 +11,6 @@ class PhotosController < ApplicationController
   # GET /photos/1.json
   def show
     @photo = Photo.find(params[:id])
-    @image = Image.new
     @user = User.new
     @unavailable = Unavailable.new
   end
@@ -37,13 +36,6 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.save
-
-        if params[:images]
-        #===== The magic is here ;)
-        params[:images].each { |image|
-          @photo.user.medias.create(image: image)
-        }
-      end
 
 
         format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
@@ -91,6 +83,6 @@ class PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id, :image, :media)
+      params.require(:photo).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id)
     end
 end

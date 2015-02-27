@@ -39,13 +39,7 @@
   <strong>Description:</strong>
   <%= @user.description %>
 </p>
-<p>
-  <%= @user.images.each do |image| %><br>
-    <%= image_tag image.media.url(:medium)%><br>
-    <%= button_to "Delete", :action => @destroy%>
-  <% end %>
-</p>
-<%= render 'images/form' %>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
