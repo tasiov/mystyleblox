@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :rate %><br>
-    <%= f.number_field :rate %>
+    <%= f.select :rate, ["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"] %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225223825) do
+ActiveRecord::Schema.define(version: 20150227200420) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "company"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20150225223825) do
     t.string   "scar"
     t.string   "nudity"
     t.string   "experience"
-    t.integer  "rate"
+    t.string   "rate"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20150225223825) do
     t.string   "experience"
     t.string   "clients"
     t.string   "equipment"
-    t.integer  "rate"
+    t.string   "rate"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20150225223825) do
     t.string   "scar"
     t.string   "nudity"
     t.string   "experience"
-    t.integer  "rate"
+    t.string   "rate"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20150225223825) do
     t.string   "experience"
     t.string   "clients"
     t.string   "equipment"
-    t.integer  "rate"
+    t.string   "rate"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 20150225223825) do
     t.string   "experience"
     t.string   "clients"
     t.string   "equipment"
-    t.integer  "rate"
+    t.string   "rate"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(version: 20150225223825) do
     t.string   "experience"
     t.string   "clients"
     t.string   "equipment"
-    t.integer  "rate"
+    t.string   "rate"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
