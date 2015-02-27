@@ -11,8 +11,7 @@ class PhotosController < ApplicationController
   # GET /photos/1.json
   def show
     @photo = Photo.find(params[:id])
-    @user = User.new
-    @unavailable = Unavailable.new
+    @user = current_user
   end
 
   # GET /photos/new

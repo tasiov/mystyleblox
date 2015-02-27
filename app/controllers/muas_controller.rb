@@ -12,7 +12,7 @@ class MuasController < ApplicationController
   # GET /muas/1.json
   def show
     @mua = Mua.find(params[:id])
-    @user = User.new
+    @user = current_user
   end
 
   # GET /muas/new

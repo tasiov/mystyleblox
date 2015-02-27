@@ -12,7 +12,7 @@ class MalesController < ApplicationController
   # GET /males/1.json
   def show
     @male = Male.find(params[:id])
-    @user = User.new
+    @user = current_user
   end
 
   # GET /males/new

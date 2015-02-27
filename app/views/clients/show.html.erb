@@ -2,11 +2,16 @@
 
 <%= render 'profileClient' %>
 
-
+<% if @client.user == current_user %>
+	<%= render 'users/userImages' %>
+<% end %>
 
 <br>
 
-<div id='calendar'></div>
+<%= image_tag @client.user.image %>
+
+
+<div id='calendar' data-uid="<%= @client.user.id %>"></div>
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>

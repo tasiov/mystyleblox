@@ -11,7 +11,7 @@ class FemalesController < ApplicationController
   # GET /females/1.json
   def show
     @female = Female.find(params[:id])
-    @user = User.new
+    @user = current_user
   end
 
   # GET /females/new

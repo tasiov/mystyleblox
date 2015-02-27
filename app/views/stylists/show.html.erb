@@ -6,7 +6,9 @@
 
 
 <br>
-
+<% if @client.user == current_user %>
+	<%= render 'users/userImages' %>
+<% end %>
 <div id='calendar' data-uid="<%= @stylist.user.id %>"></div>
 
 <%= link_to 'Edit', edit_stylist_path(@stylist) %> |

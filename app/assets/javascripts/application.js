@@ -17,6 +17,7 @@
 //= require moment
 //= require fullcalendar 
 fullCal = function(){
+	var currentUser = $('#user-now').attr('user-id');
 	var uid = $('#calendar').attr('data-uid');
 	$('#calendar').fullCalendar({
 	  height: 550,
@@ -29,16 +30,18 @@ fullCal = function(){
 	  }],
 	  eventColor: '#ff4351',
 		dayClick: function(date) {
-	        $(this).css('background-color', '#ff4351');
-	        var userInput = $('#user-now').attr('user-id');
-	    	var unAvaliable = date.toString()
-	    // alert("User ID: " + userID);
-	        $.post("/unavailables", {
-	        unavailable: {
-	        date: unAvaliable,
-	        user_id: userInput,
-	        }
-	        })
+			if(uid === currentUser){
+		        $(this).css('background-color', '#ff4351');
+		//         var userInput = $('#user-now').attr('user-id');
+		    	var unAvaliable = date.toString()
+		    // alert("User ID: " + userID);
+		        $.post("/unavailables", {
+		        unavailable: {
+		        date: unAvaliable,
+		        user_id: currentUser,
+		        }
+		        });
+			}
 		}
 	   });
 }

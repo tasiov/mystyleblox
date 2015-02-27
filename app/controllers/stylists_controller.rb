@@ -12,7 +12,7 @@ class StylistsController < ApplicationController
   # GET /stylists/1.json
   def show
     @stylist = Stylist.find(params[:id])
-    @user = User.new
+    @user = current_user
   end
 
   # GET /stylists/new

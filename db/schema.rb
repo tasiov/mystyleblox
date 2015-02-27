@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227200420) do
+ActiveRecord::Schema.define(version: 20150227203608) do
 
   create_table "clients", force: :cascade do |t|
     t.string   "company"
@@ -147,9 +147,13 @@ ActiveRecord::Schema.define(version: 20150227200420) do
     t.string   "state"
     t.string   "zip"
     t.text     "description"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "password_digest"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

@@ -12,7 +12,7 @@ class HairsController < ApplicationController
   # GET /hairs/1.json
   def show
     @hair = Hair.find(params[:id])
-    @user = User.new
+    @user = current_user
   end
 
   # GET /hairs/new
