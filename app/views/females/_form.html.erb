@@ -21,11 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :age %><br>
-    <%= f.select :age, (15..60)%>
+    <%= f.select :age, (16..60)%>
   </div>
   <div class="field">
     <%= f.label :hair_c %><br>
-     <%= f.select :hair_c, ["Red","Brunette","Blonde","Other"] %>
+     <%= f.select :hair_c, ["Auburn","Black","Blonde","Brunette", "Chestnut", "Red", "Grey" "Other"] %>
   </div>
   <div class="field">
     <%= f.label :hair_l %><br>
@@ -49,7 +49,7 @@
   </div>
   <div class="field">
     <%= f.label :dress %><br>
-    <%= f.select :dress, ["00","0","2","4","6","8","10","12"] %>
+    <%= f.select :dress, ["00","0","2","4","6","8","10","12","14","16","18","20"] %>
   </div>
   <div class="field">
     <%= f.label :shoes %><br>
@@ -57,36 +57,33 @@
   </div>
   <div class="field">
     <%= f.label :skin %><br>
-    <%= f.select :skin, ["Fair","Olive","Dark"] %>
+    <%= f.select :skin, ["Asian","Black","Caucasian","Eastern European","East Indian","Hispanic","Middle Eastern","Native American","Pacific Islander","Other"] %>
   </div>
   <div class="field">
     <%= f.label :tattoo %><br>
-    <%= f.select :tattoo, ["Yes", "No","Implied"] %>
+    <%= f.select :tattoo, ["Yes","No","Some"] %>
   </div>
   <div class="field">
     <%= f.label :pierce %><br>
-    <%= f.select :pierce, ["Yes", "No","Implied"]  %>
+    <%= f.select :pierce, ["Yes", "No","Some"]  %>
   </div>
   <div class="field">
     <%= f.label :scar %><br>
-    <%= f.select :scar, ["Yes", "No","Implied"]  %>
+    <%= f.select :scar, ["Yes","No","Some"]  %>
   </div>
   <div class="field">
     <%= f.label :nudity %><br>
-    <%= f.select :nudity, ["Yes", "No","Implied"] %>
-
+    <%= f.select :nudity, ["Yes","No","Implied"] %>
   </div>
   <div class="field">
     <%= f.label :experience %><br>
-    <%= f.text_field :experience %>
+    <%= f.select :experience, ["No Experience","Some Experience","Experienced","Professional"] %>
   </div>
   <div class="field">
     <%= f.label :rate %><br>
     <%= f.select :rate, ["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"] %>
   </div>
-
   <div class="field">
-    <%= f.label :user_id %><br>
     <%=f.hidden_field :user_id, value: session[:user_id] %>
   </div>
   <div class="actions">

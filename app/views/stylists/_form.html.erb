@@ -13,30 +13,29 @@
 
   <div class="field">
     <%= f.label :style %><br>
-    <%= f.text_field :style %>
+    <%= f.select :style, ["Beauty","Fashion","Theatre","Television","Film and Movies","Personal Services"] %>
   </div>
   <div class="field">
     <%= f.label :education %><br>
-    <%= f.text_field :education %>
-  </div>
-  <div class="field">
-    <%= f.label :experience %><br>
-    <%= f.text_field :experience %>
+    <%= f.select :education, ["On the Job","Some Schooling","Degree Certified"] %>
   </div>
   <div class="field">
     <%= f.label :clients %><br>
-    <%= f.text_field :clients %>
+    <%= f.text_field :clients "Separated by commas" %>
   </div>
   <div class="field">
     <%= f.label :equipment %><br>
-    <%= f.text_field :equipment %>
+    <%= f.select :equipment, ["Minimum","Moderate","Full Set"] %>
+  </div>
+    <div class="field">
+    <%= f.label :experience %><br>
+    <%= f.select :experience, ["No Experience","Some Experience","Experienced","Professional"] %>
   </div>
   <div class="field">
     <%= f.label :rate %><br>
     <%= f.select :rate, ["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"] %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
     <%=f.hidden_field :user_id, value: session[:user_id] %>
   </div>
   <div class="actions">
