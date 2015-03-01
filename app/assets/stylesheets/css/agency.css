@@ -17,6 +17,7 @@ body {
     color: #ff4351;
 }
 
+
 p {
     font-size: 14px;
     line-height: 1.75;
@@ -328,6 +329,16 @@ section h2.section-heading {
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 40px;
+    color: #666;
+    padding-bottom: 50px;
+}
+
+section h2.section-heading-dark{
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 40px;
+    color: white;
+    padding-bottom: 50px;
 }
 
 section h3.section-subheading {
@@ -351,7 +362,7 @@ section h3.section-subheading {
 }
 
 #portfolio{
-    background-image: url(../img/modelfaces.jpg);
+    background-image: url(../img/modelfaces.png);
 }
 
 #portfolio .portfolio-item {
