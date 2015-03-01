@@ -2,10 +2,14 @@
 
 <%= render 'profileShow' %>
 
-<br>
-<% if @client.user == current_user %>
+<% if @female.user == current_user %>
 	<%= render 'users/userImages' %>
 <% end %>
+
+<br>
+
+<%= image_tag @client.user.image %>
+
 <div id='calendar' data-uid="<%= @female.user.id %>"></div>
 
 <%= link_to 'Edit', edit_female_path(@female) %> |
