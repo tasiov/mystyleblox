@@ -887,3 +887,30 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #ff4351;
 }
+
+/*************************Log In Page**********************/
+.log-in-page {
+    /*text-align: center;*/
+    /*color: #fff;*/
+    background-attachment: scroll;
+    background-image: url(../img/red-hair.png);
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+section h2.log-in-section-heading {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 40px;
+    color: white;
+    padding-bottom: 50px;
+}
+
+#login-fields{
+    color: white;
+}
+

@@ -4,27 +4,21 @@
 <br>
 <br>
 
-
-<div class='container'>
-
-<div class='col-md-12' >
-
-<h1>Log in</h1>
-<%= form_for(:session, url: login_path) do |f| %>
-
-<p><%= flash[:error] %></p>
-<%= f.label :email %>
-<%= f.email_field :email %>
-
-<%= f.label :password %>
-<%= f.password_field :password %>
-
-<%= f.submit "Log in"  %>
-<% end %>
-
-<p>New user? <%= link_to "Sign up now!", signup_path %></p>
-
-</div>
-
-</div>
-
+<section class="log-in-page">
+  <div>
+    <div class='container'>
+      <div class='col-md-12' >
+        <h2 class="log-in-section-heading">Log in</h2>
+        <%= form_for(:session, url: login_path) do |f| %>
+        <p><%= flash[:error] %></p>
+        <%= f.label :email, id: "login-fields" %>
+        <%= f.email_field :email %>
+        <%= f.label :password, id: "login-fields" %>
+        <%= f.password_field :password %>
+        <%= f.submit "Log in"  %>
+        <% end %>
+        <p id="login-fields">New user? <%= link_to "Sign up now!", signup_path %></p>
+      </div>
+    </div>
+  </div>
+</section>
