@@ -14,6 +14,12 @@ div.new_user, div.all_forms {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;;
 }
 
+#logo {
+       margin-top: -12px;
+       padding-top: 5px;
+    }
+
+
 .text-muted {
     color: #777;
 }
@@ -353,7 +359,7 @@ section h3.section-subheading {
     font-size: 16px;
     font-style: italic;
     font-weight: 400;
-    color: white;
+    color: #666;
 }
 
 @media(min-width:768px) {
@@ -387,24 +393,12 @@ section h3.section-subheading {
     position: absolute;
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
-    opacity: 70 ;
-/*    background: rgba(254,209,54,.9);*/
-    -webkit-transition: all ease .5s;
-    -moz-transition: all ease .5s;
-    transition: all ease .5s;
-=======
     opacity: 0;
-    /*background: rgba(255,67,81,.2);*/
     -webkit-transition: all ease .1s;
     -moz-transition: all ease .1s;
     transition: all ease .1s;
->>>>>>> 21da754d8a232d2643d251a8831a0d6143a13519
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
-    opacity: 1;
-}
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
     position: absolute;
@@ -414,7 +408,6 @@ section h3.section-subheading {
     margin-top: -12px;
     text-align: center;
     font-size: 20px;
-    color: #ff4351;
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
