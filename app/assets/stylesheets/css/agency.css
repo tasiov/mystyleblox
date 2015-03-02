@@ -890,8 +890,7 @@ body {
 
 /*************************Log In Page**********************/
 .log-in-page {
-    /*text-align: center;*/
-    /*color: #fff;*/
+    text-align: left;
     background-attachment: scroll;
     background-image: url(../img/red-hair.png);
     background-position: center center;
@@ -911,6 +910,7 @@ section h2.log-in-section-heading {
 }
 
 #login-fields{
+    text-align: left;
     color: white;
 }
 
