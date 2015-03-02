@@ -49,18 +49,15 @@
                         <a class="page-scroll" href="#services">Services</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                        <a class="page-scroll" href="#portfolio">Discover</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Team</a>
+                        <a class="page-scroll" href="#about">Why</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
-                    <li> 
+                    <li>
  					   <% if logged_in? %>
 		                   <div id="user-now" user-id="<%= current_user.id %>"></div>
 			               <%= link_to "Log out", logout_path, method: "delete"  %>
