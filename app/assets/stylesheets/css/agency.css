@@ -348,6 +348,7 @@ section h3.section-subheading {
     font-size: 16px;
     font-style: italic;
     font-weight: 400;
+    color: white;
 }
 
 @media(min-width:768px) {
@@ -362,7 +363,7 @@ section h3.section-subheading {
 }
 
 #portfolio{
-    background-image: url(../img/modelfaces.png);
+    background-image: url(../img/hire-background.png);
 }
 
 #portfolio .portfolio-item {
