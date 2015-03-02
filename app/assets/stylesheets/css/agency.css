@@ -9,6 +9,11 @@ body {
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+div.new_user, div.all_forms {
+    text-align: center;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+}
+
 .text-muted {
     color: #777;
 }
@@ -381,8 +386,8 @@ section h3.section-subheading {
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    background: rgba(254,209,54,.9);
+    opacity: 70 ;
+/*    background: rgba(254,209,54,.9);*/
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
