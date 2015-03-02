@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 //= require moment
-//= require fullcalendar 
+//= require fullcalendar
 fullCal = function(){
 	var currentUser = $('#user-now').attr('user-id');
 	var uid = $('#calendar').attr('data-uid');
