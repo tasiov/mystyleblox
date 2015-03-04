@@ -12,58 +12,58 @@
   <% end %>
 
   <div class="col-md-4">
-    <%= f.select :height, [ "4' 10\"", "4' 11\"","5","5' 1\"","5' 2\"","5' 3\"","5' 4\"","5' 5\"","5' 6\"","5' 7\"","5' 8\"","5' 9\"","5' 10\"","5' 11\"","6\"","6' 1\"","6' 2\"","6' 3\"","6' 4\"","6' 5\""], :include_blank => "Height?" %>
+    <%= f.select :height, [ "4' 10\"", "4' 11\"","5","5' 1\"","5' 2\"","5' 3\"","5' 4\"","5' 5\"","5' 6\"","5' 7\"","5' 8\"","5' 9\"","5' 10\"","5' 11\"","6\"","6' 1\"","6' 2\"","6' 3\"","6' 4\"","6' 5\""], {:include_blank => "Height?"}, { class: "form-control" } %>
   </div>
   <div class="col-md-4">
-    <%= f.select :weight, (95..200), :include_blank => "Weight" %>
+    <%= f.select :weight, (95..200), {:include_blank => "Weight"} ,{ class: "form-control" } %>
   </div>
   <div class="col-md-4">
-    <%= f.select :age, (16..60), :include_blank => "Age"%>
+    <%= f.select :age, (16..60), {:include_blank => "Age"} ,{ class: "form-control" }%>
   </div>
   <div class="col-md-4">
-     <%= f.select :hair_c, ["Auburn","Black","Blonde","Brunette", "Chestnut", "Red", "Grey" "Other"], :include_blank => "Hair Color" %>
+     <%= f.select :hair_c, ["Auburn","Black","Blonde","Brunette", "Chestnut", "Red", "Grey" "Other"], {:include_blank => "Hair Color"} , { class: "form-control" }%>
   </div>
   <div class="col-md-4">
-   <%= f.select :hair_l, ["Short","Medium","Long"], :include_blank => "Hair Length"%>
+   <%= f.select :hair_l, ["Short","Medium","Long"], {:include_blank => "Hair Length"} , { class: "form-control" } %>
   </div>
   <div class="col-md-4">
-    <%= f.select :eyes, ["Blue", "Brown", "Green", "Hazel"], :include_blank => "Eye Color"%>
+    <%= f.select :eyes, ["Blue", "Brown", "Green", "Hazel"], {:include_blank => "Eye Color"} , { class: "form-control" }%>
   </div>
   <div class="col-md-4">
-    <%= f.select :bust, (32..45), :include_blank => "Bust in inches" %>
+    <%= f.select :bust, (32..45), {:include_blank => "Bust in inches"} ,{ class: "form-control" } %>
   </div>
   <div class="col-md-4">
-    <%= f.select :waist, (20..36), :include_blank => "Waist" %>
+    <%= f.select :waist, (20..36), {:include_blank => "Waist"} ,{ class: "form-control" } %>
   </div>
   <div class="col-md-4">
-    <%= f.select :hips, (30..50), :include_blank => "Hips" %>
+    <%= f.select :hips, (30..50), {:include_blank => "Hips"} ,{ class: "form-control" }%>
   </div>
   <div class="col-md-4">
-    <%= f.select :dress, ["00","0","2","4","6","8","10","12","14","16","18","20"], :include_blank => "Dress" %>
+    <%= f.select :dress, ["00","0","2","4","6","8","10","12","14","16","18","20"], {:include_blank => "Dress"} , { class: "form-control" }%>
   </div>
   <div class="col-md-4">
-    <%= f.select :shoes, options_for_select((5..12).step(0.5)), :include_blank => "Shoes" %>
+    <%= f.select :shoes, options_for_select((5..12).step(0.5)), {:include_blank => "Shoes"} , { class: "form-control" }%>
   </div>
   <div class="col-md-4">
-    <%= f.select :skin, ["Asian","Black","Caucasian","Eastern European","East Indian","Hispanic","Middle Eastern","Native American","Pacific Islander","Other"], :include_blank => "Ethnicity" %>
+    <%= f.select :skin, ["Asian","Black","Caucasian","Eastern European","East Indian","Hispanic","Middle Eastern","Native American","Pacific Islander","Other"], {:include_blank => "Ethnicity"} , { class: "form-control" }%>
   </div>
   <div class="col-md-4">
-    <%= f.select :tattoo, ["Yes","No","Some"], :include_blank => "Tattoos?" %>
+    <%= f.select :tattoo, ["Yes","No","Some"], {:include_blank => "Tattoos?"} , { class: "form-control" }%>
   </div>
   <div class="col-md-4">
-    <%= f.select :pierce, ["Yes", "No","Some"], :include_blank => "Piercings?"  %>
+    <%= f.select :pierce, ["Yes", "No","Some"], {:include_blank => "Piercings?"} ,{ class: "form-control" } %>
   </div>
   <div class="col-md-4">
-    <%= f.select :scar, ["Yes","No","Some"], :include_blank => "Scars?"  %>
+    <%= f.select :scar, ["Yes","No","Some"], {:include_blank => "Scars?"} ,{ class: "form-control" } %>
   </div>
   <div class="col-md-4">
-    <%= f.select :nudity, ["Yes","No","Implied"], :include_blank => "Nudity?" %>
+    <%= f.select :nudity, ["Yes","No","Implied"], {:include_blank => "Nudity?"} , { class: "form-control" }%>
   </div>
   <div class="col-md-4">
-    <%= f.select :experience, ["No Experience","Some Experience","Experienced","Professional"], :include_blank => "Experience" %>
+    <%= f.select :experience, ["No Experience","Some Experience","Experienced","Professional"], {:include_blank => "Experience"} , { class: "form-control" } %>
   </div>
   <div class="col-md-4">
-    <%= f.select :rate, ["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"], :include_blank => "Day Rate" %>
+    <%= f.select :rate, ["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"], {:include_blank => "Day Rate"} ,{ class: "form-control" } %>
   </div>
     <br>
   <br>
