@@ -155,17 +155,13 @@ ActiveRecord::Schema.define(version: 20150303181628) do
     t.string   "state"
     t.string   "zip"
     t.text     "description"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "password_digest"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "images_file_name"
-    t.string   "images_content_type"
-    t.integer  "images_file_size"
-    t.datetime "images_updated_at"
   end
 
 end
