@@ -5,8 +5,24 @@ class HairsController < ApplicationController
   # GET /hairs
   # GET /hairs.json
   def index
-    @hairs = Hair.all
+    # if search_params
+    #   @hairs = Hair.where(style: params[:style])
+    #   @hairs = Hair.where(education: params[:education])
+    #   @hairs = Hair.where(equipment: params[:equipment])
+    #   @hairs = Hair.where(experience: params[:experience])
+    #   @hairs = Hair.where(rate: params[:rate])
+    # else
+
+    # if params[:style]
+    #   @hairs = Hair.where(style: params[:style])
+    # else
+      @hairs = Hair.search(params)
+    # end
   end
+
+  # def search
+  # @hairs = Hair.search(params[:search])
+  # end
 
   # GET /hairs/1
   # GET /hairs/1.json
@@ -78,6 +94,10 @@ class HairsController < ApplicationController
   end
 
   private
+
+    def search_params
+      params.permit(:style, :education, :equipment, :experience, :rate)
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_hair
       @hair = Hair.find(params[:id])

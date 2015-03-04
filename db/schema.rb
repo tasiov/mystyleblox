@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303181628) do
+ActiveRecord::Schema.define(version: 20150303180924) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "clients", force: :cascade do |t|
     t.string   "company"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20150303181628) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "clients", ["user_id"], name: "index_clients_on_user_id"
+  add_index "clients", ["user_id"], name: "index_clients_on_user_id", using: :btree
 
   create_table "females", force: :cascade do |t|
     t.string   "height"
@@ -46,7 +49,7 @@ ActiveRecord::Schema.define(version: 20150303181628) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "females", ["user_id"], name: "index_females_on_user_id"
+  add_index "females", ["user_id"], name: "index_females_on_user_id", using: :btree
 
   create_table "hairs", force: :cascade do |t|
     t.string   "style"
@@ -60,7 +63,7 @@ ActiveRecord::Schema.define(version: 20150303181628) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "hairs", ["user_id"], name: "index_hairs_on_user_id"
+  add_index "hairs", ["user_id"], name: "index_hairs_on_user_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.integer "user_id"
@@ -68,7 +71,7 @@ ActiveRecord::Schema.define(version: 20150303181628) do
     t.string  "picture"
   end
 
-  add_index "images", ["user_id"], name: "index_images_on_user_id"
+  add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
 
   create_table "males", force: :cascade do |t|
     t.string   "height"
@@ -93,7 +96,7 @@ ActiveRecord::Schema.define(version: 20150303181628) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "males", ["user_id"], name: "index_males_on_user_id"
+  add_index "males", ["user_id"], name: "index_males_on_user_id", using: :btree
 
   create_table "muas", force: :cascade do |t|
     t.string   "style"
@@ -107,7 +110,7 @@ ActiveRecord::Schema.define(version: 20150303181628) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "muas", ["user_id"], name: "index_muas_on_user_id"
+  add_index "muas", ["user_id"], name: "index_muas_on_user_id", using: :btree
 
   create_table "photos", force: :cascade do |t|
     t.string   "style"
@@ -121,7 +124,7 @@ ActiveRecord::Schema.define(version: 20150303181628) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "photos", ["user_id"], name: "index_photos_on_user_id"
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
   create_table "stylists", force: :cascade do |t|
     t.string   "style"
@@ -135,7 +138,7 @@ ActiveRecord::Schema.define(version: 20150303181628) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "stylists", ["user_id"], name: "index_stylists_on_user_id"
+  add_index "stylists", ["user_id"], name: "index_stylists_on_user_id", using: :btree
 
   create_table "unavailables", force: :cascade do |t|
     t.integer  "user_id"
@@ -144,7 +147,7 @@ ActiveRecord::Schema.define(version: 20150303181628) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "unavailables", ["user_id"], name: "index_unavailables_on_user_id"
+  add_index "unavailables", ["user_id"], name: "index_unavailables_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -164,4 +167,13 @@ ActiveRecord::Schema.define(version: 20150303181628) do
     t.datetime "image_updated_at"
   end
 
+  add_foreign_key "clients", "users"
+  add_foreign_key "females", "users"
+  add_foreign_key "hairs", "users"
+  add_foreign_key "images", "users"
+  add_foreign_key "males", "users"
+  add_foreign_key "muas", "users"
+  add_foreign_key "photos", "users"
+  add_foreign_key "stylists", "users"
+  add_foreign_key "unavailables", "users"
 end

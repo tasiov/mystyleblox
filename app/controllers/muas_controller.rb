@@ -5,7 +5,7 @@ class MuasController < ApplicationController
   # GET /muas
   # GET /muas.json
   def index
-    @muas = Mua.all
+    @muas = Mua.search(params)
   end
 
   # GET /muas/1

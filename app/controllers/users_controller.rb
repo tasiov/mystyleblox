@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if params[:description]
+      @users = User.where(description: params[:description])
+    else
+      @users = User.all
+    end
   end
 
   # GET /users/1
@@ -30,7 +34,9 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    # @image = Image.new
+
+    @image = Image.new
+
 
 
     respond_to do |format|

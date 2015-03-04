@@ -1,8 +1,66 @@
 <p id="notice"><%= notice %></p>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <h1>Listing Males</h1>
-
+<br>
+<br>
+<br>
 <%= render 'males' %>
 <br>
+
+<br>
+<br>
+<br>
+<br>
+<%= form_tag(males_path, method: 'get') do %>
+  <p>
+  	Height:
+    <%= select_tag( :height, options_for_select(["4' 10\"", "4' 11\"","5","5' 1\"","5' 2\"","5' 3\"","5' 4\"","5' 5\"","5' 6\"","5' 7\"","5' 8\"","5' 9\"","5' 10\"","5' 11\"","6\"","6' 1\"","6' 2\"","6' 3\"","6' 4\"","6' 5\""]), include_blank: true) %>
+    Weight:
+    <%= select_tag( :weight, options_for_select(['(95..200)']), include_blank: true ) %>
+    Age:
+    <%= select_tag( :age,  options_for_select(['(16..60)']), include_blank: true ) %>
+ 	Hair Color:
+    <%= select_tag( :hair_c,  options_for_select(["Auburn","Black","Blonde","Brunette", "Chestnut", "Red", "Grey" "Other"]), include_blank: true) %>
+    Hair Length:
+    <%= select_tag( :hair_l,   options_for_select(["Short","Medium","Long"]), include_blank: true) %>
+    Eyes:
+    <%= select_tag( :eyes,   options_for_select(["Blue", "Brown", "Green", "Hazel"]), include_blank: true) %>
+    Bust:
+    <%= select_tag( :suit,   options_for_select(["(36..54) "]), include_blank: true) %>
+    Waist:
+    <%= select_tag( :waist,   options_for_select(["Short","Medium","Long"]), include_blank: true) %>
+    Hips:
+    <%= select_tag( :chest,   options_for_select(["38..56"]), include_blank: true) %>
+    <br>
+    <br>
+    Dress:
+    <%= select_tag( :pant,   options_for_select(["38..56"]), include_blank: true) %>
+    Shoes:
+    <%= select_tag( :shoes,   options_for_select(["7..12"]), include_blank: true) %>
+    Skin:
+    <%= select_tag( :skin,   options_for_select(["Asian","Black","Caucasian","Eastern European","East Indian","Hispanic","Middle Eastern","Native American","Pacific Islander","Other"]), include_blank: true) %>
+    Tattoos:
+    <%= select_tag( :tattoo,   options_for_select(["Yes","No","Some"]), include_blank: true) %>    
+    Piercings:
+    <%= select_tag( :pierce,   options_for_select(["Yes","No","Some"]), include_blank: true) %>
+    Scar:    
+   	<%= select_tag( :scar,   options_for_select(["Yes","No","Some"]), include_blank: true) %>  
+   	Nudity:
+   	<%= select_tag( :nudity,   options_for_select(["Yes","No","Implied"]), include_blank: true) %>    
+   	Experience:
+   	<%= select_tag( :experience,   options_for_select(["No Experience","Some Experience","Experienced","Professional"]), include_blank: true) %>    
+   	Rate:
+   	<%= select_tag( :rate,   options_for_select(["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"]), include_blank: true) %>           
+   	<br>
+   	<br>
+
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
 
 <%= link_to 'New Male', new_male_path %>

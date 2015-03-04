@@ -3,7 +3,7 @@
 
 <h1>Listing Users</h1>
 
-<table>
+<table style="margin-top:5%;">
   <thead>
     <tr>
       <th>Name</th>
@@ -38,5 +38,11 @@
 </table>
 
 <br>
-
+<%= form_tag users_path, method: 'get' do %>
+  <p>
+    <%= select_tag( :description,  options_for_select(['jdjfhffkfkfk', 'kdkdk'])  ) %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+<br>
 <%= link_to 'New User', new_user_path %>

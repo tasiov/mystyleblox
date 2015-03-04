@@ -17,7 +17,15 @@ div.new_user, div.all_forms {
 #logo {
        margin-top: -12px;
        padding-top: 5px;
-    }
+}
+
+.accordion-heading {
+}
+
+/*select {
+    background-color: ivory;
+    margin: 100px;
+}*/
 
 input#image_picture {
         margin-left: 600px
