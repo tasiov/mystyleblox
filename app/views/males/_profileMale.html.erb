@@ -1,114 +1,113 @@
-<p>
-  <strong>Name:</strong>
-  <%= @male.user.name %>
-</p>
+<div class="col-md-8">
+</div>
 
-<p>
-  <strong>Memberid:</strong>
-  <%= @male.user.memberId %>
-</p>
+<div class="col-md-4"><strong>Mem. #</strong><%= @male.user.memberId %>
+<h4><%= @male.user.state %></h4>
+</div>
 
-<p>
-  <strong>City:</strong>
-  <%= @male.user.city %>
-</p>
+<div class="col-md-8">
+</div>
 
-<p>
-  <strong>State:</strong>
-  <%= @male.user.state %>
-</p>
+<div class="col-md-4">
+  <h4>Bio</h4>
+  <p class="col-md-4">
 
-<p>
-  <strong>Zip:</strong>
-  <%= @male.user.zip %>
-</p>
+  <p class="col-md-12">
+    <strong>About Me:</strong>
+    <%= @male.user.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @male.user.description %>
-</p>
+  <h4 class="col-md-12">Stats</h4>
+  <p class="col-md-4">
+    <strong>Age:</strong>
+    <%= @male.age %>
+  </p>
+  <p class="col-md-4">
+    <strong>Height:</strong>
+    <%= @male.height %>
+  </p>
 
-<p>
-  <strong>Height:</strong>
-  <%= @male.height %>
-</p>
+  <p class="col-md-4">
+    <strong>Weight:</strong>
+    <%= @male.weight %>
+  </p>
+  <p class="col-md-4">
+    <strong>Suit:</strong>
+    <%= @male.suit %>
+  </p>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @male.weight %>
-</p>
+  <p class="col-md-4">
+    <strong>Chest:</strong>
+    <%= @male.chest %>
+  </p>
 
-<p>
-  <strong>Age:</strong>
-  <%= @male.age %>
-</p>
+  <p class="col-md-4">
+    <strong>Pant:</strong>
+    <%= @male.pant %>
+  </p>
 
-<p>
-  <strong>Hair c:</strong>
-  <%= @male.hair_c %>
-</p>
+  <p class="col-md-4">
+    <strong>Shoes:</strong>
+    <%= @male.shoes %>
+  </p>
 
-<p>
-  <strong>Hair l:</strong>
-  <%= @male.hair_l %>
-</p>
+  <p class="col-md-4">
+    <strong>Eyes:</strong>
+    <%= @male.eyes %>
+  </p>
 
-<p>
-  <strong>Eyes:</strong>
-  <%= @male.eyes %>
-</p>
+  <p class="col-md-4">
+    <strong>Hair:</strong>
+    <%= @male.hair_c %>
+  </p>
 
-<p>
-  <strong>Suit:</strong>
-  <%= @male.suit %>
-</p>
+  <p class="col-md-4">
+    <strong>Length:</strong>
+    <%= @male.hair_l %>
+  </p>
 
-<p>
-  <strong>Chest:</strong>
-  <%= @male.chest %>
-</p>
+  <p class="col-md-4">
+    <strong>Race:</strong>
+    <%= @male.skin %>
+  </p>
 
-<p>
-  <strong>Pant:</strong>
-  <%= @male.pant %>
-</p>
+  <p class="col-md-4">
+    <strong>Tattoos:</strong>
+    <%= @male.tattoo %>
+  </p>
 
-<p>
-  <strong>Shoes:</strong>
-  <%= @male.shoes %>
-</p>
+  <p class="col-md-4">
+    <strong>Pierced:</strong>
+    <%= @male.pierce %>
+  </p>
 
-<p>
-  <strong>Skin:</strong>
-  <%= @male.skin %>
-</p>
+  <p class="col-md-4">
+    <strong>Scars:</strong>
+    <%= @male.scar %>
+  </p>
 
-<p>
-  <strong>Tattoo:</strong>
-  <%= @male.tattoo %>
-</p>
+  <p class="col-md-4">
+    <strong>Nudity:</strong>
+    <%= @male.nudity %>
+  </p>
 
-<p>
-  <strong>Pierce:</strong>
-  <%= @male.pierce %>
-</p>
+  <h4 class="col-md-12">Details</h4>
 
-<p>
-  <strong>Scar:</strong>
-  <%= @male.scar %>
-</p>
+  <p class="col-md-6">
+    <strong>Exp:</strong>
+    <%= @male.experience %>
+  </p>
 
-<p>
-  <strong>Nudity:</strong>
-  <%= @male.nudity %>
-</p>
+  <p class="col-md-6">
+    <strong>Day Rate:</strong>
+    <%= @male.rate %>
+  </p>
+</div>
 
-<p>
-  <strong>Experience:</strong>
-  <%= @male.experience %>
-</p>
+<div class="col-md-9">
+</div>
 
-<p>
-  <strong>Rate:</strong>
-  <%= @male.rate %>
-</p>
+<div class="col-md-3" id='calendar' data-uid="<%= @male.user.id %>">
+</div>
+
+

@@ -22,7 +22,7 @@ fullCal = function(){
 	var currentUser = $('#user-now').attr('user-id');
 	var uid = $('#calendar').attr('data-uid');
 	$('#calendar').fullCalendar({
-	  height: 550,
+	  height: 275,
 	  eventLimit: true,
 	  allDayDefault: true,
 	  allDaySlot: true,

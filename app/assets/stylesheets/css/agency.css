@@ -926,3 +926,41 @@ section h2.log-in-section-heading {
     color: white;
 }
 
+/***********************Sign Up******************************/
+.nu-form {
+    text-align: center;
+    background-attachment: scroll;
+    /*background-image: url(../img/red-hair.png);*/
+    background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/***********************Talent Profile******************************/
+
+.talent-show{
+}
+
+.profile-align{
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

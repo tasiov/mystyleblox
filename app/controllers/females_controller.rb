@@ -4,7 +4,7 @@ class FemalesController < ApplicationController
   # GET /females
   # GET /females.json
   def index
-    @females = Female.all
+    @females = Female.search(params)
   end
 
   # GET /females/1

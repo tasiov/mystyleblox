@@ -1,6 +1,14 @@
 <p id="notice"><%= notice %></p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <%= render 'profileMale' %>
+
+<%= link_to 'Edit Stats', edit_male_path(@male) %> |
 
 <br>
 
@@ -39,6 +47,7 @@
       	 <% if @male.user == current_user %>
 		<%= link_to 'Destroy', image_destroy_path(id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
+<<<<<<< HEAD
 	</div>
 	  <% end %>
     <% end %>
@@ -65,3 +74,6 @@
 
 
 
+=======
+<% end %>
+>>>>>>> 4b1f15759b1edf704e50b033f53b6d88c0455201
