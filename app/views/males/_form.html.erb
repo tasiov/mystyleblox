@@ -10,79 +10,67 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :height %><br>
-    <%= f.select :height, [ "4' 10\"", "4' 11\"","5","5' 1\"","5' 2\"","5' 3\"","5' 4\"","5' 5\"","5' 6\"","5' 7\"","5' 8\"","5' 9\"","5' 10\"","5' 11\"","6\"","6' 1\"","6' 2\"","6' 3\"","6' 4\"","6' 5\""] %>
+  <div class="col-md-4">
+    <%= f.select :height, [ "4' 10\"", "4' 11\"","5'","5' 1\"","5' 2\"","5' 3\"","5' 4\"","5' 5\"","5' 6\"","5' 7\"","5' 8\"","5' 9\"","5' 10\"","5' 11\"","6'","6' 1\"","6' 2\"","6' 3\"","6' 4\"","6' 5\""], :include_blank => "Height" %>
   </div>
-  <div class="field">
-    <%= f.label :weight %><br>
-    <%= f.select :weight, (95..250) %>
+  <div class="col-md-4">
+    <%= f.select :weight, (95..250), :include_blank => "Weight"  %>
   </div>
-  <div class="field">
-    <%= f.label :age %><br>
-    <%= f.select :age, (16..60)%>
+  <div class="col-md-4">
+    <%= f.select :age, (16..60), :include_blank => "Age" %>
   </div>
-  <div class="field">
-    <%= f.label :hair_c %><br>
-     <%= f.select :hair_c, ["Auburn","Black","Blonde","Brunette", "Chestnut", "Red", "Grey" "Other"] %>
+  <div class="col-md-4">
+     <%= f.select :hair_c, ["Auburn","Black","Blonde","Brunette", "Chestnut", "Red", "Grey" "Other"], :include_blank => "Hair Color" %>
   </div>
-  <div class="field">
-    <%= f.label :hair_l %><br>
-   <%= f.select :hair_l, ["Short","Medium","Long"] %>
+  <div class="col-md-4">
+   <%= f.select :hair_l, ["Short","Medium","Long"], :include_blank => "Hair Length" %>
   </div>
-  <div class="field">
-    <%= f.label :eyes %><br>
-    <%= f.select :eyes, ["Blue", "Brown", "Green", "Hazel"] %>
+  <div class="col-md-4">
+    <%= f.select :eyes, ["Blue", "Brown", "Green", "Hazel"], :include_blank => "Eye Color" %>
   </div>
-  <div class="field">
-    <%= f.label :suit %><br>
-    <%= f.select :suit, (36..54)  %>
+  <div class="col-md-4">
+    <%= f.select :suit, (36..54), :include_blank => "Suit"  %>
   </div>
-  <div class="field">
-    <%= f.label :chest %><br>
-    <%= f.select :chest, options_for_select((38..56).step(2)) %>
+  <div class="col-md-4">
+    <%= f.select :chest, options_for_select((38..56).step(2)), :include_blank => "Chest" %>
   </div>
-  <div class="field">
-    <%= f.label :pant %><br>
-    <%= f.select :pant, options_for_select((26..38).step(2))  %>
+  <div class="col-md-4">
+    <%= f.select :pant, options_for_select((26..38).step(2)), :include_blank => "Pant"  %>
   </div>
-  <div class="field">
-    <%= f.label :shoes %><br>
-    <%= f.select :shoes, options_for_select((7..12).step(0.5)) %>
+  <div class="col-md-4">
+    <%= f.select :shoes, options_for_select((7..12).step(0.5)), :include_blank => "Shoes" %>
   </div>
-  <div class="field">
-    <%= f.label :skin %><br>
-    <%= f.select :skin, ["Asian","Black","Caucasian","Eastern European","East Indian","Hispanic","Middle Eastern","Native American","Pacific Islander","Other"] %>
+  <div class="col-md-4">
+    <%= f.select :skin, ["Asian","Black","Caucasian","Eastern European","East Indian","Hispanic","Middle Eastern","Native American","Pacific Islander","Other"], :include_blank => "Ethnicity" %>
   </div>
-  <div class="field">
-    <%= f.label :tattoo %><br>
-    <%= f.select :tattoo, ["Yes","No","Some"] %>
+  <div class="col-md-4">
+    <%= f.select :tattoo, ["Yes","No","Some"], :include_blank => "Tattoos?" %>
   </div>
-  <div class="field">
-    <%= f.label :pierce %><br>
-    <%= f.select :pierce, ["Yes","No","Some"]  %>
+  <div class="col-md-4">
+    <%= f.select :pierce, ["Yes","No","Some"], :include_blank => "Piercings?"  %>
   </div>
-  <div class="field">
-    <%= f.label :scar %><br>
-    <%= f.select :scar, ["Yes","No","Some"]  %>
+  <div class="col-md-4">
+    <%= f.select :scar, ["Yes","No","Some"], :include_blank => "Scars?"  %>
   </div>
-  <div class="field">
-    <%= f.label :nudity %><br>
-    <%= f.select :nudity, ["Yes","No","Implied"] %>
+  <div class="col-md-4">
+    <%= f.select :nudity, ["Yes","No","Implied"], :include_blank => "Nudity?" %>
   </div>
-  <div class="field">
-    <%= f.label :experience %><br>
-    <%= f.select :experience, ["No Experience","Some Experience","Experienced","Professional"] %>
+  <div class="col-md-4">
+    <%= f.select :experience, ["No Experience","Some Experience","Experienced","Professional"], :include_blank => "Experience" %>
   </div>
-  <div class="field">
-    <%= f.label :rate %><br>
-    <%= f.select :rate, ["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"] %>
+  <div class="col-md-4">
+    <%= f.select :rate, ["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"], :include_blank => "Day Rate" %>
   </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <div class="field">
     <%=f.hidden_field :user_id, value: session[:user_id] %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="col-md-12">
+     <%= f.submit "Sign Up", :class => "btn btn-xl" %>
   </div>
 <% end %>

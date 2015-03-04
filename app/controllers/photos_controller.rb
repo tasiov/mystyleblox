@@ -11,7 +11,9 @@ class PhotosController < ApplicationController
   # GET /photos/1.json
   def show
     @photo = Photo.find(params[:id])
-    @user = current_user
+    #@user = current_user
+    @user = @photos.user
+    @image = Image.new
   end
 
   # GET /photos/new
@@ -82,6 +84,6 @@ class PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id)
+      params.require(:photo).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id, :image)
     end
 end

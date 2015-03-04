@@ -2,13 +2,20 @@
 
 <%= render 'profileStyle' %>
 
-
-
-
 <br>
-<% if @client.user == current_user %>
+
+<% if @stylist.user == current_user %>
 	<%= render 'users/userImages' %>
 <% end %>
+
+<% @stylist.user.images.each do |image| %>
+	<%= image_tag image.picture %>
+		<% if @stylist.user == current_user %>
+		<%= link_to 'Destroy', image_destroy_path(id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+<% end %>
+
+
 <div id='calendar' data-uid="<%= @stylist.user.id %>"></div>
 
 <%= link_to 'Edit', edit_stylist_path(@stylist) %> |

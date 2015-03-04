@@ -12,7 +12,8 @@ class MalesController < ApplicationController
   # GET /males/1.json
   def show
     @male = Male.find(params[:id])
-    @user = current_user
+    @user = @male.user
+    @image = Image.new
   end
 
   # GET /males/new

@@ -1,14 +1,25 @@
 <p id="notice"><%= notice %></p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <%= render 'profileMale' %>
 
 
+<%= link_to 'Edit Stats', edit_male_path(@male) %> |
 
 <br>
-<% if @client.user == current_user %>
-	<%= render 'users/userImages' %>
-<% end %>
-<div id='calendar' data-uid="<%= @male.user.id %>"></div>
 
-<%= link_to 'Edit', edit_male_path(@male) %> |
-<%= link_to 'Back', males_path %>
+<% if @male.user == current_user %>
+<%= render 'users/userImages' %>
+<% end %>
+
+<% @male.user.images.each do |image| %>
+	<%= image_tag image.picture %>
+	<% if @male.user == current_user %>
+		<%= link_to 'Destroy', image_destroy_path(id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+<% end %>
