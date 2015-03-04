@@ -5,7 +5,7 @@ class StylistsController < ApplicationController
   # GET /stylists
   # GET /stylists.json
   def index
-    @stylists = Stylist.all
+    @stylists = Stylist.search(params)
   end
 
   # GET /stylists/1

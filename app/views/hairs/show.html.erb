@@ -4,7 +4,7 @@
 
 
 <br>
-<% if @client.user == current_user %>
+<% if @hair.user == current_user %>
 	<%= render 'users/userImages' %>
 <% end %>
 <div id='calendar' data-uid="<%= @hair.user.id %>"></div>
