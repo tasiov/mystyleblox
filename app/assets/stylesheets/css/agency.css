@@ -19,6 +19,10 @@ div.new_user, div.all_forms {
        padding-top: 5px;
     }
 
+input#image_picture {
+        margin-left: 600px
+}
+
 
 .text-muted {
     color: #777;

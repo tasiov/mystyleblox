@@ -2,13 +2,22 @@
 
 <%= render 'profileShow' %>
 
-<% if @female.user == current_user %>
-	<%= render 'users/userImages' %>
-<% end %>
-
 <br>
 
-<%= image_tag @client.user.image %>
+<% if @female.user == current_user %>
+	<%= render 'users/userImages'%>
+<% end %>
+
+
+<% @female.user.images.each do |image| %>
+	<%= image_tag image.picture %>
+		<% if @female.user == current_user %>
+		<%= link_to 'Destroy', image_destroy_path(id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+<% end %>
+
+
+<br><br>
 
 <div id='calendar' data-uid="<%= @female.user.id %>"></div>
 

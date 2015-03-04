@@ -12,7 +12,8 @@ class StylistsController < ApplicationController
   # GET /stylists/1.json
   def show
     @stylist = Stylist.find(params[:id])
-    @user = current_user
+    @user = @stylist.user
+    @image = Image.new
   end
 
   # GET /stylists/new
@@ -82,6 +83,6 @@ class StylistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stylist_params
-      params.require(:stylist).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id)
+      params.require(:stylist).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id, :image)
     end
 end

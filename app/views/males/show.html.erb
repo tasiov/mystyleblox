@@ -10,3 +10,16 @@
 
 
 <%= link_to 'Edit Stats', edit_male_path(@male) %> |
+
+<br>
+
+<% if @male.user == current_user %>
+<%= render 'users/userImages' %>
+<% end %>
+
+<% @male.user.images.each do |image| %>
+	<%= image_tag image.picture %>
+	<% if @male.user == current_user %>
+		<%= link_to 'Destroy', image_destroy_path(id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+<% end %>

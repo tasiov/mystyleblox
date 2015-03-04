@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  post 'image/create'
+
+  get 'image/show'
+
+  delete 'image/destroy'
+
   resources :unavailables
 
   get 'sessions/new'
@@ -25,6 +31,8 @@ Rails.application.routes.draw do
 
   resources :clients
 
+  resources :images
+
   resources :users do
     resources :stylists
     resources :muas
@@ -33,6 +41,7 @@ Rails.application.routes.draw do
     resources :females
     resources :males
     resources :clients
+    resources :images
   end
 
 

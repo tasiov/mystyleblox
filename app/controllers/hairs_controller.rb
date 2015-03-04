@@ -12,7 +12,8 @@ class HairsController < ApplicationController
   # GET /hairs/1.json
   def show
     @hair = Hair.find(params[:id])
-    @user = current_user
+    @user = @hair.user
+    @image = Image.new
   end
 
   # GET /hairs/new
@@ -84,6 +85,6 @@ class HairsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hair_params
-      params.require(:hair).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id)
+      params.require(:hair).permit(:style, :education, :experience, :clients, :equipment, :rate, :user_id, :image)
     end
 end
