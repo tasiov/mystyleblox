@@ -10,6 +10,9 @@
 <%= render 'users/userImages' %>
 <% end %>
 
+
+
+
 <% @mua.user.images.each do |image| %>
 	<%= image_tag image.picture %>
 		<% if @mua.user == current_user %>
