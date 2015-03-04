@@ -16,34 +16,53 @@
 //= require_tree .
 //= require moment
 //= require fullcalendar
+$.ajaxSetup({
+	headers: {
+		'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+	}
+});
+
+
 fullCal = function(){
 	var currentUser = $('#user-now').attr('user-id');
 	var uid = $('#calendar').attr('data-uid');
 	$('#calendar').fullCalendar({
-	  height: 275,
-	  eventLimit: true,
-	  allDayDefault: true,
-	  allDaySlot: true,
-	  eventSources:[
-	  {url:'/unavailables/'+ uid +'.json',
-	  cellColor: '#ff4351',
-	  }],
-	  eventColor: '#ff4351',
+		height: 275,
+		eventLimit: true,
+		allDayDefault: true,
+		allDaySlot: true,
+		eventSources:[
+		{
+			url:'/unavailables/'+ uid +'.json',
+			cellColor: '#ff4351',
+		}
+		],
+		eventColor: '#ff4351',
 		dayClick: function(date) {
-			if(uid === currentUser){
-		        $(this).css('background-color', '#ff4351');
-		//         var userInput = $('#user-now').attr('user-id');
-		    	var unAvaliable = date.toString()
-		    // alert("User ID: " + userID);
-		        $.post("/unavailables", {
-		        unavailable: {
-		        date: unAvaliable,
-		        user_id: currentUser,
-		        }
-		        });
+			if (uid === currentUser){
+				// var userInput = $('#user-now').attr('user-id');
+				var dateBox = this;
+				var unAvaliable = date.toString()
+				// alert("User ID: " + userID);
+				$.ajax({
+				  type: "POST",
+				  url: "/unavailables",
+				  data: {
+				  	unavailable: {
+							date: unAvaliable,
+							user_id: currentUser,
+						}
+					},
+					beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+				  success: function() {
+				  	// This is where you make the box red.
+						$(dateBox).css('background-color', '#ff4351');
+				  },
+				  //dataType: dataType
+				});
 			}
 		}
-	   });
+});
 }
 
 $(document).ready(fullCal);

@@ -25,12 +25,17 @@ class UnavailablesController < ApplicationController
   # POST /unavailables
   # POST /unavailables.json
   def create
-
     @unavailable = Unavailable.new(unavailable_params)
 
     respond_to do |format|
       if @unavailable.save
-        format.html { redirect_to @unavailable, notice: 'Unavailable was successfully created.' }
+        format.html {
+          if request.xhr?
+            render json: @unavailable
+          else
+            redirect_to @unavailable, notice: 'Unavailable was successfully created.'
+          end
+        }
         format.json { render :show, status: :created, location: @unavailable }
       else
         format.html { render :new }
