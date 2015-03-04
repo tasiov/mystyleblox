@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <%= render 'profileMale' %>
 
 
-
-<br>
-<% if @client.user == current_user %>
-	<%= render 'users/userImages' %>
-<% end %>
-<div id='calendar' data-uid="<%= @male.user.id %>"></div>
-
-<%= link_to 'Edit', edit_male_path(@male) %> |
-<%= link_to 'Back', males_path %>
+<%= link_to 'Edit Stats', edit_male_path(@male) %> |
