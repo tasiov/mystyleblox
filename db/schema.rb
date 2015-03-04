@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303181628) do
+ActiveRecord::Schema.define(version: 20150303180924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20150303181628) do
     t.string  "picture"
   end
 
-  add_index "images", ["user_id"], name: "index_images_on_user_id"
+  add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
 
   create_table "males", force: :cascade do |t|
     t.string   "height"
@@ -170,6 +170,7 @@ ActiveRecord::Schema.define(version: 20150303181628) do
   add_foreign_key "clients", "users"
   add_foreign_key "females", "users"
   add_foreign_key "hairs", "users"
+  add_foreign_key "images", "users"
   add_foreign_key "males", "users"
   add_foreign_key "muas", "users"
   add_foreign_key "photos", "users"
