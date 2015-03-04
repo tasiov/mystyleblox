@@ -8,7 +8,6 @@
 
 <%= render 'profileMale' %>
 
-
 <%= link_to 'Edit Stats', edit_male_path(@male) %> |
 
 <br>
@@ -17,9 +16,63 @@
 <%= render 'users/userImages' %>
 <% end %>
 
-<% @male.user.images.each do |image| %>
-	<%= image_tag image.picture %>
-	<% if @male.user == current_user %>
+
+<!-- Photo Slider -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+ <!-- Indicators -->
+	<% @male.user.images.each do |image| %>
+		<div class="carousel-indicators">
+			<% if @male.user.images.index(image) == 0 %>
+				<li class='active'>  
+			<% else %>
+	             <li>
+	        <% end %> 
+	            </li>
+		</div>
+	<% end %>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+  	<% @male.user.images.each do |image| %>
+        <% if @male.user.images.index(image) == 0 %>
+    <div class="item active">
+      <%= image_tag image.picture %>
+      	<% if @male.user == current_user %>
+		<%= link_to 'Destroy', image_destroy_path(id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+       <% end %>
+    </div>
+       <% else %>
+    <div class="item">
+      <%= image_tag image.picture %>
+      	 <% if @male.user == current_user %>
 		<%= link_to 'Destroy', image_destroy_path(id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-<% end %>
+	</div>
+	  <% end %>
+    <% end %>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+
+
+<div id='calendar' data-uid="<%= @male.user.id %>"></div>
+
+<%= link_to 'Edit', edit_male_path(@male) %> |
+<%= link_to 'Back', males_path %>
+
+
+
+
+
+
+

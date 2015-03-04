@@ -10,12 +10,14 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 //= require moment
 //= require fullcalendar
+
 fullCal = function(){
 	var currentUser = $('#user-now').attr('user-id');
 	var uid = $('#calendar').attr('data-uid');
@@ -48,3 +50,6 @@ fullCal = function(){
 
 $(document).ready(fullCal);
 $(document).on('page:load', fullCal);
+
+
+

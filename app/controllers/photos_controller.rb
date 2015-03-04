@@ -11,8 +11,7 @@ class PhotosController < ApplicationController
   # GET /photos/1.json
   def show
     @photo = Photo.find(params[:id])
-    #@user = current_user
-    @user = @photos.user
+    @user = @photo.user
     @image = Image.new
   end
 
