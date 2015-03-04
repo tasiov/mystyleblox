@@ -6,17 +6,21 @@
 <br>
 <br>
 
-
-<%= image_tag @client.user.image, align: 'left'%>
-
-
 <p id="notice"><%= notice %></p>
+
 <div class='client_show_page'>
-<%= render 'profileClient' %>
+	<%= render 'profileClient' %>
 </div>
 
 <% if @client.user == current_user %>
 	<%= render 'users/userImages' %>
+<% end %>
+
+<% @client.user.images.each do |image| %>
+   <%= image_tag image.picture %>
+   	<% if @client.user == current_user %>
+		<%= link_to 'Destroy', image_destroy_path(id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
 <% end %>
 
 <br>

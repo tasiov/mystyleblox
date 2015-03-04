@@ -11,7 +11,8 @@ class FemalesController < ApplicationController
   # GET /females/1.json
   def show
     @female = Female.find(params[:id])
-    @user = current_user
+    @user = @female.user
+    @image = Image.new
   end
 
   # GET /females/new
