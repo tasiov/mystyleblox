@@ -56,6 +56,9 @@
     <%= f.select :nudity, ["Yes","No","Implied"], {:include_blank => "Nudity?"}, { class: "form-control" } %>
   </div>
   <div class="col-md-4">
+    <%= f.select :style, ["Acting","Alternative","Catalog","Commercial","Corporate" ,"Curvy","Editorial","Erotic","Fashion","Fetish","Fit Model","Fitness","Glamour","Juniors","Lifestyle","Lingerie","Mature","Fashion","Nude","Parts Modeling","Petite","Performance","Pinup","Pregnancy","Print","Promo","Runway","Host","Sports","Stunt","Swimwear"], {:include_blank => "Style"} , { class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
     <%= f.select :experience, ["No Experience","Some Experience","Experienced","Professional"], {:include_blank => "Experience"} ,{ class: "form-control" } %>
   </div>
   <div class="col-md-4">
