@@ -22,10 +22,10 @@ div.new_user, div.all_forms {
 .accordion-heading {
 }
 
-select#male_height {
+/*select {
     background-color: ivory;
     margin: 100px;
-}
+}*/
 
 input#image_picture {
         margin-left: 600px
