@@ -18,10 +18,9 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox" >
-   <% if @user.image.empty? %>
-     <%= image_tag "default1.png"
-  else
-    @user.image
+   <% if @male.user.images.empty? %>
+     <%= image_tag "default1.png" %>
+  <% else %>
     <% @male.user.images.each do |image| %>
       <% if @male.user.images.index(image) == 0 %>
         <div class="item active">
@@ -38,8 +37,9 @@
           <%= link_to 'Destroy', image_destroy_path(id: image.id), class: "delete_b", method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
         </div>
-      <% end %>
+      <% end %>  
     <% end %>
+  <% end %>
   <% if @male.user == current_user %>
    <%= render 'users/userImages'%>
   <% end %>
