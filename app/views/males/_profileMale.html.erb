@@ -18,7 +18,10 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox" >
-
+   <% if @user.image.empty? %>
+     <%= image_tag "default1.png"
+  else
+    @user.image
     <% @male.user.images.each do |image| %>
       <% if @male.user.images.index(image) == 0 %>
         <div class="item active">
@@ -55,111 +58,112 @@
   </div>
 </div>
 
+<div class="show-right">
+  <div class="col-md-4"><strong>Mem. #</strong><%= @male.user.memberId %>
+    <h4><%= @male.user.state %></h4>
+  </div>
 
-<div class="col-md-4"><strong>Mem. #</strong><%= @male.user.memberId %>
-<h4><%= @male.user.state %></h4>
-</div>
+  <div class="col-md-4">
+    <h4>Bio</h4>
+    <p class="col-md-4">
 
-<div class="col-md-4">
-  <h4>Bio</h4>
-  <p class="col-md-4">
+    <p class="col-md-12">
+      <strong>About Me:</strong>
+      <%= @male.user.description %>
+    </p>
 
-  <p class="col-md-12">
-    <strong>About Me:</strong>
-    <%= @male.user.description %>
-  </p>
+    <h4 class="col-md-12">Stats</h4>
+    <p class="col-md-4">
+      <strong>Age:</strong>
+      <%= @male.age %>
+    </p>
+    <p class="col-md-4">
+      <strong>Height:</strong>
+      <%= @male.height %>
+    </p>
 
-  <h4 class="col-md-12">Stats</h4>
-  <p class="col-md-4">
-    <strong>Age:</strong>
-    <%= @male.age %>
-  </p>
-  <p class="col-md-4">
-    <strong>Height:</strong>
-    <%= @male.height %>
-  </p>
+    <p class="col-md-4">
+      <strong>Weight:</strong>
+      <%= @male.weight %>
+    </p>
+    <p class="col-md-4">
+      <strong>Suit:</strong>
+      <%= @male.suit %>
+    </p>
 
-  <p class="col-md-4">
-    <strong>Weight:</strong>
-    <%= @male.weight %>
-  </p>
-  <p class="col-md-4">
-    <strong>Suit:</strong>
-    <%= @male.suit %>
-  </p>
+    <p class="col-md-4">
+      <strong>Chest:</strong>
+      <%= @male.chest %>
+    </p>
 
-  <p class="col-md-4">
-    <strong>Chest:</strong>
-    <%= @male.chest %>
-  </p>
+    <p class="col-md-4">
+      <strong>Pant:</strong>
+      <%= @male.pant %>
+    </p>
 
-  <p class="col-md-4">
-    <strong>Pant:</strong>
-    <%= @male.pant %>
-  </p>
+    <p class="col-md-4">
+      <strong>Shoes:</strong>
+      <%= @male.shoes %>
+    </p>
 
-  <p class="col-md-4">
-    <strong>Shoes:</strong>
-    <%= @male.shoes %>
-  </p>
+    <p class="col-md-4">
+      <strong>Eyes:</strong>
+      <%= @male.eyes %>
+    </p>
 
-  <p class="col-md-4">
-    <strong>Eyes:</strong>
-    <%= @male.eyes %>
-  </p>
+    <p class="col-md-4">
+      <strong>Hair:</strong>
+      <%= @male.hair_c %>
+    </p>
 
-  <p class="col-md-4">
-    <strong>Hair:</strong>
-    <%= @male.hair_c %>
-  </p>
+    <p class="col-md-4">
+      <strong>Length:</strong>
+      <%= @male.hair_l %>
+    </p>
 
-  <p class="col-md-4">
-    <strong>Length:</strong>
-    <%= @male.hair_l %>
-  </p>
+    <p class="col-md-4">
+      <strong>Race:</strong>
+      <%= @male.skin %>
+    </p>
 
-  <p class="col-md-4">
-    <strong>Race:</strong>
-    <%= @male.skin %>
-  </p>
+    <p class="col-md-4">
+      <strong>Tattoos:</strong>
+      <%= @male.tattoo %>
+    </p>
 
-  <p class="col-md-4">
-    <strong>Tattoos:</strong>
-    <%= @male.tattoo %>
-  </p>
+    <p class="col-md-4">
+      <strong>Pierced:</strong>
+      <%= @male.pierce %>
+    </p>
 
-  <p class="col-md-4">
-    <strong>Pierced:</strong>
-    <%= @male.pierce %>
-  </p>
+    <p class="col-md-4">
+      <strong>Scars:</strong>
+      <%= @male.scar %>
+    </p>
 
-  <p class="col-md-4">
-    <strong>Scars:</strong>
-    <%= @male.scar %>
-  </p>
+    <p class="col-md-4">
+      <strong>Nudity:</strong>
+      <%= @male.nudity %>
+    </p>
 
-  <p class="col-md-4">
-    <strong>Nudity:</strong>
-    <%= @male.nudity %>
-  </p>
+    <h4 class="col-md-12">Details</h4>
 
-  <h4 class="col-md-12">Details</h4>
+    <p class="col-md-6">
+      <strong>Exp:</strong>
+      <%= @male.experience %>
+    </p>
 
-  <p class="col-md-6">
-    <strong>Exp:</strong>
-    <%= @male.experience %>
-  </p>
+    <p class="col-md-6">
+      <strong>Day Rate:</strong>
+      <%= @male.rate %>
+    </p>
 
-  <p class="col-md-6">
-    <strong>Day Rate:</strong>
-    <%= @male.rate %>
-  </p>
+  </div>
 
-</div>
+  <br><br><br>
 
-<br><br><br>
-
-<div class="col-md-4" id='calendar' data-uid="<%= @male.user.id %>">
+  <div class="col-md-6" id='calendar' data-uid="<%= @male.user.id %>">
+  </div>
 </div>
 
 
