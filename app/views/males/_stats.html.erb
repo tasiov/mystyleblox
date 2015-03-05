@@ -19,7 +19,13 @@
 <td><% male.rate %></td>
 <td><%= male.zip %></td>
 <td><% male.user%></td>
-<td><%= image_tag male.user.images.first.picture %></td>
+<td>
+  <% if male.user.images.empty? %>
+     <%= image_tag "default1.png" %>
+  <% else %>
+	<%= image_tag male.user.images.first.picture %>
+   <% end %>
+</td>
 
 
 <td><% link_to 'Show', male %></td>
