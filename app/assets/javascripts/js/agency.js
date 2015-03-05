@@ -26,10 +26,10 @@ $('.navbar-collapse ul li a').click(function() {
 });
 
 
-$(function() {
-    $('#myCollapsible').collapse({
-        toggle: false
-    })
-});
+// $(function() {
+//     $('#myCollapsible').collapse({
+//         toggle: false
+//     })
+// });
 
 
