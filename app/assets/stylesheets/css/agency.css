@@ -955,6 +955,12 @@ section h2.log-in-section-heading {
     /*padding-bottom: 10px;*/
 }
 
+.search-form-center{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    width:100%;
+}
 
 
 
