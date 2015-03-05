@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303180924) do
+ActiveRecord::Schema.define(version: 20150305164153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20150303180924) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "style"
+    t.string   "zip"
   end
 
   add_index "females", ["user_id"], name: "index_females_on_user_id", using: :btree
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150303180924) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "zip"
   end
 
   add_index "hairs", ["user_id"], name: "index_hairs_on_user_id", using: :btree
@@ -94,6 +97,8 @@ ActiveRecord::Schema.define(version: 20150303180924) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "style"
+    t.string   "zip"
   end
 
   add_index "males", ["user_id"], name: "index_males_on_user_id", using: :btree
@@ -108,6 +113,7 @@ ActiveRecord::Schema.define(version: 20150303180924) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "zip"
   end
 
   add_index "muas", ["user_id"], name: "index_muas_on_user_id", using: :btree
@@ -122,6 +128,7 @@ ActiveRecord::Schema.define(version: 20150303180924) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "zip"
   end
 
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
@@ -136,6 +143,7 @@ ActiveRecord::Schema.define(version: 20150303180924) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "zip"
   end
 
   add_index "stylists", ["user_id"], name: "index_stylists_on_user_id", using: :btree

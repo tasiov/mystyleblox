@@ -4,7 +4,7 @@
 
 <br>
 
-<% if @fefemale.user == current_user %>
+<% if @female.user == current_user %>
 	<%= render 'users/userImages'%>
 <% end %>
 
@@ -15,10 +15,10 @@
 	<% @female.user.images.each do |image| %>
 		<div class="carousel-indicators">
 			<% if @female.user.images.index(image) == 0 %>
-				<li class='active'>  
+				<li class='active'>
 			<% else %>
 	             <li>
-	        <% end %> 
+	        <% end %>
 	            </li>
 		</div>
 	<% end %>
@@ -58,7 +58,7 @@
 
 <br><br>
 
-<div id='calendar' data-uid="<%= @fefemale.user.id %>"></div>
+<div id='calendar' data-uid="<%= @female.user.id %>"></div>
 
-<%= link_to 'Edit', edit_fefemale_path(@fefemale) %> |
-<%= link_to 'Back', fefemales_path %>
+<%= link_to 'Edit', edit_female_path(@female) %> |
+<%= link_to 'Back', females_path %>

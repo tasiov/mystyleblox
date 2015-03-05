@@ -19,14 +19,16 @@
       <th>Nudity</th>
       <th>Experience</th>
       <th>Rate</th>
+      <th>Style</th>
       <th>User</th>
+      <th>Zip</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @females.each do |female| %>
-      <tr><%= render 'stats', female:female %></tr>    
+      <tr><%= render 'stats', female:female %></tr>
     <% end %>
   </tbody>
 </table>

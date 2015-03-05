@@ -1,0 +1,10 @@
+<td><%= photo.style %></td>
+<td><%= photo.education %></td>
+<td><%= photo.experience %></td>
+<td><%= photo.clients %></td>
+<td><%= photo.equipment %></td>
+<td><%= photo.rate %></td>
+<td><%= photo.user %></td>
+<td><%= link_to 'Show', photo %></td>
+<td><%= link_to 'Edit', edit_photo_path(photo) %></td>
+<td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>

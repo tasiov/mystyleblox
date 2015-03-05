@@ -989,7 +989,19 @@ section h2.log-in-section-heading {
     text-align: right;
 }
 
+.search-form{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    /*padding-bottom: 10px;*/
+}
 
+.search-form-center{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    width:100%;
+}
 
 
 

@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
 	validates :email, uniqueness: {case_sensitive: false}
 	validates :email, format: {with: /\A[^@]+@[^@]+\z/, :message => "must be a valid email address."}
 
-	
-	
+
+
 	has_one :client
 	has_one :male
 	has_one :female
@@ -22,7 +22,35 @@ class User < ActiveRecord::Base
 	has_many :unavailables
 	has_many :images
 
+	before_save :update_zip
 
-	
 
+	has_attached_file :image, styles: { large: "600x600>", medium: "300x300>", thumb: "150x150#" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  def update_zip
+  if self.profession
+  self.profession.zip = self.zip
+  end
+  end
+
+
+
+  def profession
+  if self.client
+  self.client
+  elsif self.female
+  self.female
+  elsif self.hair
+  self.hair
+  elsif self.male
+  self.male
+  elsif self.photo
+  self.photo
+  elsif self.mua
+  self.mua
+  elsif self.stylist
+  self.stylist
+  end
+  end
 	end

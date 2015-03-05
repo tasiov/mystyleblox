@@ -1,67 +1,69 @@
 <p id="notice"><%= notice %></p>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<h1>Listing Males</h1>
-<br>
-<br>
-<br>
-<%= render 'males' %>
-<br>
+<section>
+<h2 class="section-heading">Male Model's</h2>
 
-<br>
-<br>
-<br>
-<br>
+<div class="search-form">
 <%= form_tag(males_path, method: 'get') do %>
-  <p>
-  	Height:
-    <%= select_tag( :height, options_for_select(["4' 10\"", "4' 11\"","5","5' 1\"","5' 2\"","5' 3\"","5' 4\"","5' 5\"","5' 6\"","5' 7\"","5' 8\"","5' 9\"","5' 10\"","5' 11\"","6\"","6' 1\"","6' 2\"","6' 3\"","6' 4\"","6' 5\""]), include_blank: true) %>
-    Weight:
-    <%= select_tag( :weight, options_for_select(['(95..200)']), include_blank: true ) %>
-    Age:
-    <%= select_tag( :age,  options_for_select(['(16..60)']), include_blank: true ) %>
- 	Hair Color:
-    <%= select_tag( :hair_c,  options_for_select(["Auburn","Black","Blonde","Brunette", "Chestnut", "Red", "Grey" "Other"]), include_blank: true) %>
-    Hair Length:
-    <%= select_tag( :hair_l,   options_for_select(["Short","Medium","Long"]), include_blank: true) %>
-    Eyes:
-    <%= select_tag( :eyes,   options_for_select(["Blue", "Brown", "Green", "Hazel"]), include_blank: true) %>
-    Bust:
-    <%= select_tag( :suit,   options_for_select(["(36..54) "]), include_blank: true) %>
-    Waist:
-    <%= select_tag( :waist,   options_for_select(["Short","Medium","Long"]), include_blank: true) %>
-    Hips:
-    <%= select_tag( :chest,   options_for_select(["38..56"]), include_blank: true) %>
-    <br>
-    <br>
-    Dress:
-    <%= select_tag( :pant,   options_for_select(["38..56"]), include_blank: true) %>
-    Shoes:
-    <%= select_tag( :shoes,   options_for_select(["7..12"]), include_blank: true) %>
-    Skin:
-    <%= select_tag( :skin,   options_for_select(["Asian","Black","Caucasian","Eastern European","East Indian","Hispanic","Middle Eastern","Native American","Pacific Islander","Other"]), include_blank: true) %>
-    Tattoos:
-    <%= select_tag( :tattoo,   options_for_select(["Yes","No","Some"]), include_blank: true) %>    
-    Piercings:
-    <%= select_tag( :pierce,   options_for_select(["Yes","No","Some"]), include_blank: true) %>
-    Scar:    
-   	<%= select_tag( :scar,   options_for_select(["Yes","No","Some"]), include_blank: true) %>  
-   	Nudity:
-   	<%= select_tag( :nudity,   options_for_select(["Yes","No","Implied"]), include_blank: true) %>    
-   	Experience:
-   	<%= select_tag( :experience,   options_for_select(["No Experience","Some Experience","Experienced","Professional"]), include_blank: true) %>    
-   	Rate:
-   	<%= select_tag( :rate,   options_for_select(["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"]), include_blank: true) %> 
-        
-   	<br>
-   	<br>
-
-    <%= submit_tag "Search", name: nil %>
+<p class="col-sm-2">
+  <%= select_tag( :height, options_for_select(["4' 10\"", "4' 11\"","5","5' 1\"","5' 2\"","5' 3\"","5' 4\"","5' 5\"","5' 6\"","5' 7\"","5' 8\"","5' 9\"","5' 10\"","5' 11\"","6\"","6' 1\"","6' 2\"","6' 3\"","6' 4\"","6' 5\""]), {include_blank: "Height", class: "form-control"}) %>
+</p>
+<p class="col-sm-2">
+  <%= select_tag( :weight, options_for_select([ "95",  "96",  "97",  "98",  "99",  "100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128", "129", "130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "140", "141", "142", "143", "144", "145", "146", "147", "148", "149", "150", "151", "152", "153", "154", "155", "156", "157", "158", "159", "160", "161", "162", "163", "164", "165", "166", "167", "168", "169", "170", "171", "172", "173", "174", "175", "176", "177", "178", "179", "180", "181", "182", "183", "184", "185", "186", "187", "188", "189", "190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213", "214", "215", "216", "217", "218", "219", "220", "221", "222", "223", "224", "225", "226", "227", "228", "229", "230", "231", "232", "233", "234", "235", "236", "237", "238", "239", "240", "241", "242", "243", "244", "245", "246", "247", "248", "249", "250", "251", "252", "253", "254", "255", "256", "257", "258", "259", "260", "261", "262", "263", "264", "265", "266", "267", "268", "269", "270", "271", "272", "273", "274", "275", "276", "277", "278", "279", "280", "281", "282", "283", "284", "285", "286", "287", "288", "289", "290", "291", "292", "293", "294", "295", "296", "297", "298", "299", "300"]), {include_blank: "Weight", class: "form-control"} ) %>
   </p>
+  <p class="col-sm-2">
+    <%= select_tag( :age,  options_for_select(["16",  "17",  "18",  "19",  "20",  "21",  "22",  "23",  "24",  "25",  "26",  "27",  "28",  "29",  "30",  "31",  "32",  "33",  "34",  "35",  "36",  "37",  "38",  "39",  "40",  "41",  "42",  "43",  "44",  "45",  "46",  "47",  "48",  "49",  "50",  "51",  "52",  "53",  "54",  "55",  "56",  "57",  "58",  "59",  "60",  "61",  "62",  "63",  "64",  "65",  "66",  "67",  "68",  "69",  "70",  "71",  "72",  "73",  "74",  "75",  "76",  "77",  "78",  "79",  "80"]), {include_blank: "Age", class: "form-control"} ) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :hair_c,  options_for_select(["Auburn","Black","Blonde","Brunette", "Chestnut", "Red",
+      "Grey" "Other"]), {include_blank: "Hair Color", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :hair_l,   options_for_select(["Short","Medium","Long"]), {include_blank: "Hair Length", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :eyes,   options_for_select(["Blue", "Brown", "Green", "Hazel"]), {include_blank: "Eye Color", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :suit,   options_for_select([36,38,40,42,44,46,48,50,52,54,56]), {include_blank: "Suit", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :waist, options_for_select(["38",  "39",  "40",  "41",  "42",  "43",  "44",  "45",  "46",  "47",  "48",  "49",  "50",  "51",  "52",  "53",  "54",  "55",  "56"]), {include_blank: "Waist", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :chest,   options_for_select(["38",  "39",  "40",  "41",  "42",  "43",  "44",  "45",  "46",  "47",  "48",  "49",  "50",  "51",  "52",  "53",  "54",  "55",  "56"]), {include_blank: "Chest", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :pant, options_for_select(["28",  "29",  "30",  "31",  "32",  "33",  "34",  "35",  "36",  "37",  "38",  "39",  "40",  "41",  "42",  "43",  "44"]), {include_blank: "Pant", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :shoes, options_for_select(["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "12.5"]), {include_blank: "Shoes", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :skin, options_for_select(["Asian","Black","Caucasian","Eastern European","East Indian","Hispanic","Middle Eastern","Native American","Pacific Islander","Other"]), {include_blank: "Race", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :tattoo, options_for_select(["Yes","No","Some"]), {include_blank: "Tattoos", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :pierce, options_for_select(["Yes","No","Some"]), {include_blank: "Piercings", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :scar, options_for_select(["Yes","No","Some"]), {include_blank: "Scars", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :nudity, options_for_select(["Yes","No","Implied"]), {include_blank: "Nudity", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :experience,   options_for_select(["No Experience","Some Experience","Experienced","Professional"]), {include_blank: "Experience", class: "form-control"}) %>
+  </p>
+  <p class="col-sm-2">
+    <%= select_tag( :rate,   options_for_select(["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"]), {include_blank: "Rate", class: "form-control"}) %>
+    </p>
+</div>
+    <%= submit_tag "Search", {name: nil, class: "btn btn-xl"} %>
 <% end %>
+</section>
+
+<%= render 'males' %>
 
 <%= link_to 'New Male', new_male_path %>
