@@ -11,17 +11,14 @@
              <li class='active'>
          <% else %>
               <li>
-          <% end %> 
+          <% end %>
               </li>
     </ol>
   <% end %>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox" >
-   <% if @user.image.empty? %>
-     <%= image_tag "default1.png"
-  else
-    @user.image
+
     <% @male.user.images.each do |image| %>
       <% if @male.user.images.index(image) == 0 %>
         <div class="item active">
