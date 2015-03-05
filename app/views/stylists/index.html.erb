@@ -3,7 +3,7 @@
 <h2 class="section-heading">Fashion Stylists</h2>
 
 <div class="search-form-center">
-  <%= form_tag(hairs_path, method: 'get') do %>
+  <%= form_tag(stylists_path, method: 'get') do %>
   <p class="col-sm-2">
     <%= select_tag( :style, options_for_select(['Beauty', 'Fashion', 'Theatre', 'Television', 'Film', 'Personal Services']), {include_blank: "Style", class: "form-control"}) %>
   </p>
