@@ -1,3 +1,4 @@
+
 <td><% male.height %></td>
 <td><% male.weight %></td>
 <td><% male.age %></td>
@@ -13,8 +14,10 @@
 <td><% male.pierce %></td>
 <td><% male.scar %></td>
 <td><% male.nudity %></td>
+<td><%= male.style %></td>
 <td><% male.experience %></td>
 <td><% male.rate %></td>
+<td><%= male.zip %></td>
 <td><% male.user%></td>
 <td>
   <% if male.user.images.empty? %>
@@ -23,6 +26,7 @@
 	<%= image_tag male.user.images.first.picture %>
    <% end %>
 </td>
+
 
 <td><% link_to 'Show', male %></td>
 <td><% link_to 'Edit', edit_male_path(male) %></td>
