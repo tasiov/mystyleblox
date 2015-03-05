@@ -16,10 +16,16 @@
  */
 
 .fc-day-grid-event {
-	height: 150px;
+	height: 100px;
 }
 
 #calendar {
 	height: 300px;
-	width: 300px;
+	width: 450px;
+	margin-top: 30px;
+}
+
+
+#calendar h2 {
+	font-size: 12px;
 }

@@ -15,7 +15,9 @@
 
   <tbody>
     <% @photos.each do |photo| %>
+
       <tr><%= render 'stats',photo:photo %></tr>
+
     <% end %>
   </tbody>
 </table>

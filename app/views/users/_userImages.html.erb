@@ -13,8 +13,8 @@
 
 
   <div class="field">
-    <%= f.label :picture %><br>
-    <%= f.file_field :picture%>
+    <% f.label :picture %><br>
+    <%= f.file_field :picture, class: 'upload_button'%>
     <%= f.hidden_field :user_id, value: @user.id %>
   </div>
   <div class="actions">

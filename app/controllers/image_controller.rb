@@ -1,6 +1,7 @@
 class ImageController < ApplicationController
   before_action :set_image, only: [:destroy, :show]
 
+
   def create
      @image = Image.new(image_params)
      respond_to do |format|
@@ -15,6 +16,7 @@ class ImageController < ApplicationController
   end
 
   def show
+    
   end
 
   def destroy

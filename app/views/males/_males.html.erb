@@ -1,5 +1,5 @@
 <table>
-  <thead>
+<!--   <thead>
     <tr>
       <th>Height</th>
       <th>Weight</th>
@@ -21,13 +21,14 @@
       <th>Rate</th>
       <th>Zip <th>
       <th>User</th>
+      <th>Profile Picture</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+  </thead> -->
 
    <tbody>
     <% @males.each do |male| %>
-      <tr><%= render 'stats', male:male %></tr>    
+      <tr><%= render 'stats', male: male %></tr>   
     <% end %>
   </tbody>
 </table>
