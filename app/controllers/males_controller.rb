@@ -84,6 +84,6 @@ class MalesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def male_params
-      params.require(:male).permit(:height, :weight, :age, :hair_c, :hair_l, :eyes, :suit, :chest, :pant, :shoes, :skin, :tattoo, :pierce, :scar, :nudity, :experience, :rate, :user_id)
+      params.require(:male).permit(:height, :weight, :age, :hair_c, :hair_l, :eyes, :suit, :chest, :pant, :shoes, :skin, :tattoo, :pierce, :scar, :nudity, :style, :experience, :rate, :user_id)
     end
 end
