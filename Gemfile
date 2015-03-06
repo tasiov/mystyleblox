@@ -21,6 +21,8 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'fullcalendar-rails'
 
 gem 'momentjs-rails'
+gem 'rails_12factor'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
