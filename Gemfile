@@ -6,6 +6,7 @@ gem 'bcrypt', '3.1.7'
 gem 'pg'
 
 gem 'unf'
+gem 'fog'
 
 group :development do
 	gem 'pg'
