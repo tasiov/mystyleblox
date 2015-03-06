@@ -5,7 +5,7 @@ gem 'bcrypt', '3.1.7'
 
 gem 'pg'
 
-group :development do 
+group :development do
 	gem 'pg'
 end
 
@@ -13,6 +13,7 @@ group :production do
 	gem 'pg'
 end
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # Calendar gems
 gem 'fullcalendar-rails'

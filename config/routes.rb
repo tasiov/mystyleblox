@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   resources :images
 
+  resources :charges
+
   resources :users do
     resources :stylists
     resources :muas
