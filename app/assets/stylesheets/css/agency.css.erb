@@ -328,7 +328,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url('../img/header-slider.png');
+    background-image: url('<%= image_path 'img/header-slider.png' %>');
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -792,6 +792,12 @@ section#contact .text-danger {
 footer {
     padding: 25px 0;
     text-align: center;
+/*    left:0px;
+*/    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
 }
 
 footer span.copyright {
@@ -1003,9 +1009,12 @@ section h2.log-in-section-heading {
     width:100%;
 }
 
+/************************Search Page*********************************/
 
+.fix-pos{
+    position:relative;
 
-
+}
 
 
 
