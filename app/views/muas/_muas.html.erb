@@ -1,5 +1,5 @@
-<table>
-  <thead>
+<div class='search-profile-pic'>
+<!--   <thead>
     <tr>
       <th>Style</th>
       <th>Education</th>
@@ -11,11 +11,10 @@
       <th>User</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+  </thead> -->
 
-  <tbody>
     <% @muas.each do |mua| %>
-      <tr><%= render 'stats', mua:mua %></tr>    
+      <%= render 'stats', mua:mua %>   
     <% end %>
-  </tbody>
-</table>
+
+</div>

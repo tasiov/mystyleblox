@@ -1,24 +1,34 @@
-<td><%= female.height %></td>
-<td><%= female.weight %></td>
-<td><%= female.age %></td>
-<td><%= female.hair_c %></td>
-<td><%= female.hair_l %></td>
-<td><%= female.eyes %></td>
-<td><%= female.bust %></td>
-<td><%= female.waist %></td>
-<td><%= female.hips %></td>
-<td><%= female.dress %></td>
-<td><%= female.shoes %></td>
-<td><%= female.skin %></td>
-<td><%= female.tattoo %></td>
-<td><%= female.pierce %></td>
-<td><%= female.scar %></td>
-<td><%= female.nudity %></td>
-<td><%= female.style %></td>
-<td><%= female.experience %></td>
-<td><%= female.rate %></td>
-<td><%= female.user %></td>
-<td><%= female.zip %></td>
-<td><%= link_to 'Show', female %></td>
-<td><%= link_to 'Edit', edit_female_path(female) %></td>
-<td><%= link_to 'Destroy', female, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% female.height %>
+<% female.weight %>
+<% female.age %>
+<% female.hair_c %>
+<% female.hair_l %>
+<% female.eyes %>
+<% female.bust %>
+<% female.waist %>
+<% female.hips %>
+<% female.dress %>
+<% female.shoes %>
+<% female.skin %>
+<% female.tattoo %>
+<% female.pierce %>
+<% female.scar %>
+<% female.nudity %>
+<% female.style %>
+<% female.experience %>
+<% female.rate %>
+<% female.user %>
+<% female.zip %>
+ 
+   <% if female.user.images.empty? %>
+     <%= image_tag "default1.png" %>
+  <% else %>
+     <%= link_to image_tag(female.user.images.first.picture, {width: "300px", class: "search-images"}), female %>
+   <% end %>
+
+
+<% link_to 'Show', female %>
+
+<% link_to 'Edit', edit_female_path(female) %>
+
+<% link_to 'Destroy', female, method: :delete, data: { confirm: 'Are you sure?' } %>

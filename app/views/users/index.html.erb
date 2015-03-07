@@ -1,9 +1,10 @@
+
 <!-- Will not be showing all users, page may be irrelevant -->
 <p id="notice"><%= notice %></p>
-
+<section>
 <h1>Listing Users</h1>
 
-<table style="margin-top:5%;">
+<table style="margin-top:5%">
   <thead>
     <tr>
       <th>Name</th>
@@ -37,12 +38,14 @@
   </tbody>
 </table>
 
-<br>
-<%= form_tag users_path, method: 'get' do %>
+</section>
+
+<!-- <br>
+<%#= form_tag users_path, method: 'get' do %>
   <p>
-    <%= select_tag( :description,  options_for_select(['jdjfhffkfkfk', 'kdkdk'])  ) %>
-    <%= submit_tag "Search", name: nil %>
+    <%#= select_tag( :description,  options_for_select(['jdjfhffkfkfk', 'kdkdk'])  ) %>
+    <%#= submit_tag "Search", name: nil %>
   </p>
-<% end %>
-<br>
+<%# end %>
+<br> -->
 <%= link_to 'New User', new_user_path %>

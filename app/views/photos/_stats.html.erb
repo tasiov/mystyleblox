@@ -1,11 +1,18 @@
-<td><%= photo.style %></td>
-<td><%= photo.education %></td>
-<td><%= photo.experience %></td>
-<td><%= photo.clients %></td>
-<td><%= photo.equipment %></td>
-<td><%= photo.rate %></td>
-<td><%= photo.zip %></td>
-<td><%= photo.user %></td>
-<td><%= link_to 'Show', photo %></td>
-<td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-<td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% photo.style %>
+<% photo.education %>
+<% photo.experience %>
+<% photo.clients %>
+<% photo.equipment %>
+<% photo.rate %>
+<% photo.zip %>
+<% photo.user %>
+
+  <% if photo.user.images.empty? %>
+     <%= image_tag "default1.png" %>
+  <% else %>
+     <%= link_to image_tag(photo.user.images.first.picture, {width: "300px", class: "search-images"}), photo %>
+   <% end %>
+
+<% link_to 'Show', photo %>
+<% link_to 'Edit', edit_photo_path(photo) %>
+<% link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %>

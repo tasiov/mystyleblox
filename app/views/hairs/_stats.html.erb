@@ -1,12 +1,18 @@
-<td><%= hair.style %></td>
-<td><%= hair.education %></td>
-<td><%= hair.experience %></td>
-<td><%= hair.clients %></td>
-<td><%= hair.equipment %></td>
-<td><%= hair.rate %></td>
-<td><%= hair.zip %></td>
-<td><%= hair.user %></td>
+<% hair.style %>
+<% hair.education %>
+<% hair.experience %>
+<% hair.clients %>
+<% hair.equipment %>
+<% hair.rate %>
+<% hair.zip %>
+<% hair.user %>
 
-<td><%= link_to 'Show', hair %></td>
-<td><%= link_to 'Edit', edit_hair_path(hair) %></td>
-<td><%= link_to 'Destroy', hair, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+   <% if hair.user.images.empty? %>
+     <%= image_tag "default1.png" %>
+  <% else %>
+     <%= link_to image_tag(hair.user.images.first.picture, {width: "300px", class: "search-images"}), hair %>
+   <% end %>
+
+<% link_to 'Show', hair %>
+<% link_to 'Edit', edit_hair_path(hair) %>
+<% link_to 'Destroy', hair, method: :delete, data: { confirm: 'Are you sure?' } %>

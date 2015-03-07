@@ -1,11 +1,19 @@
-<td><%= stylist.style %></td>
-<td><%= stylist.education %></td>
-<td><%= stylist.experience %></td>
-<td><%= stylist.clients %></td>
-<td><%= stylist.equipment %></td>
-<td><%= stylist.rate %></td>
-<td><%= stylist.zip %></td>
-<td><%= stylist.user.name %></td>
-<td><%= link_to 'Show', stylist %></td>
-<td><%= link_to 'Edit', edit_stylist_path(stylist) %></td>
-<td><%= link_to 'Destroy', stylist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% stylist.style %>
+<% stylist.education %>
+<% stylist.experience %>
+<% stylist.clients %>
+<% stylist.equipment %>
+<% stylist.rate %>
+<% stylist.zip %>
+<% stylist.user.name %>
+
+   <% if stylist.user.images.empty? %>
+     <%= image_tag "default1.png" %>
+  <% else %>
+     <%= link_to image_tag(stylist.user.images.first.picture, {width: "300px", class: "search-images"}), stylist %>
+   <% end %>
+
+
+<% link_to 'Show', stylist %>
+<% link_to 'Edit', edit_stylist_path(stylist) %>
+<% link_to 'Destroy', stylist, method: :delete, data: { confirm: 'Are you sure?' } %>

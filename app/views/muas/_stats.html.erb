@@ -1,11 +1,20 @@
-<td><%= mua.style %></td>
-<td><%= mua.education %></td>
-<td><%= mua.experience %></td>
-<td><%= mua.clients %></td>
-<td><%= mua.equipment %></td>
-<td><%= mua.rate %></td>
-<td><%= mua.zip %></td>
-<td><%= mua.user %></td>
-<td><%= link_to 'Show', mua %></td>
-<td><%= link_to 'Edit', edit_mua_path(mua) %></td>
-<td><%= link_to 'Destroy', mua, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+<% mua.style %>
+<% mua.education %>
+<% mua.experience %>
+<% mua.clients %>
+<% mua.equipment %>
+<% mua.rate %>
+<% mua.zip %>
+<% mua.user %>
+
+   <% if mua.user.images.empty? %>
+     <%= image_tag "default1.png" %>
+  <% else %>
+     <%= link_to image_tag(mua.user.images.first.picture, {width: "300px", class: "search-images"}), mua %>
+   <% end %>
+
+
+<% link_to 'Show', mua %>
+<% link_to 'Edit', edit_mua_path(mua) %>
+<% link_to 'Destroy', mua, method: :delete, data: { confirm: 'Are you sure?' } %>

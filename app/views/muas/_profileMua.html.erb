@@ -1,3 +1,68 @@
+<div class="col-md-7">
+<!-- Photo Slider -->
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+
+ <!-- Indicators -->
+  <% @mua.user.images.each do |image| %>
+    <ol class="carousel-indicators">
+         <% if @mua.user.images.index(image) == 0 %>
+             <li class='active'>
+         <% else %>
+              <li>
+         <% end %>
+            </li>
+         </ol>
+  <% end %>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox" >
+
+
+   <% if @mua.user.images.empty? %>
+     <%= image_tag "default1.png" %>
+  <% else %>
+    <% @mua.user.images.each do |image| %>
+      <% if @mua.user.images.index(image) == 0 %>
+        <div class="item active">
+          <%= image_tag image.picture %>
+        <% if @mua.user == current_user %>
+          <%= link_to (image_tag 'delete64.png'), image_destroy_path(id: image.id), class: "delete_b", method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        </div>
+
+
+
+      <% else %>
+        <div class="item">
+          <%= image_tag image.picture %>
+          <% if @mua.user == current_user %>
+          <%= link_to (image_tag 'delete64.png'), image_destroy_path(id: image.id), class: "delete_b", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+      <% end %>  
+    <% end %>
+  <% end %>
+  <% if @mua.user == current_user %>
+   <%= render 'users/userImages'%>
+  <% end %>
+</div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+  </div>
+</div>
+
+
 <p>
   <strong>Name:</strong>
   <%= @mua.user.name %>
@@ -8,10 +73,6 @@
   <%= @mua.user.memberId %>
 </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @mua.user.city %>
-</p>
 
 <p>
   <strong>State:</strong>
@@ -23,11 +84,6 @@
   <%= @mua.user.zip %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @mua.user.description %>
-</p>
-
 
 <p>
   <strong>Style:</strong>
@@ -35,31 +91,52 @@
 </p>
 
 <p>
-  <strong>Education:</strong>
-  <%= @mua.education %>
-</p>
-
-<p>
-  <strong>Experience:</strong>
-  <%= @mua.experience %>
-</p>
-
-<p>
   <strong>Clients:</strong>
   <%= @mua.clients %>
 </p>
 
-<p>
+
+
+
+
+  <div class="col-md-5"><strong>Member ###</strong><%= @mua.user.memberId %>
+    <h4><%= @mua.user.state %></h4>
+  </div>
+
+  <div class="col-md-5">
+    <h4>Bio</h4>
+    <p class="col-md-5">
+
+    <p class="col-md-12">
+      <strong>About Me:</strong>
+      <%= @mua.user.description %>
+    </p>
+
+    <h4 class="col-md-12">Details</h4>
+
+  <p class="col-md-12">
+    <strong>Education:</strong>
+    <%= @mua.education %>
+  </p> 
+
+    <p class="col-md-6">
+      <strong>Exp:</strong>
+      <%= @mua.experience %>
+    </p>
+
+    <p class="col-md-6">
   <strong>Equipment:</strong>
   <%= @mua.equipment %>
-</p>
+   </p>
 
-<p>
-  <strong>Rate:</strong>
-  <%= @mua.rate %>
-</p>
+    <p class="col-md-6">
+      <strong>Day Rate:</strong>
+      <%= @mua.rate %>
+    </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @mua.user %>
-</p>
+  <br><br><br>
+
+  <h4 class="col-md-12" id='calendar' data-uid="<%= @mua.user.id %>">
+  </h4>
+</div>
+</div>
