@@ -82,7 +82,7 @@ div.field, div.actions {
   margin: -7px;
   margin-bottom: 0px;
   background-color: #c00;
-  color: #fff;
+  color: white;
 }
 
 #error_explanation ul li {
