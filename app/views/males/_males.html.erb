@@ -1,4 +1,4 @@
-<table>
+<div class='search-profile-pic'>
 <!--   <thead>
     <tr>
       <th>Height</th>
@@ -26,9 +26,9 @@
     </tr>
   </thead> -->
 
-   <tbody>
     <% @males.each do |male| %>
-      <tr><%= render 'stats', male: male %></tr>   
+       <%= render 'stats', male: male %>  
     <% end %>
-  </tbody>
-</table>
+
+    
+</div>

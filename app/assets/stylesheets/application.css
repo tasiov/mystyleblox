@@ -21,11 +21,23 @@
 
 #calendar {
 	height: 300px;
-	width: 450px;
+	width: 500px;
 	margin-top: 30px;
 }
 
 
 #calendar h2 {
 	font-size: 12px;
+}
+
+.fc-today-button{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  height: 2.1em;
+  /* padding: 0 .6em; */
+  font-size: .8em;
+  white-space: nowrap;
+  cursor: pointer;
 }

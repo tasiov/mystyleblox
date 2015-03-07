@@ -7,6 +7,21 @@ body, p, ol, ul, td {
   text-align: center;
 }
 
+table {
+  margin-right: auto;
+  margin-left: auto;
+  border-spacing: 10px;
+  border-collapse: separate;
+  text-align: left;
+}
+
+tr, td, th {
+  
+  padding: 10px;
+  text-align: left;
+}
+
+
 input#image_picture {
   margin-left: auto;
   margin-right: auto;

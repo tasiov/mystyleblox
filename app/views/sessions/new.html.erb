@@ -7,14 +7,14 @@
 <section class="log-in-page">
   <div>
     <div class='container'>
-      <div class='col-md-12' >
+      <div class='col-md-4' >
         <h2 class="log-in-section-heading">Log in</h2>
         <%= form_for(:session, url: login_path) do |f| %>
         <p><%= flash[:error] %></p>
-        <%= f.email_field :email, placeholder:"Email" %>
-        <%= f.password_field :password, placeholder: "Password" %>
+        <%= f.email_field :email, class: "form-control input-sm", placeholder:"Email" %><br>
+        <%= f.password_field :password, class: "form-control input-sm", placeholder: "Password" %><br>
         <%= f.submit "Log in"  %>
-        <% end %>
+        <% end %><br>
         <p id="login-fields">New user? <%= link_to "Sign up now!", signup_path, id: "login-fields" %></p>
       </div>
     </div>
