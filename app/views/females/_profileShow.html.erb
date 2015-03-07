@@ -61,20 +61,22 @@
 </div>
 </div>
 
-<div class="col-md-5"><strong>Member ###</strong><%= @female.user.memberId %>
-  <h4><%= @female.user.state %></h4>
-</div>
 
-<div class="col-md-5">
-  <h4>Bio</h4>
-  <p class="col-md-5">
+  <div class="col-md-5"><h3><%= @female.user.name %></h3>
+    <h4 class="underline"> State </h4>
+    <h5><%= @female.user.state %></h5>
+  </div>
+
+  <div class="col-md-5">
+    <h4 class="underline">Bio</h4>
+    <p class="col-md-5">
 
     <p class="col-md-12">
-      <strong>About Me:</strong>
+
       <%= @female.user.description %>
     </p>
 
-    <h4 class="col-md-12" id="stats">Stats</h4>
+    <h4 class="col-md-12 underline" id="stats">Stats</h4>
 
     <p class="col-md-4">
       <strong>Age:</strong>
@@ -154,7 +156,7 @@
       <%= @female.nudity %>
     </p>
 
-    <h4 class="col-md-12">Details</h4>
+    <h4 class="col-md-12 underline">Details</h4>
 
     <p class="col-md-6">
       <strong>Exp:</strong>
@@ -168,6 +170,16 @@
 
     <br><br><br>
 
-    <h4 class="col-md-12" id='calendar' data-uid="<%= @female.user.id %>">
-    </h4>
+  <div class="col-md-12">
+    <h4 class="underline">Availability</h4>
+  </div>
+
+  <h4 class="col-md-12" id='calendar' data-uid="<%= @female.user.id %>">
+  </h4>
+
+
+  <div class="col-md-4">
+     <%= link_to 'Pay', charges_path, class: "btn btn-xl" %>
+  </div>
+</div>
 </div>
