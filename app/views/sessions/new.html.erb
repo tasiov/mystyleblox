@@ -13,7 +13,7 @@
         <p><%= flash[:error] %></p>
         <%= f.email_field :email, class: "form-control input-sm", placeholder:"Email" %><br>
         <%= f.password_field :password, class: "form-control input-sm", placeholder: "Password" %><br>
-        <%= f.submit "Log in"  %>
+        <%= f.submit "Log in", {name: nil, class: "btn btn-xl"} %>
         <% end %><br>
         <p id="login-fields">New user? <%= link_to "Sign up now!", signup_path, id: "login-fields" %></p>
       </div>
