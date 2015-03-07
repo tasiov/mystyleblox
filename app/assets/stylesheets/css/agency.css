@@ -1026,7 +1026,7 @@ section.full_profile {
 div.search-profile-pic {
     -webkit-column-count: 4; /* Chrome, Safari, Opera */
     -moz-column-count: 4;
-    column-count: 4;*/
+    column-count: 4;
     -webkit-column-gap: 10px;
     -moz-column-gap: 10px;
     column-gap: 10px;
