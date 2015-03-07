@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <section>
-<h2 class="section-heading">Male Model's</h2>
+<h2 class="section-heading">Male Models</h2>
 
 <div class="search-form">
 <%= form_tag(males_path, method: 'get') do %>
@@ -63,13 +63,18 @@
     <%= select_tag( :rate,   options_for_select(["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"]), {include_blank: "Rate", class: "form-control"}) %>
     </p>
     <p class="col-sm-2">
-    <%= text_field_tag :zip, nil, :placeholder => "Location Zip Code" %>
+    <%= text_field_tag :zip, nil, class: "form-control input-sm", :placeholder => "Zip Code"%>
     </p>
-</div>
+    <br>
+    <br>
+    <p class="col-sm-12">
     <%= submit_tag "Search", {name: nil, class: "btn btn-xl"} %>
+    </p>
+    </div>
 <% end %>
 </section>
+<br><br><br>
 
-<%= render 'males' %>
+<%= render 'males'%>
 
-<%= link_to 'New Male', new_male_path %>
+<% link_to 'New Male', new_male_path %>

@@ -1,64 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<section class="full_profile">
+	
 <%= render 'profileShow' %>
 
-<br>
-
-<% if @female.user == current_user %>
-	<%= render 'users/userImages'%>
-<% end %>
-
-
-<!-- Photo Slider -->
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
- <!-- Indicators -->
-	<% @female.user.images.each do |image| %>
-		<div class="carousel-indicators">
-			<% if @female.user.images.index(image) == 0 %>
-				<li class='active'>
-			<% else %>
-	             <li>
-	        <% end %>
-	            </li>
-		</div>
-	<% end %>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-  	<% @female.user.images.each do |image| %>
-        <% if @female.user.images.index(image) == 0 %>
-    <div class="item active">
-      <%= image_tag image.picture %>
-      	<% if @female.user == current_user %>
-		<%= link_to 'Destroy', image_destroy_path(id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-       <% end %>
-    </div>
-       <% else %>
-    <div class="item">
-      <%= image_tag image.picture %>
-      	 <% if @female.user == current_user %>
-		<%= link_to 'Destroy', image_destroy_path(id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-	</div>
-	  <% end %>
-    <% end %>
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-
+<div class="col-md-12">
+  <% link_to 'Back', females_path %>
 </div>
 
-<br><br>
+</section>
 
-<div id='calendar' data-uid="<%= @female.user.id %>"></div>
 
-<%= link_to 'Edit', edit_female_path(@female) %> |
-<%= link_to 'Back', females_path %>

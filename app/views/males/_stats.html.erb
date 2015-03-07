@@ -1,33 +1,34 @@
 
-<td><% male.height %></td>
-<td><% male.weight %></td>
-<td><% male.age %></td>
-<td><% male.hair_c %></td>
-<td><% male.hair_l %></td>
-<td><% male.eyes %></td>
-<td><% male.suit %></td>
-<td><% male.chest %></td>
-<td><% male.pant %></td>
-<td><% male.shoes %></td>
-<td><% male.skin %></td>
-<td><% male.tattoo %></td>
-<td><% male.pierce %></td>
-<td><% male.scar %></td>
-<td><% male.nudity %></td>
-<td><%= male.style %></td>
-<td><% male.experience %></td>
-<td><% male.rate %></td>
-<td><%= male.zip %></td>
-<td><% male.user%></td>
-<td>
+<% male.height %>
+<% male.weight %>
+<% male.age %>
+<% male.hair_c %>
+<% male.hair_l %>
+<% male.eyes %>
+<% male.suit %>
+<% male.chest %>
+<% male.pant %>
+<% male.shoes %>
+<% male.skin %>
+<% male.tattoo %>
+<% male.pierce %>
+<% male.scar %>
+<% male.nudity %>
+<% male.style %>
+<% male.experience %>
+<% male.rate %>
+<% male.zip %>
+<% male.user%>
+
   <% if male.user.images.empty? %>
      <%= image_tag "default1.png" %>
   <% else %>
-	<%= image_tag male.user.images.first.picture %>
+     <%= link_to image_tag(male.user.images.first.picture, {width: "300px", class: "search-images"}), male %>
    <% end %>
-</td>
 
 
-<td><% link_to 'Show', male %></td>
-<td><% link_to 'Edit', edit_male_path(male) %></td>
-<td><% link_to 'Destroy', male, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% link_to 'Show', male %>
+
+<% link_to 'Edit', edit_male_path(male) %>
+
+<% link_to 'Destroy', male, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -1,6 +1,6 @@
-<table>
-  <thead>
-    <tr>
+<div class='search-profile-pic'>
+
+<!--     <tr>
       <th>Style</th>
       <th>Education</th>
       <th>Experience</th>
@@ -11,13 +11,10 @@
       <th>User</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
-
-  <tbody>
+ -->
     <% @photos.each do |photo| %>
 
       <tr><%= render 'stats',photo:photo %></tr>
 
     <% end %>
-  </tbody>
-</table>
+</div>
