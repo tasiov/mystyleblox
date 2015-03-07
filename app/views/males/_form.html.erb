@@ -75,11 +75,6 @@
     <%=f.hidden_field :user_id, value: session[:user_id] %>
   </div>
   <div class="col-md-12">
-    <% if current_user %>
-      <%= f.submit "Edit", :class => "btn btn-xl" %>
-   <% else %>
      <%= f.submit "Sign Up", :class => "btn btn-xl" %>
-    <% end %>
-
   </div>
 <% end %>
