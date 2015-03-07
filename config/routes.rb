@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get 'static_pages/contact'
 
+  post '/current_user' => 'users#take_to_show', as: :profile
+
   resources :stylists
 
   resources :muas

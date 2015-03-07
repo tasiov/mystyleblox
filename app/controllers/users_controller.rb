@@ -30,6 +30,10 @@ class UsersController < ApplicationController
   def test
   end
 
+  def take_to_show
+    redirect_to current_user_profession(current_user)
+  end
+
   # POST /users
   # POST /users.json
   def create

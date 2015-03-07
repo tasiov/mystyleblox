@@ -3,14 +3,12 @@ source 'https://rubygems.org'
 
 gem 'bcrypt', '3.1.7'
 
-gem 'pg'
-
-group :development do
-	gem 'pg'
-end
+gem 'unf'
+gem 'fog'
 
 group :production do
 	gem 'pg'
+  gem 'rails_12factor', group: :production
 end
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
@@ -19,6 +17,7 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'fullcalendar-rails'
 
 gem 'momentjs-rails'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

@@ -51,24 +51,30 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Discover</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Why</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
+                   
                     <li>
  					   <% if logged_in? %>
 		                   <div id="user-now" user-id="<%= current_user.id %>"></div>
+                           <li>
 			               <%= link_to "Log out", logout_path, method: "delete"  %>
+                          </li>
+                          <li>
+                           <%= link_to "My Profile", profile_path, method: 'post' %>
+                       </li>
 			             <% else %>
 							<%= link_to "Log In", login_path%>
+                            <li>
+                                <a class="page-scroll" href="#services">Services</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="#portfolio">Discover</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="#about">Why</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="#contact">Contact</a>
+                            </li>
                     	 <% end %>
                     </li>
                 </ul>
@@ -99,6 +105,8 @@
     <!-- Custom Theme JavaScript -->
     <!-- script src="js/agency.js"></script -->
 </body>
+<br>
+<br>
 <footer>
         <div class="container">
             <div class="row">

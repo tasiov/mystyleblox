@@ -37,20 +37,22 @@ class User < ActiveRecord::Base
 
 
   def profession
-  if self.client
-  self.client
-  elsif self.female
-  self.female
-  elsif self.hair
-  self.hair
-  elsif self.male
-  self.male
-  elsif self.photo
-  self.photo
-  elsif self.mua
-  self.mua
-  elsif self.stylist
-  self.stylist
+    if self.client
+      self.client
+    elsif self.female
+      self.female
+    elsif self.hair
+      self.hair
+    elsif self.male
+      self.male
+    elsif self.photo
+      self.photo
+    elsif self.mua
+      self.mua
+    elsif self.stylist
+      self.stylist
+    end
   end
-  end
-	end
+
+
+end
