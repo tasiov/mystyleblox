@@ -5,6 +5,7 @@
 
 
  <!-- Indicators -->
+
   <% @male.user.images.each do |image| %>
     <ol class="carousel-indicators">
          <% if @male.user.images.index(image) == 0 %>
@@ -157,23 +158,27 @@
 
     <h4 class="col-md-12">Details</h4>
 
-    <p class="col-md-6">
+    <p class="col-md-4">
       <strong>Exp:</strong>
       <%= @male.experience %>
     </p>
 
-    <p class="col-md-6">
+    <p class="col-md-4">
       <strong>Day Rate:</strong>
       <%= @male.rate %>
     </p>
 
+    <div class="col-md-12">
+     <%= link_to 'Pay', charges_path %>
+    </div>
+
   </div>
 
   <br><br><br>
-
   <div class="col-md-6" id='calendar' data-uid="<%= @male.user.id %>">
   </div>
-</div>
 
+
+</div>
 
 
