@@ -30,8 +30,8 @@ div.new_user, div.all_forms {
   font-size: 12px;
   opacity: 0;
   padding: 3px;
-  left: 90px;
-  top: 38px;
+  left: 110px;
+  top: 22px;
   border-radius: 100px;
   background-color: ivory;
   text-transform: uppercase;
@@ -58,8 +58,7 @@ div.new_user, div.all_forms {
 }
 
 #carousel-example-generic {
-  width: 850px;
-  height: 1200px;
+  width: 750px;
 }
 
 .carousel-control.left, .carousel-control.right{ 
