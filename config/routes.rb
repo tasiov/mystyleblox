@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :messages
+
   post 'image/create'
 
   get 'image/show'

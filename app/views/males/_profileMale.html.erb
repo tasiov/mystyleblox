@@ -64,20 +64,18 @@
   </div>
 </div>
 
-  <div class="col-md-5"><strong>Member ###</strong><%= @male.user.memberId %>
+  <div class="col-md-5"><h3><%= @male.user.name %></h3>
+    <h4 class="underline"> State </h4>
     <h4><%= @male.user.state %></h4>
   </div>
 
   <div class="col-md-5">
-    <h4>Bio</h4>
-    <p class="col-md-5">
-
     <p class="col-md-12">
-      <strong>About Me:</strong>
+      <h4 class="underline">Bio</h4><br>
       <%= @male.user.description %>
     </p>
 
-    <h4 class="col-md-12" id="stats">Stats</h4>
+    <h4 class="col-md-12 underline" id="stats">Stats</h4><br>
 
     <p class="col-md-4">
       <strong>Age:</strong>
@@ -152,32 +150,33 @@
       <%= @male.nudity %>
     </p>
 
-    <h4 class="col-md-12">Details</h4>
+    <h4 class="col-md-12 underline">Details</h4>
 
-    <p class="col-md-4">
+    <p class="col-md-6">
       <strong>Exp:</strong>
       <%= @male.experience %>
     </p>
 
-    <p class="col-md-4">
+    <p class="col-md-6">
       <strong>Day Rate:</strong>
       <%= @male.rate %>
     </p>
 
+  <br><br><br>
 
-    <div class="col-md-12">
-     <%= link_to 'Pay', charges_path %>
-    </div>
-
+  <div class="col-md-12">
+    <h4 class="underline">Availability</h4> 
   </div>
 
-
-  <br><br><br>
 
   <h4 class="col-md-12" id='calendar' data-uid="<%= @male.user.id %>">
   </h4>
 
+  <div class="col-md-4">
+     <%= link_to 'Pay', charges_path, class: "btn btn-xl" %>
+  </div>
 
+</div>
 </div>
 
 
