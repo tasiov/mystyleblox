@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
 
 	has_many :unavailables
 	has_many :images
+  has_many :sent_messages, class_name: "Message", foreign_key: "sender_id"
+  has_many :recieved_messages, class_name: "Message", foreign_key: "reciever_id"
 
 	before_save :update_zip
 
