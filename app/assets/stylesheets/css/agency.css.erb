@@ -52,14 +52,21 @@ div.new_user, div.all_forms {
     margin-top: -12px;
     padding-top: 5px;
 }
+/******************************Carousel Customizations****************************/
+/*.carousel-fade {
+  .carousel-inner {
+    .item {
+      opacity: 0;
+      transition-property: opacity;
+    }*/
 
 .carousel-inner{
     width: 700px;
 }
 
 .carousel-inner > .item > img {
-    margin: 0 auto;
-    width: 85%;
+    opacity: 0;
+    transition-property: opacity;
 }
 
 #carousel-example-generic {
@@ -83,6 +90,8 @@ div.new_user, div.all_forms {
 
  }
 
+/*******************Carousel ^ **************************/
+
 .text-muted {
     color: #777;
 }
@@ -92,7 +101,7 @@ div.new_user, div.all_forms {
 }
 
 
-p { 
+p {
     font-size: 14px;
     line-height: 1.75;
 }
