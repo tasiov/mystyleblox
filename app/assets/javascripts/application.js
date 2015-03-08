@@ -66,10 +66,18 @@ fullCal = function(){
 });
 }
 
+
+dropdown = function() {
+
+	$('.dropdown-toggle').dropdown()
+}
+
 $(document).ready(fullCal);
+$(document).ready(dropdown);
 $(document).on('page:load', fullCal);
-// $(document).ready($('.dropdown-toggle').dropdown());
-// $(document).on('page:load', $('.dropdown-toggle').dropdown());
+$(document).on('page:load', dropdown);
+
+
 
 
 
