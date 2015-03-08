@@ -68,6 +68,8 @@
     <h4><%= @male.user.state %></h4>
   </div>
 
+  
+
   <div class="col-md-5">
     <p class="col-md-12">
       <h4 class="underline">Bio</h4><br>
@@ -172,12 +174,17 @@
   </h4>
   </div>
 
+
+
+  <div class="col-md-4">
+     <%= link_to 'Edit', edit_male_path(@male), class: "payBtn btn btn-xl" %> 
+  </div>
   <div class="col-md-4">
      <%= link_to 'Book', charges_path, class: "payBtn btn btn-xl" %>
   </div>
 
 </div>
-</div>
+
 
 
 
