@@ -1,6 +1,87 @@
-<h1>Editing Male</h1>
 <section>
-<%= render 'form' %>
+<h1>Editing Male</h1>
+
+<%= form_for(@male) do |f| %>
+  <% if @male.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@male.errors.count, "error") %> prohibited this male from being saved:</h2>
+
+      <ul>
+      <% @male.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-md-4">
+    <%= f.select :height, [ "4' 10\"", "4' 11\"","5'","5' 1\"","5' 2\"","5' 3\"","5' 4\"","5' 5\"","5' 6\"","5' 7\"","5' 8\"","5' 9\"","5' 10\"","5' 11\"","6'","6' 1\"","6' 2\"","6' 3\"","6' 4\"","6' 5\""], { :include_blank => "Height" }, { class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :weight, (95..250), {:include_blank => "Weight"}, { class: "form-control" }  %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :age, (16..60), {:include_blank => "Age"}, { class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+     <%= f.select :hair_c, ["Auburn","Black","Blonde","Brunette", "Chestnut", "Red", "Grey" "Other"], {:include_blank => "Hair Color"}, { class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+   <%= f.select :hair_l, ["Short","Medium","Long"], {:include_blank => "Hair Length"}, { class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :eyes, ["Blue", "Brown", "Green", "Hazel"], {:include_blank => "Eye Color"}, { class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :suit, [36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60], {:include_blank => "Suit"}, { class: "form-control" }  %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :chest, options_for_select((38..56).step(2)), {:include_blank => "Chest"}, { class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :pant, options_for_select((26..38).step(2)), {:include_blank => "Pant"} ,{ class: "form-control" }  %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :shoes, options_for_select((7..12).step(0.5)), {:include_blank => "Shoes"} ,{ class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :skin, ["Asian","Black","Caucasian","Eastern European","East Indian","Hispanic","Middle Eastern","Native American","Pacific Islander","Other"], {:include_blank => "Ethnicity"} ,{ class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :tattoo, ["Yes","No","Some"], {:include_blank => "Tattoos?"} ,{ class: "form-control" }%>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :pierce, ["Yes","No","Some"], {:include_blank => "Piercings?"} ,{ class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :scar, ["Yes","No","Some"], {:include_blank => "Scars?"} ,{ class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :nudity, ["Yes","No","Implied"], {:include_blank => "Nudity?"}, { class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :style, ["Acting","Alternative","Catalog","Commercial","Corporate" ,"Curvy","Editorial","Erotic","Fashion","Fetish","Fit Model","Fitness","Glamour","Juniors","Lifestyle","Lingerie","Mature","Fashion","Nude","Parts Modeling","Petite","Performance","Pinup","Pregnancy","Print","Promo","Runway","Host","Sports","Stunt","Swimwear"], {:include_blank => "Style"} , { class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :experience, ["No Experience","Some Experience","Experienced","Professional"], {:include_blank => "Experience"} ,{ class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :rate, ["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"], {:include_blank => "Day Rate"} ,{ class: "form-control" } %>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="field">
+    <%=f.hidden_field :user_id, value: session[:user_id] %>
+  </div>
+  <div class="col-md-12">
+     <%= f.submit "Edit", :class => "btn btn-xl" %>
+  </div>
+<% end %>
+
 </section>
 
 
