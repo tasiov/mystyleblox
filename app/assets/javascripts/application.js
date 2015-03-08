@@ -68,6 +68,12 @@ fullCal = function(){
 
 $(document).ready(fullCal);
 $(document).on('page:load', fullCal);
+// $(document).ready($('.dropdown-toggle').dropdown());
+// $(document).on('page:load', $('.dropdown-toggle').dropdown());
+
+
+
+
 
 
 

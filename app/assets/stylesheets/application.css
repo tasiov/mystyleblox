@@ -30,6 +30,10 @@
 	font-size: 12px;
 }
 
+.mainDrop {
+  background-color: #ff4351;
+  color:black;
+}
 .fc-today-button{
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;

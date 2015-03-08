@@ -61,6 +61,19 @@
                           <li>
                            <%= link_to "My Profile", profile_path, method: 'post' %>
                             </li>
+                             <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                   Browse
+                                   <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                   <li class="mainDrop"><%= link_to "Males", males_path %></li>
+                                   <li class="mainDrop"><%= link_to "Females", females_path %></li>
+                                   <li class="mainDrop"><%= link_to "Hair Dresser", hairs_path %></li>
+                                   <li class="mainDrop"><%= link_to "Stylist", stylists_path %></li>
+                                   <li class="mainDrop"><%= link_to "Makeup Artist", muas_path %></li>   
+                                </ul>
+                             </li>
 			             <% else %>
 							<%= link_to "Log In", login_path%>
                             <li>
@@ -94,6 +107,7 @@
 
     <!-- Plugin JavaScript -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <!-- script src="js/classie.js"></script -->
     <!-- script src="js/cbpAnimatedHeader.js"></script -->
 
