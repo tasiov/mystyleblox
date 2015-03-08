@@ -62,7 +62,7 @@
   </div>
 </div>
 
-  <div class="col-md-5"><strong>Member ###</strong><%= @photo.user.memberId %>
+  <div class="col-md-5"><%= @photo.user.name %>
     <h4><%= @photo.user.state %></h4>
   </div>
 
@@ -70,17 +70,9 @@
     <h4>Bio</h4>
     <p class="col-md-5">
 
-    <p class="col-md-12">
-      <strong>About Me:</strong>
-      <%= @photo.user.description %>
-    </p>
-
-
 <p class="col-md-12">
-  <strong>Description:</strong>
   <%= @photo.user.description %>
 </p>
-
 
 <p class="col-md-12">
   <strong>Style:</strong>
