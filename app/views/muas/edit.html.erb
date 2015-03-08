@@ -1,6 +1,48 @@
+<section>
 <h1>Editing Mua</h1>
 
-<%= render 'form' %>
+<%= form_for(@mua) do |f| %>
+  <% if @mua.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mua.errors.count, "error") %> prohibited this mua from being saved:</h2>
 
-<%= link_to 'Show', @mua %> |
-<%= link_to 'Back', muas_path %>
+      <ul>
+      <% @mua.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-md-4">
+    <%= f.select :style, ["Beauty","Fashion","Theatre","Television","Body and Face Paint","Film and Movies","Personal Services"], {:include_blank => "Style"}, { class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :education, ["On the Job","Some Schooling","Degree Certified"], {:include_blank => "Training"}, { class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :equipment, ["Minimum","Moderate","Full Set"], {:include_blank => "Equipment"}, { class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :experience, ["No Experience","Some Experience","Experienced","Professional"], {:include_blank => "Experience"}, { class: "form-control" } %>
+  </div>
+  <div class="col-md-4">
+    <%= f.select :rate, ["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"], {:include_blank => "Day Rate"}, { class: "form-control" } %>
+  </div>
+  <div class="col-md-12">
+    <%= f.text_field :clients, {placeholder: "Clients (separated by commas)", class: "form-control input-sm"}  %>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="field">
+    <%=f.hidden_field :user_id, value: session[:user_id] %>
+  </div>
+  <div class="col-md-12">
+     <%= f.submit "Edit", :class => "btn btn-xl" %>
+  </div>
+<% end %>
+</section>
+
+<% link_to 'Show', @mua %> |
+<% link_to 'Back', muas_path %>
