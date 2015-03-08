@@ -6,7 +6,10 @@ class User < ActiveRecord::Base
 	validates :phone, format: {with: /\(?[0-9]{3}\)?-[0-9]{3}-[0-9]{4}/, :message => "number must be valid. i.e xxx-xxx-xxxx"}
 	validates :email, uniqueness: {case_sensitive: false}
 	validates :email, format: {with: /\A[^@]+@[^@]+\z/, :message => "must be a valid email address."}
-
+  validates :state, inclusion:{in: %w(AK,AL,AR,AZ,CA,CO,CT,DE,FL,GA,HI,IA,ID,IL,IN,KS,KY,LA,MA,MD,ME,MI,MN,
+  MO,MS,MT,NC,ND,NE,NH,NJ,NM,NV,NY,OH,OK,OR,PA,RI,SC,SD,TN,TX,UT,VA,VT,WA,WI,WV,WY), :message => "%{value} is not a valid US state"}
+  validates :zip, length: {is: 5}
+  validates :zip, numericality: true
 
 
 	has_one :client
