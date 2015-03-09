@@ -7,9 +7,9 @@
 
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="New talent booking"
+          data-description="Talent booking"
           data-amount="50000"
-          data-image=url('<%= image_path "img/msb-red.png" %>')
+          data-image=url('<%= image_path 'img/msb-red.png' %>')
           data-name="My Style Blox"
-          data-label="Book now"></script>
+          data-panel-label="Book now"></script>
 <% end %>
