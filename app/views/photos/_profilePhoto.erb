@@ -41,7 +41,7 @@
           <%= link_to (image_tag 'delete64.png'), image_destroy_path(id: image.id), class: "delete_b", method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
         </div>
-      <% end %>  
+      <% end %>
     <% end %>
   <% end %>
   <% if @photo.user == current_user %>
@@ -62,59 +62,66 @@
   </div>
 </div>
 
-  <div class="col-md-5"><%= @photo.user.name %>
+<div class="col-md-5"><h3><%= @photo.user.name %></h3>
+    <%= form_tag charges_path do %>
+    <article>
+      <label class="amount">
+        <span>Day Rate: $500.00</span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-description="Hiring new talent"
+    data-amount="50000"></script>
+    <% end %>
     <h4><%= @photo.user.state %></h4>
   </div>
 
+
+
   <div class="col-md-5">
-    <h4>Bio</h4>
-    <p class="col-md-5">
+    <p class="col-md-12">
+      <h4 class="underline">Bio</h4><br>
+      <%= @photo.user.description %>
+    </p>
 
-<p class="col-md-12">
-  <%= @photo.user.description %>
-</p>
+    <h4 class="col-md-12 underline">Details</h4>
 
-<p class="col-md-12">
-  <strong>Style:</strong>
-  <%= @photo.style %>
-</p>
+    <p class="col-md-6" style="text-align:left">
+      <strong>Edu:</strong>
+      <%= @photo.education %>
+    </p>
 
-<p class="col-md-12">
-  <strong>Education:</strong>
-  <%= @photo.education %>
-</p>
+    <p class="col-md-6" style="text-align:left">
+      <strong>Exp:</strong>
+      <%= @photo.experience %>
+    </p>
 
-<p class="col-md-12">
-  <strong>Experience:</strong>
-  <%= @photo.experience %>
-</p>
+    <p class="col-md-6" style="text-align:left">
+      <strong>Equipment:</strong>
+      <%= @photo.equipment %>
+    </p>
 
-<p class="col-md-12">
-  <strong>Clients:</strong>
-  <%= @photo.clients %>
-</p>
+    <p class="col-md-6" style="text-align:left">
+      <strong>Day Rate:</strong>
+      <%= @photo.rate %>
+    </p>
 
-<p class="col-md-12">
-  <strong>Equipment:</strong>
-  <%= @photo.equipment %>
-</p>
+    <br><br><br>
 
-<p class="col-md-12">
-  <strong>Rate:</strong>
-  <%= @photo.rate %>
-</p>
+    <div class="col-md-12">
+      <h4 class="underline">Availability</h4>
+    </div>
 
+    <div class="col-md-12">
+      <h4 class="col-md-12" id='calendar' data-uid="<%= @photo.user.id %>"></h4>
+    </div>
 
-<br><br><br>
-
-  <h4 class="col-md-12" id='calendar' data-uid="<%= @photo.user.id %>">
-  </h4>
 
     <div class="col-md-4">
-     <%= link_to 'Edit', edit_photo_path(@photo), class: "payBtn btn btn-xl" %> 
-   </div>
-     <div class="col-md-4">
-     <%= link_to 'Pay', charges_path, class: "payBtn btn btn-xl" %>
+      <%= link_to 'Edit', edit_photo_path(@photo), class: "payBtn btn btn-xl" %>
+    </div>
+
   </div>
-</div>
 </div>
