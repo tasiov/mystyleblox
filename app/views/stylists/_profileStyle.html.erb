@@ -1,113 +1,130 @@
 <div class="col-md-7">
-<!-- Photo Slider -->
+  <!-- Photo Slider -->
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-
- <!-- Indicators -->
-  <% @stylist.user.images.each do |image| %>
-    <ol class="carousel-indicators">
-         <% if @stylist.user.images.index(image) == 0 %>
-             <li class='active'>
-         <% else %>
-              <li>
-         <% end %>
-            </li>
-         </ol>
-  <% end %>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox" >
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
 
-   <% if @stylist.user.images.empty? %>
-     <%= image_tag "default1.png" %>
-  <% else %>
+    <!-- Indicators -->
+
     <% @stylist.user.images.each do |image| %>
+    <ol class="carousel-indicators">
       <% if @stylist.user.images.index(image) == 0 %>
+      <li class='active'>
+        <% else %>
+        <li>
+          <% end %>
+        </li>
+      </ol>
+      <% end %>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox" >
+
+
+        <% if @stylist.user.images.empty? %>
+        <%= image_tag "default1.png" %>
+        <% else %>
+        <% @stylist.user.images.each do |image| %>
+
+        <% if @stylist.user.images.index(image) == 0 %>
         <div class="item active">
           <%= image_tag image.picture %>
-        <% if @stylist.user == current_user %>
+          <% if @stylist.user == current_user %>
           <%= link_to (image_tag 'delete64.png'), image_destroy_path(id: image.id), class: "delete_b", method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
+          <% end %>
         </div>
 
 
 
-      <% else %>
+        <% else %>
         <div class="item">
           <%= image_tag image.picture %>
           <% if @stylist.user == current_user %>
           <%= link_to (image_tag 'delete64.png'), image_destroy_path(id: image.id), class: "delete_b", method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
         </div>
-      <% end %>  
-    <% end %>
-  <% end %>
-  <% if @stylist.user == current_user %>
-   <%= render 'users/userImages'%>
-  <% end %>
-</div>
+        <% end %>
+        <% end %>
+        <% end %>
+        <% if @stylist.user == current_user %>
+        <%= render 'users/userImages'%>
+        <% end %>
+      </div>
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
 
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+    </div>
   </div>
-</div>
 
-  <div class="col-md-5"><%= @stylist.user.name %>
+  <div class="col-md-5"><h3><%= @stylist.user.name %></h3>
+    <%= form_tag charges_path do %>
+    <article>
+      <label class="amount">
+        <span>Day Rate: $500.00</span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-description="Hiring new talent"
+    data-amount="50000"></script>
+    <% end %>
     <h4><%= @stylist.user.state %></h4>
   </div>
 
-  <div class="col-md-5">
-    <h4>Bio</h4>
-    <p class="col-md-5">
 
+
+  <div class="col-md-5">
     <p class="col-md-12">
-      <strong>About Me:</strong><br>
+      <h4 class="underline">Bio</h4><br>
       <%= @stylist.user.description %>
     </p>
 
-    <h4 class="col-md-12">Details</h4>
+    <h4 class="col-md-12 underline">Details</h4>
 
-  <p class="col-md-12">
-    <strong>Education:</strong>
-    <%= @stylist.education %>
-  </p> 
+    <p class="col-md-6" style="text-align:left">
+      <strong>Edu:</strong>
+      <%= @stylist.education %>
+    </p>
 
-    <p class="col-md-12">
+    <p class="col-md-6" style="text-align:left">
       <strong>Exp:</strong>
       <%= @stylist.experience %>
     </p>
 
-    <p class="col-md-12">
-  <strong>Equipment:</strong>
-  <%= @stylist.equipment %>
-   </p>
+    <p class="col-md-6" style="text-align:left">
+      <strong>Equipment:</strong>
+      <%= @stylist.equipment %>
+    </p>
 
-    <p class="col-md-12">
+    <p class="col-md-6" style="text-align:left">
       <strong>Day Rate:</strong>
       <%= @stylist.rate %>
     </p>
 
-  <br><br><br>
+    <br><br><br>
 
-  <h4 class="col-md-12" id='calendar' data-uid="<%= @stylist.user.id %>">
-  </h4>
+    <div class="col-md-12">
+      <h4 class="underline">Availability</h4>
+    </div>
+
+    <div class="col-md-12">
+      <h4 class="col-md-12" id='calendar' data-uid="<%= @male.user.id %>"></h4>
+    </div>
+
 
     <div class="col-md-4">
-     <%= link_to 'Edit', edit_stylist_path(@stylist), class: "payBtn btn btn-xl" %> 
-  </div>
-  <div class="col-md-4">
-     <%= link_to 'Pay', charges_path, class: "payBtn btn btn-xl" %>
-  </div>
+      <%= link_to 'Edit', edit_stylist_path(@stylist), class: "payBtn btn btn-xl" %>
+    </div>
 
-</div>
+  </div>
 </div>
