@@ -1,4 +1,4 @@
-<div class="col-md-7">
+<div class="col-md-7" id='slider'>
 <!-- Photo Slider -->
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -9,12 +9,12 @@
   <% @male.user.images.each do |image| %>
     <ol class="carousel-indicators">
          <% if @male.user.images.index(image) == 0 %>
-             <li class='active'>
+            <li class='active'>
          <% else %>
-              <li>
+            <li>
          <% end %>
             </li>
-         </ol>
+    </ol>
   <% end %>
 
   <!-- Wrapper for slides -->
@@ -52,11 +52,13 @@
 </div>
 
   <!-- Controls -->
+
    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Prev</span>
   </a>
+
   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
@@ -64,6 +66,7 @@
 
   </div>
 </div>
+
 
   <div class="col-md-5"><h3><%= @male.user.name %></h3>
     <h4><%= @male.user.state %></h4>
