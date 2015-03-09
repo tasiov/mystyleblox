@@ -54,7 +54,7 @@
   <!-- Controls -->
 
    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    
+
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Prev</span>
   </a>
@@ -69,6 +69,18 @@
 
 
   <div class="col-md-5"><h3><%= @male.user.name %></h3>
+    <%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+      <span>Day Rate: $500.00</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Hiring new talent"
+          data-amount="50000"></script>
+  <% end %>
     <h4><%= @male.user.state %></h4>
   </div>
 
@@ -82,75 +94,75 @@
 
     <h4 class="col-md-12 underline" id="stats">Stats</h4><br>
 
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Age:</strong>
       <%= @male.age %>
     </p>
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Height:</strong>
       <%= @male.height %>
     </p>
 
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Weight:</strong>
       <%= @male.weight %>
     </p>
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Suit:</strong>
       <%= @male.suit %>
     </p>
 
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Chest:</strong>
       <%= @male.chest %>
     </p>
 
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Pant:</strong>
       <%= @male.pant %>
     </p>
 
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Shoes:</strong>
       <%= @male.shoes %>
     </p>
 
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Eyes:</strong>
       <%= @male.eyes %>
     </p>
 
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Hair:</strong>
       <%= @male.hair_c %>
     </p>
 
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Length:</strong>
       <%= @male.hair_l %>
     </p>
 
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Race:</strong>
       <%= @male.skin %>
     </p>
 
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Tattoos:</strong>
       <%= @male.tattoo %>
     </p>
 
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Pierced:</strong>
       <%= @male.pierce %>
     </p>
 
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Scars:</strong>
       <%= @male.scar %>
     </p>
 
-    <p class="col-md-4">
+    <p class="col-md-4" style="text-align:left">
       <strong>Nudity:</strong>
       <%= @male.nudity %>
     </p>
@@ -181,10 +193,10 @@
 
 
   <div class="col-md-4">
-     <%= link_to 'Edit', edit_male_path(@male), class: "payBtn btn btn-xl" %> 
+     <%= link_to 'Edit', edit_male_path(@male), class: "payBtn btn btn-xl" %>
   </div>
   <div class="col-md-4">
-     <%= link_to 'Book', charges_path, class: "payBtn btn btn-xl" %>
+    <!-- ******************* messages will go here ******************* -->
   </div>
 
 </div>
