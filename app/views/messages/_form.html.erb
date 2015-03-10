@@ -1,12 +1,13 @@
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<section>
 <%= form_for @message do |f| %>
-    <%= f.collection_select(:reciever_id, User.all, :id, :name) %>
-    <%= f.text_field :title %>
-    <%= f.text_area :body %>
-    <%= f.submit %>
+    <div>
+    <%= f.hidden_field :reciever_id  %>
+    </div>
+    <div>
+    <%= f.text_field :title, class: "form-control input-sm", placeholder: "Title" %>
+    </div>
+    <div>
+    <%= f.text_area :body, class: "form-control input-sm", placeholder: "Message" %>
+    </div>
+    <br>
+    <%= f.submit "Send", :class => "btn btn-xl" %>
 <% end %>
-</section>

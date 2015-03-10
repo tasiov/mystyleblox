@@ -13,6 +13,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @user = @photo.user
     @image = Image.new
+    @message = Message.new
   end
 
   # GET /photos/new
@@ -22,7 +23,7 @@ class PhotosController < ApplicationController
 
   # GET /photos/1/edit
   def edit
-    if current_user.photo 
+    if current_user.photo
       @photo = current_user.photo
     else
       redirect_to '/'
@@ -64,7 +65,7 @@ class PhotosController < ApplicationController
   # DELETE /photos/1
   # DELETE /photos/1.json
   def destroy
-    if @photo == current_user.photo 
+    if @photo == current_user.photo
       @photo.destroy
       respond_to do |format|
         format.html { redirect_to photos_url, notice: 'Photo was successfully destroyed.' }

@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   get 'static_pages/contact'
 
+  get 'inbox' => 'messages#inbox'
+
   post '/current_user' => 'users#take_to_show', as: :profile
 
   resources :stylists

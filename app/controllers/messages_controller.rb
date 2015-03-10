@@ -4,9 +4,10 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    # @messages = Message.of_user(current_user)
+    @sent_messages = current_user.sent_messages
+    @recieved_messages = current_user.recieved_messages
   end
-
   # GET /messages/1
   # GET /messages/1.json
   def show
@@ -21,6 +22,11 @@ class MessagesController < ApplicationController
   def edit
   end
 
+  def inbox
+    @sent_messages = current_user.sent_messages
+    @recieved_messages = current_user.recieved_messages
+  end
+
   # POST /messages
   # POST /messages.json
   def create
@@ -28,7 +34,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        format.html { redirect_to :back, notice: 'Message sent' }
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new }

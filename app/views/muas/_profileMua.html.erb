@@ -120,11 +120,31 @@
     <div class="col-md-12">
       <h4 class="col-md-12" id='calendar' data-uid="<%= @mua.user.id %>"></h4>
     </div>
-
-
-    <div class="col-md-4">
-      <%= link_to 'Edit', edit_mua_path(@mua), class: "payBtn btn btn-xl" %>
-    </div>
-
   </div>
+    <div>
+      <button class="payBtn btn btn-xl" id="messageBtn">Message</button>
+      <br><br>
+      <div class="messDiv">
+      <%= form_for @message do |f| %>
+        <div>
+          <%= f.hidden_field :reciever_id, value: @mua.user.id %>
+        </div>
+        <div>
+          <%= f.text_field :title, class: "form-control input-sm", placeholder: "Title" %>
+        </div>
+        <div>
+          <%= f.text_area :body, class: "form-control input-sm", placeholder: "Message" %>
+        </div>
+        <br>
+          <%= f.submit "Send", :class => "btn btn-xl" %>
+        <% end %>
+      </div>
+    <br>
+    <% if @mua.user == current_user %>
+      <div>
+        <%= link_to 'Edit', edit_mua_path(@mua), class: "payBtn btn btn-xl" %>
+      </div>
+    <% end %>
+  </div>
+
 </div>
