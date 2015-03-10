@@ -4,18 +4,6 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
 
- <!-- Indicators -->
-  <% @hair.user.images.each do |image| %>
-    <ol class="carousel-indicators">
-         <% if @hair.user.images.index(image) == 0 %>
-             <li class='active'>
-         <% else %>
-              <li>
-         <% end %>
-            </li>
-         </ol>
-  <% end %>
-
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox" >
 

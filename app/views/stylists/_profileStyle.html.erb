@@ -4,19 +4,6 @@
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
 
-    <!-- Indicators -->
-
-    <% @stylist.user.images.each do |image| %>
-    <ol class="carousel-indicators">
-      <% if @stylist.user.images.index(image) == 0 %>
-      <li class='active'>
-        <% else %>
-        <li>
-          <% end %>
-        </li>
-      </ol>
-      <% end %>
-
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox" >
 
