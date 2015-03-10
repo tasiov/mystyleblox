@@ -187,6 +187,7 @@
   <div>
     <button class="payBtn btn btn-xl" id="messageBtn">Message</button>
     <br><br>
+    <div class="col-md-12">
     <div class="messDiv">
       <%= form_for @message do |f| %>
       <div>
@@ -202,6 +203,7 @@
       <%= f.submit "Send", :class => "btn btn-xl" %>
       <% end %>
     </div>
+  </div>
     <br>
     <% if @female.user == current_user %>
     <div>
