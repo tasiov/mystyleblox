@@ -1,5 +1,5 @@
 class Male < ActiveRecord::Base
-  validates :height, :weight, :age, :hair_c, :hair_l, :eyes, :suit, :chest, :pant, :shoes, :skin, :tattoo, :pierce, :scar, :nudity, :experience, :rate, presence: true
+  validates :height, :weight, :suit, :shoes
   belongs_to :user
 
 
