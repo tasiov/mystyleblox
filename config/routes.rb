@@ -50,7 +50,6 @@ Rails.application.routes.draw do
     resources :images
   end
 
-
   get "static_pages/all_talent_forms_page"
 
   get 'login' => 'sessions#new'
