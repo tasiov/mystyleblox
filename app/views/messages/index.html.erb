@@ -8,7 +8,7 @@
 <br>
 <br>
 <br>
-<h1>Listing Messages</h1>
+<h1>Received Messages</h1>
 
 <table>
   <thead>
@@ -22,11 +22,11 @@
   </thead>
 
   <tbody>
-    <% @messages.each do |message| %>
+    <% @recieved_messages.each do |message| %>
       <tr>
 
-        <td><%= get_user_name(message.sender_id) %></td>
-        <td><%= get_user_name(message.reciever_id) %></td>
+        <td><%= message.sender.name %></td>
+        <td><%= message.reciever.name %></td>
         <td><%= message.title %></td>
         <td><%= message.body %></td>
         <td><%= link_to 'Show', message %></td>
@@ -38,5 +38,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Message', new_message_path %>

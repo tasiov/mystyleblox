@@ -1,0 +1,67 @@
+<section>
+  <div class="col-md-3">
+    <p class="col-md-12">
+      <button class="btn btn-xl" id="sentBtn" style="width: 95px">Sent</button>
+    </p>
+    <p class="col-md-12">
+      <button class="btn btn-xl" id="recBtn">Received</button>
+    </p>
+  </div>
+  <div class="col-md-6">
+    <div class="sentDiv">
+      <div>
+        <% @sent_messages.each do |message| %>
+        <div class="messageBox">
+          <div class="sentBox">
+            To: <%= message.reciever.name %>
+          </div>
+          <br>
+          <div class="sentBoxTitle">
+            Subject: <%= message.title %>
+          </div>
+          <br>
+          <div class="sentBoxBox">
+            <%= message.body %>
+          </div>
+          <br>
+        </div>
+        <div style="text-align: right">
+          <%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="recDiv">
+      <div>
+        <% if @received_messages.nil? %>
+          <h2 style="text-align: center">No new messages</h2>
+        <% else %>
+            <% @received_messages.each do |message| %>
+              <div class="messageBox">
+              <div class="recBox">
+                To: <%= message.sender.name %>
+              </div>
+              <br>
+              <div class="recBoxTitle">
+                Subject: <%= message.title %>
+              </div>
+              <br>
+              <div class="recBoxBox">
+                <%= message.body %>
+              </div>
+              <% end %>
+          <br>
+        </div>
+        <div style="text-align: right">
+          <%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+

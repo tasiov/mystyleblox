@@ -1,21 +1,7 @@
-<div class="col-md-7">
+<div class="col-md-7" id='slider'>
 <!-- Photo Slider -->
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-
- <!-- Indicators -->
-
-  <% @male.user.images.each do |image| %>
-    <ol class="carousel-indicators">
-         <% if @male.user.images.index(image) == 0 %>
-             <li class='active'>
-         <% else %>
-              <li>
-         <% end %>
-            </li>
-         </ol>
-  <% end %>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox" >
@@ -34,8 +20,6 @@
         <% end %>
         </div>
 
-
-
       <% else %>
         <div class="item">
           <%= image_tag image.picture %>
@@ -52,11 +36,13 @@
 </div>
 
   <!-- Controls -->
+
    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
 
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Prev</span>
   </a>
+
   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
@@ -64,6 +50,7 @@
 
   </div>
 </div>
+
 
   <div class="col-md-5"><h3><%= @male.user.name %></h3>
     <%= form_tag charges_path do %>
@@ -75,8 +62,10 @@
 
   <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Hiring new talent"
-          data-amount="50000"></script>
+          data-description="Talent booking"
+          data-amount="50000"
+          data-label="Book ME!"
+          data-image="/msb-red.png" ></script>
   <% end %>
     <h4><%= @male.user.state %></h4>
   </div>
@@ -176,28 +165,42 @@
       <%= @male.rate %>
     </p>
 
-  <br><br><br>
+    <br><br><br>
 
-  <div class="col-md-12">
-    <h4 class="underline">Availability</h4>
+    <div class="col-md-12">
+      <h4 class="underline">Availability</h4>
+    </div>
+
+    <div class="col-md-12">
+    <h4 class="col-md-12" id='calendar' data-uid="<%= @male.user.id %>">
+    </h4>
+    </div>
+    <div div class="col-md-12">
+      <button class="payBtn btn btn-xl" id="messageBtn">Message</button>
+      <br><br>
+      <div class="messDiv">
+      <%= form_for @message do |f| %>
+        <div>
+          <%= f.hidden_field :reciever_id, value: @male.user.id %>
+        </div>
+        <div>
+          <%= f.text_field :title, class: "form-control input-sm", placeholder: "Title" %>
+        </div>
+        <div>
+          <%= f.text_area :body, class: "form-control input-sm", placeholder: "Message" %>
+        </div>
+        <br>
+          <%= f.submit "Send", :class => "btn btn-xl" %>
+        <% end %>
+      </div>
+    <br>
+    <% if @male.user == current_user %>
+      <div>
+        <%= link_to 'Edit', edit_male_path(@male), class: "payBtn btn btn-xl" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="col-md-12">
-  <h4 class="col-md-12" id='calendar' data-uid="<%= @male.user.id %>">
-  </h4>
-  </div>
-
-
-
-  <div class="col-md-4">
-     <%= link_to 'Edit', edit_male_path(@male), class: "payBtn btn btn-xl" %>
-  </div>
-  <div class="col-md-4">
-    <!-- ******************* messages will go here ******************* -->
-  </div>
-
 </div>
-
-
+</div>
 
 

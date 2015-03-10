@@ -14,6 +14,7 @@ class MuasController < ApplicationController
     @mua = Mua.find(params[:id])
     @user = @mua.user
     @image = Image.new
+    @message = Message.new
   end
 
   # GET /muas/new
@@ -23,8 +24,8 @@ class MuasController < ApplicationController
 
   # GET /muas/1/edit
   def edit
-    if current_user.mua 
-      @mua = current_user.mua 
+    if current_user.mua
+      @mua = current_user.mua
     else
       redirect_to '/'
     end
@@ -64,13 +65,13 @@ class MuasController < ApplicationController
   # DELETE /muas/1
   # DELETE /muas/1.json
   def destroy
-    if @mua == current_user.mua 
+    if @mua == current_user.mua
       @mua.destroy
       respond_to do |format|
         format.html { redirect_to muas_url, notice: 'Mua was successfully destroyed.' }
         format.json { head :no_content }
       end
-    else 
+    else
       redirect_to '/'
     end
   end

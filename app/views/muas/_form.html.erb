@@ -26,8 +26,11 @@
   <div class="col-md-4">
     <%= f.select :rate, ["$20-$99", "$100-$499","$500-$999","$1000-$4999","$5000+"], {:include_blank => "Day Rate"}, { class: "form-control" } %>
   </div>
-  <div class="col-md-12">
+  <div class="col-md-4">
     <%= f.text_field :clients, {placeholder: "Clients (separated by commas)", class: "form-control input-sm"}  %>
+  </div>
+    <div class="col-md-12" style= "padding: 10px">
+     <%= f.submit "Sign Up", :class => "btn btn-xl" %>
   </div>
   <br>
   <br>
@@ -35,7 +38,5 @@
   <div class="field">
     <%=f.hidden_field :user_id, value: session[:user_id] %>
   </div>
-  <div class="col-md-12">
-     <%= f.submit "Sign Up", :class => "btn btn-xl" %>
-  </div>
+
 <% end %>

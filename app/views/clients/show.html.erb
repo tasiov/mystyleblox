@@ -1,40 +1,12 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 <p id="notice"><%= notice %></p>
 
-<div class='client_show_page'>
-	<%= render 'profileClient' %>
+<section class="full_profile">
+  
+<%= render 'profileClient' %>
+
+<div class="col-md-12">
+  <% link_to 'Back', muas_path %>
 </div>
 
-<% if @client.user == current_user %>
-	<%= render 'users/userImages' %>
-<% end %>
-
-<% @client.user.images.each do |image| %>
-   <%= image_tag image.picture %>
-   	<% if @client.user == current_user %>
-		<%= link_to 'Destroy', image_destroy_path(id: image.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-<% end %>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-<div id='calendar' data-uid="<%= @client.user.id %>"></div>
-
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
-
-
+</section>
 

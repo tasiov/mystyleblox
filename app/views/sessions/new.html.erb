@@ -10,7 +10,7 @@
       <div class='col-md-4' >
         <h2 class="log-in-section-heading">Log in</h2>
         <%= form_for(:session, url: login_path) do |f| %>
-        <p><%= flash[:error] %></p>
+        <p class='signup-error'><%= flash[:error] %></p>
         <%= f.email_field :email, class: "form-control input-sm", placeholder:"Email" %><br>
         <%= f.password_field :password, class: "form-control input-sm", placeholder: "Password" %><br>
         <%= f.submit "Log in", {name: nil, class: "btn btn-xl"} %>

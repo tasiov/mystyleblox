@@ -3,19 +3,6 @@
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-
- <!-- Indicators -->
-  <% @mua.user.images.each do |image| %>
-    <ol class="carousel-indicators">
-         <% if @mua.user.images.index(image) == 0 %>
-             <li class='active'>
-         <% else %>
-              <li>
-         <% end %>
-            </li>
-         </ol>
-  <% end %>
-
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox" >
 
@@ -71,11 +58,13 @@
       </label>
     </article>
 
-    <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-description="Hiring new talent"
-    data-amount="50000"></script>
-    <% end %>
+  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Talent booking"
+          data-amount="50000"
+          data-label="Book ME!"
+          data-image="/msb-red.png" ></script>
+  <% end %>
     <h4><%= @mua.user.state %></h4>
   </div>
 
@@ -118,11 +107,32 @@
     <div class="col-md-12">
       <h4 class="col-md-12" id='calendar' data-uid="<%= @mua.user.id %>"></h4>
     </div>
-
-
-    <div class="col-md-4">
-      <%= link_to 'Edit', edit_mua_path(@mua), class: "payBtn btn btn-xl" %>
-    </div>
-
   </div>
+  
+    <div class="col-md-12">
+      <button class="payBtn btn btn-xl" id="messageBtn">Message</button>
+      <br><br>
+      <div class="messDiv">
+      <%= form_for @message do |f| %>
+        <div>
+          <%= f.hidden_field :reciever_id, value: @mua.user.id %>
+        </div>
+        <div>
+          <%= f.text_field :title, class: "form-control input-sm", placeholder: "Title" %>
+        </div>
+        <div>
+          <%= f.text_area :body, class: "form-control input-sm", placeholder: "Message" %>
+        </div>
+        <br>
+          <%= f.submit "Send", :class => "btn btn-xl" %>
+        <% end %>
+      </div>
+    <br>
+    <% if @mua.user == current_user %>
+      <div>
+        <%= link_to 'Edit', edit_mua_path(@mua), class: "payBtn btn btn-xl" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 </div>

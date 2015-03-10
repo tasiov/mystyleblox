@@ -13,6 +13,7 @@ class FemalesController < ApplicationController
     @female = Female.find(params[:id])
     @user = @female.user
     @image = Image.new
+    @message = Message.new
   end
 
   # GET /females/new

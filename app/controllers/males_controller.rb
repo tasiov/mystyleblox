@@ -1,6 +1,6 @@
 class MalesController < ApplicationController
   before_action :set_male, only: [:show, :edit, :update, :destroy]
-  before_action :user_only, only: :edit 
+  before_action :user_only, only: :edit
 
   # GET /males
   # GET /males.json
@@ -14,6 +14,7 @@ class MalesController < ApplicationController
     @male = Male.find(params[:id])
     @user = @male.user
     @image = Image.new
+    @message = Message.new
   end
 
   # GET /males/new
@@ -23,8 +24,8 @@ class MalesController < ApplicationController
 
   # GET /males/1/edit
   def edit
-    if current_user.male 
-      @male = current_user.male 
+    if current_user.male
+      @male = current_user.male
     else
       redirect_to '/'
     end
@@ -65,7 +66,7 @@ class MalesController < ApplicationController
   # DELETE /males/1
   # DELETE /males/1.json
   def destroy
-    if @male == current_user.male 
+    if @male == current_user.male
       @male.destroy
       respond_to do |format|
         format.html { redirect_to males_url, notice: 'Male was successfully destroyed.' }
