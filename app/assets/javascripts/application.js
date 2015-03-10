@@ -69,7 +69,7 @@ fullCal = function(){
 
 dropdown = function() {
 
-	$('.dropdown-toggle').dropdown()
+	$('.dropdown-toggle').dropdown();
 }
 
 $(document).ready(fullCal);
@@ -81,14 +81,12 @@ $(document).on('page:load', dropdown);
 sentButton = function(){
 $("#sentBtn").click(function(){
 		$(".sentDiv").toggle("fast");
-
 });
 }
 
 recButton = function(){
 $("#recBtn").click(function(){
 		$(".recDiv").toggle("fast");
-
 });
 }
 
@@ -107,9 +105,3 @@ $("#messageBtn").click(function(){
 
 $(document).ready(messButton);
 $(document).on('page:load', messButton);
-
-
-
-
-
-
