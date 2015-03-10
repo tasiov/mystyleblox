@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   get 'static_pages/contact'
 
+
+  get '/talent' => "static_pages#all_talent_forms_page"
+
   get 'inbox' => 'messages#inbox'
 
   post '/current_user' => 'users#take_to_show', as: :profile
@@ -52,8 +55,7 @@ Rails.application.routes.draw do
     resources :images
   end
 
-
-  get "static_pages/all_talent_forms_page"
+  
 
   get 'login' => 'sessions#new'
 
