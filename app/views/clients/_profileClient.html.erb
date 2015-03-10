@@ -37,3 +37,31 @@
   <strong>User:</strong>
   <%= @client.user %>
 </p>
+
+    <div>
+      <button class="payBtn btn btn-xl" id="messageBtn">Message</button>
+      <br><br>
+      <div class="messDiv">
+      <%= form_for @message do |f| %>
+        <div>
+          <%= f.hidden_field :reciever_id, value: @client.user.id %>
+        </div>
+        <div>
+          <%= f.text_field :title, class: "form-control input-sm", placeholder: "Title" %>
+        </div>
+        <div>
+          <%= f.text_area :body, class: "form-control input-sm", placeholder: "Message" %>
+        </div>
+        <br>
+          <%= f.submit "Send", :class => "btn btn-xl" %>
+        <% end %>
+      </div>
+    <br>
+    <% if @client.user == current_user %>
+      <div>
+        <%= link_to 'Edit', edit_client_path(@client), class: "payBtn btn btn-xl" %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

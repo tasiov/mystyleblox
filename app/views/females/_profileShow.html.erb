@@ -48,131 +48,158 @@
 </div>
 </div>
 
+<div class="col-md-5"><h3><%= @female.user.name %></h3>
+  <%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+      <span>Day Rate: $500.00</span>
+    </label>
+  </article>
 
-  <div class="col-md-5"><h3><%= @female.user.name %></h3>
-    <h4 class="underline"> State </h4>
-    <h5><%= @female.user.state %></h5>
-  </div>
+  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+  data-description="Talent booking"
+  data-amount="50000"
+  data-label="Book ME!"
+  data-image="/msb-red.png" ></script>
+  <% end %>
+  <h4><%= @female.user.state %></h4>
+</div>
 
-  <div class="col-md-5">
-    <h4 class="underline">Bio</h4>
-    <p class="col-md-5">
 
-    <p class="col-md-12">
 
-      <%= @female.user.description %>
-    </p>
+<div class="col-md-5">
+  <p class="col-md-12">
+    <h4 class="underline">Bio</h4><br>
+    <%= @female.user.description %>
+  </p>
 
-    <h4 class="col-md-12 underline" id="stats">Stats</h4>
+  <h4 class="col-md-12 underline" id="stats">Stats</h4>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Age:</strong>
-      <%= @female.age %>
-    </p>
-    <p class="col-md-4" style="text-align:left">
-      <strong>Height:</strong>
-      <%= @female.height %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Age:</strong>
+    <%= @female.age %>
+  </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Height:</strong>
+    <%= @female.height %>
+  </p>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Weight:</strong>
-      <%= @female.weight %>
-    </p>
-    <p class="col-md-4" style="text-align:left">
-      <strong>Waist:</strong>
-      <%= @female.waist %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Weight:</strong>
+    <%= @female.weight %>
+  </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Waist:</strong>
+    <%= @female.waist %>
+  </p>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Bust:</strong>
-      <%= @female.bust %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Bust:</strong>
+    <%= @female.bust %>
+  </p>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Pant:</strong>
-      <%= @female.hips %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Pant:</strong>
+    <%= @female.hips %>
+  </p>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Dress:</strong>
-      <%= @female.dress %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Dress:</strong>
+    <%= @female.dress %>
+  </p>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Shoes:</strong>
-      <%= @female.shoes %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Shoes:</strong>
+    <%= @female.shoes %>
+  </p>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Eyes:</strong>
-      <%= @female.eyes %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Eyes:</strong>
+    <%= @female.eyes %>
+  </p>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Hair:</strong>
-      <%= @female.hair_c %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Hair:</strong>
+    <%= @female.hair_c %>
+  </p>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Length:</strong>
-      <%= @female.hair_l %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Length:</strong>
+    <%= @female.hair_l %>
+  </p>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Race:</strong>
-      <%= @female.skin %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Race:</strong>
+    <%= @female.skin %>
+  </p>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Tattoos:</strong>
-      <%= @female.tattoo %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Tattoos:</strong>
+    <%= @female.tattoo %>
+  </p>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Pierced:</strong>
-      <%= @female.pierce %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Pierced:</strong>
+    <%= @female.pierce %>
+  </p>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Scars:</strong>
-      <%= @female.scar %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Scars:</strong>
+    <%= @female.scar %>
+  </p>
 
-    <p class="col-md-4" style="text-align:left">
-      <strong>Nudity:</strong>
-      <%= @female.nudity %>
-    </p>
+  <p class="col-md-4" style="text-align:left">
+    <strong>Nudity:</strong>
+    <%= @female.nudity %>
+  </p>
 
-    <h4 class="col-md-12 underline">Details</h4>
+  <h4 class="col-md-12 underline">Details</h4>
 
-    <p class="col-md-6">
-      <strong>Exp:</strong>
-      <%= @female.experience %>
-    </p>
+  <p class="col-md-6">
+    <strong>Exp:</strong>
+    <%= @female.experience %>
+  </p>
 
-    <p class="col-md-6">
-      <strong>Day Rate:</strong>
-      <%= @female.rate %>
-    </p>
+  <p class="col-md-6">
+    <strong>Day Rate:</strong>
+    <%= @female.rate %>
+  </p>
 
-    <br><br><br>
+  <br><br><br>
 
   <div class="col-md-12">
     <h4 class="underline">Availability</h4>
   </div>
-
-  <h4 class="col-md-12" id='calendar' data-uid="<%= @female.user.id %>">
-  </h4>
-
-
-  <div class="col-md-4">
-
-     <%= link_to 'Edit', edit_female_path(@female), class: "payBtn btn btn-xl" %>
+  <div class="col-md-12">
+    <h4 class="col-md-12" id='calendar' data-uid="<%= @female.user.id %>"></h4>
   </div>
-
-    <div class="col-md-4">
-     <%= link_to 'Book', charges_path, class: "payBtn btn btn-xl" %>
-
+  <div class="col-md-12">
+    <button class="payBtn btn btn-xl" id="messageBtn">Message</button>
+    <br><br>
+    <div class="col-md-12">
+    <div class="messDiv">
+      <%= form_for @message do |f| %>
+      <div>
+        <%= f.hidden_field :reciever_id, value: @female.user.id %>
+      </div>
+      <div>
+        <%= f.text_field :title, class: "form-control input-sm", placeholder: "Title" %>
+      </div>
+      <div>
+        <%= f.text_area :body, class: "form-control input-sm", placeholder: "Message" %>
+      </div>
+      <br>
+      <%= f.submit "Send", :class => "btn btn-xl" %>
+      <% end %>
+    </div>
+  </div>
+    <br>
+    <% if @female.user == current_user %>
+    <div>
+      <%= link_to 'Edit', edit_female_path(@female), class: "payBtn btn btn-xl" %>
+    </div>
+    <% end %>
   </div>
 </div>
 </div>

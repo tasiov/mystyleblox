@@ -69,7 +69,7 @@ fullCal = function(){
 
 dropdown = function() {
 
-	$('.dropdown-toggle').dropdown()
+	$('.dropdown-toggle').dropdown();
 }
 
 $(document).ready(fullCal);
@@ -78,10 +78,30 @@ $(document).on('page:load', fullCal);
 $(document).on('page:load', dropdown);
 
 
+sentButton = function(){
+$("#sentBtn").click(function(){
+		$(".sentDiv").toggle("fast");
+});
+}
+
+recButton = function(){
+$("#recBtn").click(function(){
+		$(".recDiv").toggle("fast");
+});
+}
+
+$(document).ready(sentButton);
+$(document).on('page:load', sentButton);
+$(document).ready(recButton);
+$(document).on('page:load', recButton);
 
 
+//********************* Message function  *******************
+messButton = function(){
+$("#messageBtn").click(function(){
+	$(".messDiv").toggle("fast");
+});
+}
 
-
-
-
-
+$(document).ready(messButton);
+$(document).on('page:load', messButton);

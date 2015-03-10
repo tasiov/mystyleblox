@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
   	@hair = Hair.new
   	@mua = Mua.new
   	@stylist = Stylist.new
-  	@client = Client.new 
+  	@client = Client.new
   end
 
   def about

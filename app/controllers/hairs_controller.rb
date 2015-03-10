@@ -1,6 +1,6 @@
 class HairsController < ApplicationController
   before_action :set_hair, only: [:show, :edit, :update, :destroy]
-  before_action :user_only, only: :edit 
+  before_action :user_only, only: :edit
 
   # GET /hairs
   # GET /hairs.json
@@ -30,6 +30,7 @@ class HairsController < ApplicationController
     @hair = Hair.find(params[:id])
     @user = @hair.user
     @image = Image.new
+    @message = Message.new
   end
 
   # GET /hairs/new
@@ -39,8 +40,8 @@ class HairsController < ApplicationController
 
   # GET /hairs/1/edit
   def edit
-    if current_user.hair 
-      @hair = current_user.hair 
+    if current_user.hair
+      @hair = current_user.hair
     else
       redirect_to '/'
     end
@@ -88,7 +89,7 @@ class HairsController < ApplicationController
         format.html { redirect_to hairs_url, notice: 'Hair was successfully destroyed.' }
         format.json { head :no_content }
     end
-    else 
+    else
       redirect_to '/'
     end
   end

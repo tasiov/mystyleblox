@@ -21,11 +21,11 @@ pre {
 a {
   color: black;
   &:visited {
-    color: black;
+
+    color: white;
   }
   &:hover {
-    color: black;
-  }
+    color: #grey;
 }
 
 div {
@@ -65,4 +65,5 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
 }

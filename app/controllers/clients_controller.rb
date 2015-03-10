@@ -14,6 +14,7 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
     @user = @client.user
     @image = Image.new
+    @message = Message.new
   end
 
   # GET /clients/new
@@ -23,8 +24,8 @@ class ClientsController < ApplicationController
 
   # GET /clients/1/edit
   def edit # This is what allows only the current user to edit their profile.
-    if current_user.client 
-      @client = current_user.client 
+    if current_user.client
+      @client = current_user.client
     else
       redirect_to '/'
     end

@@ -1,6 +1,6 @@
 class StylistsController < ApplicationController
   before_action :set_stylist, only: [:show, :edit, :update, :destroy]
-  before_action :user_only, only: :edit 
+  before_action :user_only, only: :edit
 
   # GET /stylists
   # GET /stylists.json
@@ -14,6 +14,7 @@ class StylistsController < ApplicationController
     @stylist = Stylist.find(params[:id])
     @user = @stylist.user
     @image = Image.new
+    @message = Message.new
   end
 
   # GET /stylists/new
@@ -23,7 +24,7 @@ class StylistsController < ApplicationController
 
   # GET /stylists/1/edit
   def edit
-    if current_user.stylist 
+    if current_user.stylist
       @stylist = current_user.stylist
     else
       redirect_to '/'
@@ -64,13 +65,13 @@ class StylistsController < ApplicationController
   # DELETE /stylists/1
   # DELETE /stylists/1.json
   def destroy
-    if @stylist == current_user.stylist 
+    if @stylist == current_user.stylist
       @stylist.destroy
       respond_to do |format|
         format.html { redirect_to stylists_url, notice: 'Stylist was successfully destroyed.' }
         format.json { head :no_content }
       end
-    else 
+    else
       redirect_to '/'
     end
   end
