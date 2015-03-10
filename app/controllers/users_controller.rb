@@ -47,7 +47,7 @@ class UsersController < ApplicationController
       if @user.save
 
         log_in @user
-        format.html { redirect_to "/static_pages/all_talent_forms_page", notice: 'User was successfully created.' }
+        format.html { redirect_to "/talent", notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
