@@ -41,12 +41,13 @@
           <div class="accordion" id="accordion2">
             <div class="accordion-group">
               <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                <a class="accordion-toggle3" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
                   Advanced Search
                 </a>
               </div>
               <div id="collapseOne" class="accordion-body collapse">
                 <div class="accordion-inner">
+
                   <p class="col-sm-12">
                     <%= select_tag( :hair_l,   options_for_select(["Short","Medium","Long"]), {include_blank: "Hair Length", class: "form-control"}) %>
                   </p>
