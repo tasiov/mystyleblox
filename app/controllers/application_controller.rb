@@ -18,6 +18,8 @@ class ApplicationController < ActionController::Base
         user.mua
       elsif !current_user.stylist.nil?
         user.stylist
+      elsif !current_user.client.nil?
+        user.client
       else
         root_url
       end
