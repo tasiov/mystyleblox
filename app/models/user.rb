@@ -12,20 +12,20 @@ class User < ActiveRecord::Base
   validates :zip, numericality: true
 
 
-	has_one :client
-	has_one :male
-	has_one :female
-	has_one :hair
-	has_one :photo
-	has_one :mua
-	has_one :stylist
+	has_one :client, dependent: :destroy
+	has_one :male, dependent: :destroy
+	has_one :female, dependent: :destroy
+	has_one :hair, dependent: :destroy
+	has_one :photo, dependent: :destroy
+	has_one :mua, dependent: :destroy
+	has_one :stylist, dependent: :destroy
 
 	has_secure_password
 
-	has_many :unavailables
-	has_many :images
-  has_many :sent_messages, class_name: "Message", foreign_key: "sender_id"
-  has_many :recieved_messages, class_name: "Message", foreign_key: "reciever_id"
+	has_many :unavailables, dependent: :destroy
+	has_many :images, dependent: :destroy
+  has_many :sent_messages, class_name: "Message", foreign_key: "sender_id", dependent: :destroy
+  has_many :recieved_messages, class_name: "Message", foreign_key: "reciever_id", dependent: :destroy
 
 	before_save :update_zip
 
