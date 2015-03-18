@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150307194444) do
+ActiveRecord::Schema.define(version: 20150318173205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20150307194444) do
   end
 
   add_index "clients", ["user_id"], name: "index_clients_on_user_id", using: :btree
+
+  create_table "conversations", force: :cascade do |t|
+    t.string   "sender_id"
+    t.string   "receiver_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "females", force: :cascade do |t|
     t.string   "height"
@@ -161,9 +168,12 @@ ActiveRecord::Schema.define(version: 20150307194444) do
     t.integer  "reciever_id"
     t.string   "title"
     t.string   "body"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "conversation_id"
   end
+
+  add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
 
   create_table "muas", force: :cascade do |t|
     t.string   "style"
@@ -194,6 +204,15 @@ ActiveRecord::Schema.define(version: 20150307194444) do
   end
 
   add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
+
+  create_table "replies", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "message_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "replies", ["message_id"], name: "index_replies_on_message_id", using: :btree
 
   create_table "stylists", force: :cascade do |t|
     t.string   "style"
@@ -245,8 +264,10 @@ ActiveRecord::Schema.define(version: 20150307194444) do
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
   add_foreign_key "males", "users"
+  add_foreign_key "messages", "conversations"
   add_foreign_key "muas", "users"
   add_foreign_key "photos", "users"
+  add_foreign_key "replies", "messages"
   add_foreign_key "stylists", "users"
   add_foreign_key "unavailables", "users"
 end

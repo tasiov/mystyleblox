@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :replies
+
   resources :messages
 
   post 'image/create'
