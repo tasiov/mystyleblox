@@ -2,7 +2,7 @@ class Message < ActiveRecord::Base
 
 	belongs_to :sender, class_name: "User", primary_key: "sender_id"
 	belongs_to :reciever, class_name: "User", primary_key: "reciever_id"
-  has_many :replies
+  has_many :replies, dependent: :destroy
 
   def get_user_name(x)
 
