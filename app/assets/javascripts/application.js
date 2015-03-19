@@ -80,13 +80,13 @@ $(document).on('page:load', dropdown);
 
 sentButton = function(){
 $("#sentBtn").click(function(){
-		$(".sentDiv").toggle("fast");
+		$(".sentDiv").fadeToggle(100);
 });
 }
 
 recButton = function(){
 $("#recBtn").click(function(){
-		$(".recDiv").toggle("fast");
+		$(".recDiv").fadeToggle(100);
 });
 }
 
@@ -94,6 +94,32 @@ $(document).ready(sentButton);
 $(document).on('page:load', sentButton);
 $(document).ready(recButton);
 $(document).on('page:load', recButton);
+
+// **********************Reply Toggle************************
+
+repButton = function(){
+$("#sentRepTog").click(function(){
+		$(".sentRepToggle").fadeToggle("fast");
+});
+}
+
+$(document).ready(repButton);
+$(document).on('page:load', repButton);
+
+
+recRepButton = function(){
+$("#recRepTog").click(function(){
+		$(".recRepToggle").fadeToggle("fast");
+});
+}
+
+$(document).ready(recRepButton);
+$(document).on('page:load', recRepButton);
+
+
+
+
+
 
 
 //********************* Message function  *******************

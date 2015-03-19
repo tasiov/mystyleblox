@@ -1,12 +1,53 @@
 <section>
   <div class="col-md-3">
     <p class="col-md-12">
-      <button class="btn btn-xl" id="sentBtn" style="width: 95px">Sent</button>
+      <button class="btn btn-xl" id="recBtn">Recieved</button>
     </p>
     <p class="col-md-12">
-      <button class="btn btn-xl" id="recBtn">Received</button>
+      <button class="btn btn-xl" id="sentBtn" style="width: 95px">Sent</button>
     </p>
   </div>
+
+  <div class="col-md-6">
+    <div class="recDiv">
+      <div>
+        <% @recieved_messages.each do |message| %>
+        <div class="messageBox">
+          <div class="recBox">
+            From: <%= message.sender.name %>
+          </div>
+          <br>
+          <div class="recBoxTitle">
+            Subject: <%= message.title %>
+          </div>
+          <br>
+          <div class="recBoxBox">
+            <%= message.body %>
+          </div>
+          <br>
+          <p style="text-align:center">
+            <button class="btn btn-sm" id="recRepTog">show replies</button>
+          </p>
+          <div class="recRepToggle">
+            <% message.replies.each do |reply| %>
+            <div class="messageBox">
+              <p style="text-align: left"><%= reply.get_user_name(message.sender) %> said:</p>
+              <p style="text-align: left"><%= reply.body %></p>
+              <br>
+              <p style="text-align: right">Sent: <%= time_ago_in_words(reply.created_at) + " ago" %></p>
+            </div>
+            <% end %>
+          </div>
+          <%= render partial: 'replies/form', locals: {id: message.id} %>
+        </div>
+        <div style="text-align: right">
+          <%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <div class="col-md-6">
     <div class="sentDiv">
       <div>
@@ -24,36 +65,20 @@
             <%= message.body %>
           </div>
           <br>
-        </div>
-        <div style="text-align: right">
-          <%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-6">
-    <div class="recDiv">
-      <div>
-        <% if @received_messages.nil? %>
-          <h2 style="text-align: center">No new messages</h2>
-        <% else %>
-            <% @received_messages.each do |message| %>
-              <div class="messageBox">
-              <div class="recBox">
-                To: <%= message.sender.name %>
-              </div>
+          <p style="text-align:center">
+            <button class="btn btn-sm" id="sentRepTog">show replies</button>
+          </p>
+          <div class="sentRepToggle">
+            <% message.replies.each do |reply| %>
+            <div class="messageBox">
+              <p style="text-align: left"><%= reply.get_user_name(message.sender) %> said:</p>
+              <p style="text-align: left"><%= reply.body %> </p>
               <br>
-              <div class="recBoxTitle">
-                Subject: <%= message.title %>
-              </div>
-              <br>
-              <div class="recBoxBox">
-                <%= message.body %>
-              </div>
-              <% end %>
-          <br>
+              <p style="text-align: right">sent: <%= time_ago_in_words(reply.created_at) + " ago" %></p>
+            </div>
+          </div>
+          <% end %>
+          <%= render partial: 'replies/form', locals: {id: message.id} %>
         </div>
         <div style="text-align: right">
           <%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -64,4 +89,3 @@
   </div>
 </section>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-

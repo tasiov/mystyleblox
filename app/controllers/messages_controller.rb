@@ -25,6 +25,7 @@ class MessagesController < ApplicationController
   def inbox
     @sent_messages = current_user.sent_messages
     @recieved_messages = current_user.recieved_messages
+    @reply = Reply.new
   end
 
   # POST /messages

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :replies
 
-  resources :messages
+  resources :messages do
+    resources :replies
+  end
+
 
   post 'image/create'
 
@@ -57,7 +60,8 @@ Rails.application.routes.draw do
     resources :images
   end
 
-  
+
+
 
   get 'login' => 'sessions#new'
 
