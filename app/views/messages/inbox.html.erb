@@ -26,7 +26,7 @@
           </div>
           <br>
           <p style="text-align:center">
-            <button class="btn btn-sm" id="recRepTog">show replies</button>
+            <button class="btn btn-sm" id="recRepTog">reply</button>
           </p>
           <div class="recRepToggle">
             <% message.replies.each do |reply| %>
@@ -37,8 +37,8 @@
               <p style="text-align: right">Sent: <%= time_ago_in_words(reply.created_at) + " ago" %></p>
             </div>
             <% end %>
-          </div>
           <%= render partial: 'replies/form', locals: {id: message.id} %>
+        </div>
         </div>
         <div style="text-align: right">
           <%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -66,19 +66,19 @@
           </div>
           <br>
           <p style="text-align:center">
-            <button class="btn btn-sm" id="sentRepTog">show replies</button>
+            <button class="btn btn-sm" id="sentRepTog">reply</button>
           </p>
           <div class="sentRepToggle">
             <% message.replies.each do |reply| %>
             <div class="messageBox">
               <p style="text-align: left"><%= reply.get_user_name(message.sender) %> said:</p>
-              <p style="text-align: left"><%= reply.body %> </p>
+              <p style="text-align: left"><%= reply.body %></p>
               <br>
               <p style="text-align: right">sent: <%= time_ago_in_words(reply.created_at) + " ago" %></p>
             </div>
-          </div>
           <% end %>
           <%= render partial: 'replies/form', locals: {id: message.id} %>
+        </div>
         </div>
         <div style="text-align: right">
           <%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' } %>

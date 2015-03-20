@@ -16,6 +16,6 @@
     <%= f.hidden_field :message_id, value: id %>
     <%= f.hidden_field :sender, value: session[:user_id] %>
   <div class="actions" style="text-align: center">
-    <%= f.submit "Reply", :class => "btn btn-sm"%>
+    <%= f.submit "send", :class => "btn btn-sm"%>
   </div>
 <% end %>
