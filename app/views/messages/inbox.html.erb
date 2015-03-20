@@ -33,7 +33,7 @@
             <% message.replies.each do |reply| %>
             <div class="messageBox">
               <p style="text-align: left"><%= link_to image_tag(message.sender.images.first.picture, {width: "60x60px", class: "profile-icons"})%></p><br>
-              <p style="text-align: left"><%= reply.body %></p>
+              <p style="text-align: left" class="recBoxBox"><%= reply.body %></p>
               <br>
               <p style="text-align: right">Sent: <%= time_ago_in_words(reply.created_at) + " ago" %></p>
             </div>
@@ -74,7 +74,9 @@
           <div class="sentRepToggle">
             <% message.replies.each do |reply| %>
             <div class="messageBox">
-              <p style="text-align: left"><%= reply.body %></p>
+             <%= link_to image_tag(message.sender.images.first.picture, {width: "60px", height: 
+            "60px", class: "profile-icons"})%> <br><br>
+              <p style="text-align: left" class="recBoxBox"><%= reply.body %></p>
               <br>
               <p style="text-align: right">sent: <%= time_ago_in_words(reply.created_at) + " ago" %></p>
             </div>
