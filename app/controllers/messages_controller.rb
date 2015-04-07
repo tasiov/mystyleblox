@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
   def index
     # @messages = Message.of_user(current_user)
     @sent_messages = current_user.sent_messages
-    @recieved_messages = current_user.recieved_messages
+    @received_messages = current_user.received_messages
   end
   # GET /messages/1
   # GET /messages/1.json
@@ -24,14 +24,36 @@ class MessagesController < ApplicationController
 
   def inbox
     @sent_messages = current_user.sent_messages
-    @recieved_messages = current_user.recieved_messages
+    @received_messages = current_user.received_messages
     @reply = Reply.new
+    render :inbox
+    @sent_messages.each do |msg|
+      replies_arr = msg.replies
+      replies_arr.each do |rply|
+        if rply.sender.to_i != current_user.id
+          rply.status = "read"
+          rply.save
+        end
+      end
+    end
+    @received_messages.each do |msg|
+      msg.status = "read"
+      msg.save
+      replies_arr = msg.replies
+      replies_arr.each do |rply|
+        if rply.sender.to_i != current_user.id
+          rply.status = "read"
+          rply.save
+        end
+      end
+    end
   end
 
   # POST /messages
   # POST /messages.json
   def create
     @message = Message.new(message_params)
+    @message.status = "unread"
 
     respond_to do |format|
       if @message.save

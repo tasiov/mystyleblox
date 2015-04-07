@@ -1,7 +1,7 @@
 <section>
   <div class="col-md-3">
     <p class="col-md-12">
-      <button class="btn btn-xl" id="recBtn">Recieved</button>
+      <button class="btn btn-xl" id="recBtn">received</button>
     </p>
     <p class="col-md-12">
       <button class="btn btn-xl" id="sentBtn" style="width: 95px">Sent</button>
@@ -11,10 +11,10 @@
   <div class="col-md-6">
     <div class="recDiv">
       <div>
-        <% @recieved_messages.each do |message| %>
+        <% @received_messages.each do |message| %>
         <div class="messageBox">
           <div class="recBox">
-          <%= link_to image_tag(message.sender.images.first.picture, {width: "60x60px", class: "profile-icons"}) %> &nbsp;&nbsp;
+          <%# link_to image_tag(message.sender.images.first.picture, {width: "60x60px", class: "profile-icons"}) %> &nbsp;&nbsp;
             <%= message.sender.name %>
           </div>
           <br>
@@ -25,16 +25,24 @@
           <div class="recBoxBox">
             <%= message.body %>
           </div>
-          <br>
+          <% if message.status == "unread" && message.reciever_id == current_user.id %>
+              Unread
+          <% else %>
+              <br>
+          <% end %>
           <p style="text-align:center">
             <button class="btn btn-sm" id="recRepTog">reply</button>
           </p>
           <div class="recRepToggle">
             <% message.replies.each do |reply| %>
             <div class="messageBox">
-              <p style="text-align: left"><%= link_to image_tag(message.sender.images.first.picture, {width: "60x60px", class: "profile-icons"})%></p><br>
+              <p style="text-align: left"><%# link_to image_tag(message.sender.images.first.picture, {width: "60x60px", class: "profile-icons"})%></p><br>
               <p style="text-align: left" class="recBoxBox"><%= reply.body %></p>
-              <br>
+              <% if reply.status == "unread" && reply.sender.to_i != current_user.id %>
+                Unread
+              <% else %>
+                <br>
+              <% end %>
               <p style="text-align: right">Sent: <%= time_ago_in_words(reply.created_at) + " ago" %></p>
             </div>
             <% end %>
@@ -55,7 +63,7 @@
         <% @sent_messages.each do |message| %>
         <div class="messageBox">
           <div class="sentBox">
-            <%= link_to image_tag(message.reciever.images.first.picture, {width: "60px", height: 
+            <%= link_to image_tag(message.reciever.images.first.picture, {width: "60px", height:
             "60px", class: "profile-icons"}) %> &nbsp;&nbsp;
             <%= message.reciever.name %>
           </div>
@@ -67,17 +75,25 @@
           <div class="sentBoxBox">
             <%= message.body %>
           </div>
-          <br>
+          <% if message.status == "unread" && message.reciever_id == current_user.id %>
+              Unread
+          <% else %>
+              <br>
+          <% end %>
           <p style="text-align:center">
             <button class="btn btn-sm" id="sentRepTog">reply</button>
           </p>
           <div class="sentRepToggle">
             <% message.replies.each do |reply| %>
             <div class="messageBox">
-             <%= link_to image_tag(message.sender.images.first.picture, {width: "60px", height: 
+             <%# link_to image_tag(message.sender.images.first.picture, {width: "60px", height:
             "60px", class: "profile-icons"})%> <br><br>
               <p style="text-align: left" class="recBoxBox"><%= reply.body %></p>
-              <br>
+              <% if reply.status == "unread" && reply.sender.to_i != current_user.id %>
+                Unread
+              <% else %>
+                <br>
+              <% end %>
               <p style="text-align: right">sent: <%= time_ago_in_words(reply.created_at) + " ago" %></p>
             </div>
           <% end %>

@@ -25,6 +25,7 @@ class RepliesController < ApplicationController
   # POST /replies.json
   def create
     @reply = Reply.new(reply_params)
+    @reply.status = "unread"
 
     respond_to do |format|
       if @reply.save
@@ -69,6 +70,6 @@ class RepliesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reply_params
-      params.require(:reply).permit(:body, :message_id, :sender)
+      params.require(:reply).permit(:body, :message_id, :sender, :status)
     end
 end

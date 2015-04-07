@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
 	has_many :unavailables, dependent: :destroy
 	has_many :images, dependent: :destroy
   has_many :sent_messages, class_name: "Message", foreign_key: "sender_id", dependent: :destroy
-  has_many :recieved_messages, class_name: "Message", foreign_key: "reciever_id", dependent: :destroy
+  has_many :received_messages, class_name: "Message", foreign_key: "reciever_id", dependent: :destroy
 
 	before_save :update_zip
 

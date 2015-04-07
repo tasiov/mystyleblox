@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150319190945) do
+ActiveRecord::Schema.define(version: 20150402214733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 20150319190945) do
     t.string   "body"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "status"
   end
 
   create_table "muas", force: :cascade do |t|
@@ -148,6 +149,7 @@ ActiveRecord::Schema.define(version: 20150319190945) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "sender"
+    t.string   "status"
   end
 
   add_index "replies", ["message_id"], name: "index_replies_on_message_id", using: :btree

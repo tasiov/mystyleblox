@@ -24,4 +24,9 @@ class Message < ActiveRecord::Base
   #   messages.push(where(reciever_id: user))
   #   messages.flatten
   # end
+
+  def self.num_unread(x)
+    user = User.find_by(id:x)
+    user.received_messages.where(status: "unread").count
+  end
 end
